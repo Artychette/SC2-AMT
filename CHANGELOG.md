@@ -1,52 +1,57 @@
-==============================
-============ v1.3 ============
-==============================
+# CHANGELOG
+
+__==============================<br/>
+============ v1.3 ==============<br/>
+==============================<br/>__
 
 
+## Core Lib Extension
 
------- Core Lib Extension
+### Event : 
+- Exposed all native event registration functions to allow to dynamically add events to triggers from the GUI without using custom script blocks. 
 
---- Event : 
-	- Exposed all natives event registration functions to allow to dynamically add event to triggers from the GUI without using custom script blocks. 
+### Condition : 
+- Added "Is True" and "Is False" conditions to avoid `if(boolean==true)` and `if(boolean==false)` monstrosities.
 
---- Condition : 
-	- Added a "Is True" and "Is False" conditions to avoid "if(boolean==true/false)" monstruousities.
+### Dynamic Container (new) :
+- Added a (c++ style) "Vector" struct that act both as a dynamic array and a stack. Work for almost all GUI variable type.
+- Added a (c++ style) "Deque" (Double Ended QUEue) struct that act both as a queue and a stack. Work for almost all GUI variable type.
 
---- Dynamic Container (new) :
-	- Added a (c++ style) "Vector" struct that act both as a dynamic array and a stack. Work for almost all GUI variable type.
-	- Added a (c++ style) "Deque" (double ended queue) struct that act both as a queue and a stack. Work for almost all GUI variable type.
+### UI : 
+- Added a "Convert String to UI Layout Frame" function
 
---- UI : 
-	- Added a "Convert String to UI Layout Frame" function
+### User-Data :
+- Added 2 cast functions : "Convert String To User Instance", "Convert String To User Field"
+- Added a "User Reference" function that return a user reference from a user-type and an instance
 
---- User-Data :
-	- Added 2 cast functions : "Convert String To User Instance", "Convert String To User Field"
-	- Added a "User Reference" function that return a user reference from a user-type and an instance
-
------- Conversation (new)
+## Conversation (new)
 - Added a whole API for transmission/briefing/RPG-like conversation to be run from conversation data
 
 
------- Math Misc.
+## Math Misc.
 - Added a random generator for integer (and another with a distribution biaised toward less consecutive identical output), real number (in a given interval) and points (in a given disk)
 
------- Misc.
+## Misc.
 - Optimized most existing modules to (slightly) reduce performance cost of enabled ones and anihilate any performance cost of disabled ones.
 
+#
+__==============================<br/>
+============ v1.2a =============<br/>
+==============================<br/>__
 
-==============================
-============ v1.2a ===========
-==============================
 
------- Top Bar Builder 
+**HOTFIX**
+
+## Top Bar Builder 
 - Fixed a bug that would not properly show back the top bar when rapid-firing the cinematic mode on/off (for real this time, hopefully)
 
+#
+__==============================<br/>
+============ v1.2 ==============<br/>
+==============================<br/>__
 
-==============================
-============ v1.2 ============
-==============================
 
------- Top Bar Builder 
+## Top Bar Builder
 - Added some safety for the Targeting Mode using abilities to force invalid unit type caster to be defaulted as the global caster (instead of merely null link)
 - Fixed a bug where invalid placement for the global caster would prevent its creation
 - Fixed a bug where invalid activating behavior/ability would not discard the extended ability entry, resulting in various bug
@@ -61,17 +66,35 @@
 - Added a "UseTargetingUI" option on extended abilities to allow to bypasse the targeting UI
 - Added a "FireIntantly" option on extended abilities to allow to bypass sequence queuing process if the targeting UI is bypassed (meaning charges are used on the spot instead of waiting the whole queue to be filled)
 
------- Misc.
+## Misc.
 - Added Hand Left & Hand Right Attach Methods
 - Added "Stop" (resp. "Attack") Set ID to the Stop Redirect (resp. Attack Redirect) ability
 - Fixed a bug that prevented the (player-specific) "cinematic turned off" event to fire for player 10 to 15
 - Fixed a bug that prevented the top bar, the production queue, or anything else that relie on the "VictoryPanelIndicator" frame to stay hidden in the "Play Again" menu in the victory panel of HotS and LotV (and probably Coop ?)
 
+#
+__==============================<br/>
+============ v1.1 ==============<br/>
+==============================<br/>__
 
-==============================
-============ v1.1 ============
-==============================
 
+## Top Bar Builder (new)
+- Added new module which allow to easily build and customize a top bar. Has its own separate Init function
+
+## Core Lib Extension
+- Exposed the Store/Restore preset
+- Added Fog of War Alpha related actions
+- Added Kill/Remove After Delay actions (do not block the execution thread)
+- Added the Player Property Changed (duplicate) event to allow the use of the "Any Player" preset
+- Extended the cinematic mode :
+	- Added an event (Cinematic Mode Changed For Player) that check for a specific player (or any) entering/exiting the cinematic mode (natively, all player got signaled with no way to know which player is entering/exiting the mode)
+	- Inserted 2 "Indicator" frame in the game UI to allow any frame to acknowledge when the player is in cinematic mode or displaying the victory panel (see the "AMT_Indicators" layout)
+	- Added a duplicate of the "Cinematic Mode" action that trigger the "Out" transition animation of consoles (instead of hidding it instantly)
+
+## Global Pause 
+- Fixed a bug that would break units order queue when using the global pause
+
+## Misc.
 - Added SOpLookEast,SOpLookNorth,SOpLookSouth,SOpLookWest that reorient the model to look East (resp. North, South, West)
 - Added Suppress Supply Cost behavior that remove the supply cost of the target
 - Added Hide If Caster Hidden behavior that hide the target whenever the caster is Hidden. Come with a "Teleport when unhidden" variant that teleport the target next to the caster when the last stop being hidden.
@@ -82,16 +105,4 @@
 - Renamed the default console skin to show the corresponding race when browsing a console for a race
 - Added a "!race [ID of any race]" debug command to change race on the fly
 - Added a "!pause" debug command to toggle/untoggle the global pause
-- Added new module : Top Bar which allow to easily build and customize a top bar. Has its own separate Init function
 
-- Extended a bit the Core (trigger) API :
-	- Exposed the Store/Restore preset
-	- Added Fog of War Alpha related actions
-	- Added Kill/Remove After Delay actions (do not block the execution thread)
-	- Added the Player Property Changed (duplicate) event to allow the use of the "Any Player" preset
-	- Extended the cinematic mode :
-		- Added an event (Cinematic Mode Changed For Player) that check for a specific player (or any) entering/exiting the cinematic mode (natively, all player got signaled with no way to know which player is entering/exiting the mode)
-		- Inserted 2 "Indicator" frame in the game UI to allow any frame to acknowledge when the player is in cinematic mode or displaying the victory panel (see the "AMT_Indicators" layout)
-		- Added a duplicate of the "Cinematic Mode" action that trigger the "Out" transition animation of consoles (instead of hidding it instantly)
-
-- Fixed a bug that would break units order queue when using the global pause
