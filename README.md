@@ -30,6 +30,6 @@ extend (actually, replace) the built-in "in combat" system to make it closer to 
 change the "Type" field of ALL damage effect (if left to the default value) to fit the death type (e.g. make firebat actually deal fire damage, which can be used in DR)
 
 ### [Top Bar Builder](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#top-bar-builder) 
-Description to be done
+A complete system to easily build Top Bars for your mod. Only handle the basics (SoA level of top bars) ; for fancy top bar _à la_ Tychus/Zeratul/Fenix/(insert your horrifying setup here) you'll have to get your hands dirty.
 
 ### [A bunch of other small stuff](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#misc)
