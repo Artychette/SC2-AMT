@@ -11,25 +11,25 @@ Blizzard stance on mod's intellectual property is very vague, hence it is not cl
 
 ## Content
 
-### Game Pause 
+### [Game Pause](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#game-pause) 
 pause the game (duh ?). There is special support to handle timers ; see the doc for the details.
 
-### Transmission system 
-similar to the e-mail system but allow for a whole conversation between several characters (Obsolete, wait for the next update, if you don't use it already)
+### Transmission system
+__Obsolete, wait for the next update, if you don't use it already__
 
-### Automatic Production Queue Panel 
+### [Automatic Production Queue Panel](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#automatic-production-queue-panel)
 "plug'n'play" production queue panel. Customizable, auto-hide during cinematic/victory screen
 
-### Control Group rally
+### [Control Group rally](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#control-group-rally)
 when setting the rally of a training structure onto a unit, insert the trained unit into the relevant control group(s)
 
-### Combat state 
+### [Combat state](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#combat-state) 
 extend (actually, replace) the built-in "in combat" system to make it closer to the WoW system (in particular, dealing damage put the unit in combat) and make easier some stuff like muta's rapid regen
 
-### Damage type update
+### [Damage type update](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#damage-type-update)
 change the "Type" field of ALL damage effect (if left to the default value) to fit the death type (e.g. make firebat actually deal fire damage, which can be used in DR)
 
-### Top Bar Builder 
+### [Top Bar Builder](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#top-bar-builder) 
 Description to be done
 
-### A bunch of other small stuff
+### [A bunch of other small stuff](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#misc)
