@@ -30,9 +30,9 @@ All features that need initialization can be launched with the `Init AMT feature
 - Added a few conversion function (Convert String to User Instance/Field + Convert User-Data Link+Instance id to User Reference)
 ### Visibility : 
 - Fog of War Alpha related actions : 
-- “Store Player Fog Alpha” : store in the current value of the fog of war alpha for the player (so it can be restored later)
-- “Restore Fog Alpha For Player Over Time” : restore the (previously stored) value of the fog of war alpha for the the player over the inputted duration (dot not block the execution thread)
-- “Set Fog of War Alpha For Player Over Time” : set value of the fog of war alpha for the the player over the inputted duration (dot not block the execution thread)
+	- “Store Player Fog Alpha” : store in the current value of the fog of war alpha for the player (so it can be restored later)
+	- “Restore Fog Alpha For Player Over Time” : restore the (previously stored) value of the fog of war alpha for the the player over the inputted duration (dot not block the execution thread)
+	- “Set Fog of War Alpha For Player Over Time” : set value of the fog of war alpha for the the player over the inputted duration (dot not block the execution thread)
 ### Layout Misc : 
 - Inserted 2 "Indicator" frame in the game UI to allow any frame to acknowledge when the player is in cinematic mode or displaying the victory panel (see the "AMT_Indicators" layout)
 
