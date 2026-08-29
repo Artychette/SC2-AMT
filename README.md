@@ -9,7 +9,7 @@ It's tested enough (been using that for several month - up to a year or two for 
 
 Blizzard stance on mod's intellectual property is very vague, hence it is not clear if mods are Blizzard's or the modder's property. For this reason, no copyright license are provided but for all intent and purposes consider this under the GNU-GPL3 license
 
-## Content
+## Content Summary
 
 ### [Game Pause](https://github.com/Artychette/SC2-AMT/blob/main/DOCS.md#game-pause) 
 pause the game (duh ?). There is special support to handle timers ; see the doc for the details.
