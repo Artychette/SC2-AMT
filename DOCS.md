@@ -3,8 +3,9 @@ All features that need initialization can be launched with the `Init AMT feature
 
 # Core (Trigger) Lib Extension 
 ### Condition (To be Released) 
-- Added a “Is True” and “Is False” condition (to avoid "if(boolean==true/false)" monstrosities)
-- Event (To be Released) : 
+- Added a “Is True” and “Is False” condition to avoid `if(boolean==true)` and `if(boolean==false)` monstrosities)
+
+### Event (To be Released) : 
 - Expose all the built-in events as registration functions (so they can be dynamically applied to triggers)
 
 ### Dynamic Container (To be Released) 
