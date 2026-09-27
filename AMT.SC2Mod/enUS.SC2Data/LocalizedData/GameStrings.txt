@@ -1,0 +1,58 @@
+﻿Abil/Name/UnknownAbility=Unknown Ability
+Button/Name/AMTLockedTopBarAbility=Locked Top Bar Ability
+Button/Tooltip/AMTLockedTopBarAbility=Locked
+ConsoleSkin/Name/DefaultProtoss=Default (Protoss)
+ConsoleSkin/Name/DefaultTerran=Default (Terran)
+ConsoleSkin/Name/DefaultZerg=Default (Zerg)
+DocInfo/Name=Arty's Miscellaneous Tools
+Effect/Name/AMTDragDownFlyerAB=Drag Down Flyer
+Effect/Name/AMTDragDownFlyerMUEnd=Drag Down Flyer
+Effect/Name/AMTDragDownFlyerMUStart=Drag Down Flyer
+Effect/Name/AMTDragDownFlyerRefresh=Drag Down Flyer
+Effect/Name/AMTInCombatAB=In Combat
+Effect/Name/AMTInCombatABS=In Combat
+Effect/Name/AMTInCombatAS=In Combat
+Effect/Name/AMTInCombatRB=In Combat
+Effect/Name/AMTInCombatRBS=In Combat
+Effect/Name/DieIfCasterDeadAB=Die If Caster Dead
+Effect/Name/DieIfCasterDeadABRemove=Die If Caster Dead
+Effect/Name/HideIfCasterHiddenAB=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenABTP=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenABTPH=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenAHB2=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenFinalSet=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenTP=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenTP2=Hide If Caster Hidden
+Effect/Name/StopWhenCasterStopAB2=Stop When Caster Stop Copy
+Effect/Name/SummonCounterASB=Add To Summon Count
+Effect/Name/SummonCounterAcB=Increase Summon Counter
+Effect/Name/SummonCounterAcB2=Summon Counter Copy
+Effect/Name/SummonCounterRcB=Decrease Summon Counter
+Param/Expression/lib_B513D0A0_2E0BBADE=Highlighting button ~B~ for player ~A~
+Param/Expression/lib_B513D0A0_334ABBCD=X,Y : ~A~ / ~B~
+Param/Expression/lib_B513D0A0_4617F884=<s val="Lobby_MapInfoPreview_DescriptionRight"><c val="~C~">~A~</c></s>
+Param/Expression/lib_B513D0A0_4B3CA51C=Entity Count : ~A~
+Param/Expression/lib_B513D0A0_7866C962=~Name~
+Param/Expression/lib_B513D0A0_7B8D350A=<s val="Lobby_MapInfoPreview_Description"><c val="~C~">~A~</c></s>
+Param/Expression/lib_B513D0A0_815D89E3=<s val="ABChoiceRewardsValerian">~A~</s>
+Param/Expression/lib_B513D0A0_849ED670=<c val="~C~">~A~ #~B~ :</c>
+Param/Expression/lib_B513D0A0_9C97EBDF=Unit Tag : ~A~
+Param/Expression/lib_B513D0A0_BE0D2843=~A~
+Param/Expression/lib_B513D0A0_C3CD280C=~Text~
+Param/Expression/lib_B513D0A0_D4EC1A48=<c val="~C~">~A~ : </c>
+Param/Expression/lib_B513D0A0_D989C71B=<s val="ABChoiceRewards">~A~</s>
+Param/Expression/lib_B513D0A0_F88DE465=Unhighlighting button ~B~ for player ~A~
+Param/Value/lib_B513D0A0_1671F553=<s val="ArcadeFighterLevelScoreTitle"><c val="17FFA3">Incoming Transmission</c></s>
+Param/Value/lib_B513D0A0_333857FA=
+Param/Value/lib_B513D0A0_3DABBFA4=Read
+Param/Value/lib_B513D0A0_49ACBC67=Blablablablablablablablablabla
+Param/Value/lib_B513D0A0_5977F4AC=Close
+Param/Value/lib_B513D0A0_62FA467B=Hiding Targeting UI
+Param/Value/lib_B513D0A0_64146184=Skip
+Param/Value/lib_B513D0A0_766B1054=Blablablablablablablablablabla
+Param/Value/lib_B513D0A0_7DF4D4FE=Hi sweety,<n/><n/>We have received an emergency call from an exploration squadron in this sector. I would have send someone else but all your brothers are busy right now...<n/>Anyway, seem like the planet is inhabited after all and the locals are not happy with our presence. You are to secure the nearby energy generator and remove any threat to the Flock.<n/>Do whatever you want with our stationed troops.<n/><n/><n/><n/>Do not disappoint me.
+Param/Value/lib_B513D0A0_BAC5DF56=You're a bad boy !
+Param/Value/lib_B513D0A0_C4494BAE=Showing Targeting UI
+Param/Value/lib_B513D0A0_C7C0A73C=<s val="ArcadeFighterLevelScoreTitle"><c val="17FFA3">Incoming Transmission</c></s>
+Param/Value/lib_B513D0A0_C91C5280=FFFFFF
+Param/Value/lib_B513D0A0_F94C2A13=Next
