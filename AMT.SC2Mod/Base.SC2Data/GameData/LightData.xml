@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CLight id="AMTConsoleProtSpear" parent="default">
+        <ToDInfoArray index="0" Id="ConsoleProtSpear" AmbientColor="0.321569,0.141176,0.129412">
+            <Param index="HDRExposure" value="1.480000"/>
+            <Param index="HDRBloomThreshold" value="1.950000"/>
+            <Param index="HDRSpecMultiplier" value="3.400000"/>
+            <Param index="HDREmisMultiplier" value="1.900000"/>
+            <Param index="CreepSpecularExp" value="40.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.984314,0.937255,0.776471"/>
+                <ColorMultiplier value="0.920000"/>
+                <SpecColorMultiplier value="0.700000"/>
+                <Direction value="-0.332833,0.773201,0.539800"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="1.000000,1.000000,1.000000" ColorMultiplier="0.310000" Direction="0.743171,0.666575,-0.058086"/>
+            <DirectionalLight index="Back" Color="0.231373,0.564706,0.976471" ColorMultiplier="2.510000" Direction="0.410121,0.077567,-0.908727"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+
+    <CLight id="AMTTaldarimProtossCallDownTwo" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="Slayn"/>
+            <AmbientColor value="0.207843,0.270588,0.400000"/>
+            <OperatorHDR value="4"/>
+            <Colorize value="1"/>
+            <Param index="HDRExposure" value="1.500000"/>
+            <Param index="HDRWhitePoint" value="1.850000"/>
+            <Param index="HDRGain" value="0.000000"/>
+            <Param index="HDRScale" value="0.000000"/>
+            <Param index="TerrainSpecularExp" value="11.210000"/>
+            <Param index="TerrainHDRSpecular" value="3.750000"/>
+            <Param index="CreepSpecularExp" value="30.000000"/>
+            <Param index="CreepHDRSpecMultiplier" value="3.000000"/>
+            <Param index="ColorizationContrast" value="1.066000"/>
+            <Param index="ColorizationHue" value="0.001000"/>
+            <Param index="ColorizationBlend" value="0.300000"/>
+            <Param index="AOOcclusionRadius" value="1.000000"/>
+            <Param index="AONoOcclusion" value="0.900000"/>
+            <Param index="AOOcclusionPower" value="2.000000"/>
+            <Param index="AODetailOcclusionRadius" value="0.010000"/>
+            <Param index="AODetailNoOcclusion" value="0.060000"/>
+            <Param index="AODetailOcclusionPower" value="4.000000"/>
+            <DirectionalLight index="Key">
+                <Color value="0.360784,0.509804,0.886275"/>
+                <ColorMultiplier value="1.000000"/>
+                <SpecColorMultiplier value="1.250000"/>
+                <Direction value="0.724693,-0.124265,-0.677775"/>
+            </DirectionalLight>
+            <DirectionalLight index="Fill" Color="0.258824,0.184314,0.164706" ColorMultiplier="10.000000" Direction="-0.463854,-0.769851,0.438371"/>
+            <DirectionalLight index="Back" Color="0.454902,0.325490,0.525490" ColorMultiplier="3.000000" Direction="-0.668793,-0.021251,0.743145"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:StoryModeSetsProtoss"/>
+    </CLight>
+
+    <CLight id="AMTDehakaZergCallDownFour" parent="default">
+        <ToDInfoArray index="0" Id="ConsoleTerr" AmbientColor="0.188235,0.211765,0.400000">
+            <Param index="HDRExposure" value="1.480000"/>
+            <Param index="HDRBloomThreshold" value="1.950000"/>
+            <DirectionalLight index="Key" SpecColorMultiplier="1.349000" Direction="0.458682,0.657994,-0.597206"/>
+            <DirectionalLight index="Fill" Color="0.984314,0.603922,0.349020" ColorMultiplier="2.512000" Direction="-0.210848,-0.833875,-0.510093"/>
+            <DirectionalLight index="Back" Color="0.329412,0.403922,0.082353" ColorMultiplier="1.500000" Direction="-0.090918,0.306934,0.947378"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+
+
+    <CLight id="AMTConsoleProtoss_Purifier" parent="default">
+        <ToDInfoArray index="0">
+            <Id value="MainMenuWCSPlanet"/>
+            <AmbientColor value="0.196078,0.196078,0.196078"/>
+            <AmbientEnvironmentMultiplier value="0.000000"/>
+            <OperatorHDR value="4"/>
+            <Param index="HDRExposure" value="1.000000"/>
+            <Param index="HDRWhitePoint" value="1.850000"/>
+            <Param index="TerrainSpecularExp" value="11.210000"/>
+            <Param index="TerrainHDRSpecular" value="3.060000"/>
+            <Param index="CreepSpecularExp" value="30.000000"/>
+            <Param index="CreepHDRDiffuseMultiplier" value="1.710000"/>
+            <Param index="CreepHDRSpecMultiplier" value="3.000000"/>
+            <Param index="ColorizationBlend" value="0.000000"/>
+            <Param index="ShadowPenumbraSize" value="0.000000"/>
+            <DirectionalLight index="Key" ColorMultiplier="1.000000" SpecColorMultiplier="1.000000" Direction="-0.996656,0.006958,0.081417"/>
+            <DirectionalLight index="Fill" Color="1.000000,1.000000,1.000000" ColorMultiplier="1.000000" Direction="-0.199764,0.620330,-0.758476"/>
+            <DirectionalLight index="Back" Color="1.000000,1.000000,1.000000" ColorMultiplier="3.000000" Direction="-0.009967,-0.815774,-0.578285"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+
+    <CLight id="AMTHornerTerranCallDownFour" parent="default">
+        <ToDInfoArray index="0" Id="HornerTerranCallDownFour" AmbientColor="0.188235,0.211765,0.400000">
+            <Param index="HDRExposure" value="1.480000"/>
+            <Param index="HDRBloomThreshold" value="1.950000"/>
+            <DirectionalLight index="Key" SpecColorMultiplier="1.349000" Direction="0.617583,0.622996,-0.480071"/>
+            <DirectionalLight index="Fill" Color="0.984314,0.603922,0.349020" ColorMultiplier="2.512000" Direction="-0.137325,-0.824157,-0.549460"/>
+            <DirectionalLight index="Back" Color="0.164706,0.258824,0.392157" ColorMultiplier="10.965000" Direction="-0.528450,0.110110,0.841794"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+
+    <CLight id="AMTStukovZergCallDownFour" parent="default">
+        <ToDInfoArray index="0" Id="ConsoleTerr" AmbientColor="0.188235,0.211765,0.400000">
+            <Param index="HDRExposure" value="1.480000"/>
+            <Param index="HDRBloomThreshold" value="1.950000"/>
+            <DirectionalLight index="Key" SpecColorMultiplier="1.349000" Direction="0.458682,0.657994,-0.597206"/>
+            <DirectionalLight index="Fill" Color="0.984314,0.603922,0.349020" ColorMultiplier="2.512000" Direction="-0.210848,-0.833875,-0.510093"/>
+            <DirectionalLight index="Back" Color="0.329412,0.403922,0.082353" ColorMultiplier="1.500000" Direction="-0.090918,0.306934,0.947378"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+
+    <CLight id="AMTConsoleTerrCalldown" parent="default">
+        <ToDInfoArray index="0" Id="ConsoleTerrCalldown" AmbientColor="0.188235,0.211765,0.400000">
+            <Param index="HDRExposure" value="1.480000"/>
+            <Param index="HDRBloomThreshold" value="1.950000"/>
+            <DirectionalLight index="Key" SpecColorMultiplier="1.349000" Direction="0.617583,0.622996,-0.480071"/>
+            <DirectionalLight index="Fill" Color="0.984314,0.603922,0.349020" ColorMultiplier="2.512000" Direction="-0.137325,-0.824157,-0.549460"/>
+            <DirectionalLight index="Back" Color="0.164706,0.258824,0.392157" ColorMultiplier="10.965000" Direction="-0.528450,0.110110,0.841794"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+
+    <CLight id="AMTConsoleZergCoop" parent="default">
+        <ToDInfoArray index="0" Id="ConsoleTerr" AmbientColor="0.188235,0.211765,0.400000">
+            <Param index="HDRExposure" value="1.480000"/>
+            <Param index="HDRBloomThreshold" value="1.950000"/>
+            <DirectionalLight index="Key" SpecColorMultiplier="1.349000" Direction="0.458682,0.657994,-0.597206"/>
+            <DirectionalLight index="Fill" Color="0.984314,0.603922,0.349020" ColorMultiplier="2.512000" Direction="-0.210848,-0.833875,-0.510093"/>
+            <DirectionalLight index="Back" Color="0.329412,0.403922,0.082353" ColorMultiplier="1.500000" Direction="-0.090918,0.306934,0.947378"/>
+        </ToDInfoArray>
+        <EditorCategories value="LightGroup:UI"/>
+    </CLight>
+</Catalog>

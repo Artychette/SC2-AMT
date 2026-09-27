@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StyleFile>
+    <Style name="AMT_PQP_Count" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="12" vjustify="Bottom" hjustify="Right" styleflags="Shadow | Outline" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2" outlinewidth="0"/>
+
+    <!-- Targeting mode instructions --> 
+    <Constant name="Void_Bold" val="#FontHeader"/>
+    <Constant name="Void_BoldExtended" val="#FontHeaderExtended"/>
+    <Constant name="Void_Regular" val="#FontStandard"/>
+    <Constant name="Void_RegularExtended" val="#FontStandardExtended"/>
+    <Constant name="Void_International" val="#FontInternational"/>
+    <Constant name="Void_FontSizeLarge" val="26"/>
+    <Constant name="Void_FontSizeSmall" val="18"/>
+    <Constant name="Void_ColorBlue4" val="0078ff"/>
+    <Constant name="Void_ColorBlue6" val="49, 124, 136"/>
+    <Constant name="Void_ColorWhite" val="255, 255, 255"/>
+
+    <Style name="Void_RegularLarge" font="#Void_Regular" height="#Void_FontSizeLarge" vjustify="Middle"/>
+    <Style name="Void_BoldExtendedLarge" font="#Void_BoldExtended" height="#Void_FontSizeLarge" vjustify="Middle"/>
+    <Style name="Void_BoldSmall" font="#Void_Bold" height="#Void_FontSizeSmall" vjustify="Middle"/>
+
+    <Style name="Void_SOATargetModeSmall" template="Void_BoldExtendedLarge" height="26" hjustify="Center" vjustify="Middle" textcolor="#Void_ColorWhite" styleflags="Glow" glowcolor="#Void_ColorBlue4"/>
+    <Style name="Void_SOATargetModeLarge" template="Void_RegularLarge" height="22" hjustify="Left" styleflags="Glow" glowcolor="#Void_ColorBlue4"/>
+    <Style name="Void_SOATargetModeChargesText" template="Void_BoldSmall" hjustify="Left" vjustify="Top" textcolor="#Void_ColorBlue6"/> 
+    
+</StyleFile>

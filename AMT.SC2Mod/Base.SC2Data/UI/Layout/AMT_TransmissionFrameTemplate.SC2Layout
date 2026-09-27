@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Image" name="AMTTransmissionBackGroundTemplate">
+        <Texture val="@@@UI/Game_Console_Chat_Background"/>
+        <TextureType val="Border"/>
+    </Frame>
+    <Frame type="Frame" name="AMTTransmissionButtonTemplate">
+        <Width val="150"/>
+        <Height val="50"/>
+        <AcceptsMouse val="True"/>
+        <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/AMT/Transmission_Button_Normal"/>
+            <TextureType val="NineSlice"/>
+            <DisabledAlpha val="192"/>
+            <StateGroup name="Disabler">
+                <DefaultState val="Enabled"/>
+                <State name="Enabled">
+                    <When type="Property" frame="$parent/Button" Enabled="true"/>
+                    <Action type="SetProperty" frame="$this" Enabled="true"/>
+                </State>
+                <State name="Disabled">
+                    <When type="Property" frame="$parent/Button" Enabled="false"/>
+                    <Action type="SetProperty" frame="$this" Enabled="false"/>
+                </State>
+            </StateGroup>
+        </Frame>
+        <Frame type="Image" name="HoverImage">
+            <Visible val="False"/>
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/AMT/Transmission_Button_Hover"/>
+            <TextureType val="NineSlice"/>
+            <Animation name="Hover">
+                <Event event="OnMouseEnter" Action="Play" frame="$parent/Button"/>
+                <Event event="OnMouseExit" Action="Reset,Pause" frame="$parent/Button"/>
+                <Event event="OnDisabled" Action="Reset,Pause" frame="$parent/Button"/>
+                <Controller Type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="False"/>
+                    <Key type="Bool" time="0.001" value="True"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Image" name="PressedImage">
+            <Visible val="False"/>
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/AMT/Transmission_Button_Pressed"/>
+            <TextureType val="NineSlice"/>
+            <Animation name="Click">
+                <Event event="OnMouseDown" Action="Play" frame="$parent/Button"/>
+                <Event event="On    " Action="Reset,Pause" frame="$parent/Button"/>
+                <Event event="OnMouseExit" Action="Reset,Pause" frame="$parent/Button"/>
+                <Event event="OnDisabled" Action="Reset,Pause" frame="$parent/Button"/>
+                <Controller Type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="False"/>
+                    <Key type="Bool" time="0.001" value="True"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame Type="Label" name="Label">
+            <Anchor relative="$parent"/>
+            <Style val="@@@StandardButton"/>
+            <DisabledAlpha val="192"/>
+            <StateGroup name="Disabler">
+                <DefaultState val="Enabled"/>
+                <State name="Enabled">
+                    <When type="Property" frame="$parent/Button" Enabled="true"/>
+                    <Action type="SetProperty" frame="$this" Enabled="true"/>
+                </State>
+                <State name="Disabled">
+                    <When type="Property" frame="$parent/Button" Enabled="false"/>
+                    <Action type="SetProperty" frame="$this" Enabled="false"/>
+                </State>
+            </StateGroup>
+        </Frame>
+        <Frame type="Button" name="Button" template="StandardTemplates/StandardButtonTemplate">
+            <Anchor relative="$parent"/>
+            <Alpha val="0"/>
+        </Frame>
+    </Frame>
+</Desc>

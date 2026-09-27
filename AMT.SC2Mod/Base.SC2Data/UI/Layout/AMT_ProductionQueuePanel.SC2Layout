@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="AMT_ProductionSlotTemplate">
+        <Width val="38"/>
+        <Height val="44"/>
+        <Frame type="Image" name="BackgroundImage">
+            <Anchor side="top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent" pos="max" offset="0"/>
+            <Anchor side="bottom" relative="$parent" pos="max" offset="-8"/>
+            <!-- <Color val="40a080"/> -->
+            <TextureType val="Normal"/>
+            <Texture val="@@@UI/Game_Console_Buttons_MenuBar_Pressed"/>
+        </Frame>
+        <Frame type="Image" name="ForegroundImage">
+            <Anchor side="top" relative="$parent" pos="min" offset="2"/>
+            <Anchor side="left" relative="$parent" pos="min" offset="2"/>
+            <Anchor side="right" relative="$parent" pos="max" offset="-2"/>
+            <Anchor side="bottom" relative="$parent" pos="max" offset="-10"/>
+            <Color val="404040"/> -->
+            <TextureType val="Normal"/>
+            <Texture val="@@@UI/Game_Console_Buttons_MenuBar_Pressed"/>
+        </Frame>
+        <Frame type="Image" name="ProgressBarBG">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent" pos="max" offset="0"/>
+            <Anchor side="bottom" relative="$parent" pos="max" offset="0"/>
+            <Color val="505050"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@@UI/Game_Console_Buttons_MenuBar_Pressed"/>
+            <Height val="8"/>
+            <Width val="32"/>
+        </Frame>
+        <Frame type="Image" name="ProgressBar">
+            <Anchor side="left" relative="$parent" pos="min" offset="2"/>
+            <Anchor side="bottom" relative="$parent" pos="max" offset="-2"/>
+            <Color val="ffffff"/>
+            <Alpha val="192"/>
+            <Height val="4"/>
+            <Width val="10"/>
+        </Frame>
+        <Frame type="Image" name="Icon">
+            <Anchor side="Top" relative="$parent" pos="min" offset="2"/>
+            <Anchor side="left" relative="$parent" pos="mid" offset="0"/>
+            <Anchor side="right" relative="$parent" pos="mid" offset="0"/>
+            <Height val="32"/>
+            <Width val="32"/>
+            <TextureType val="Normal"/>
+            <Texture val="Custom Assets\Buttons\btn-unit-Shepard-Executioner.dds"/>
+        </Frame>
+        <Frame type="Label" name="Count">
+            <Anchor side="Bottom" relative="$parent/Icon" pos="max" offset="34"/>
+            <Anchor side="right" relative="$parent/Icon" pos="max" offset="5"/>
+            <Height val="50"/>
+            <Width val="50"/>
+            <Text val="99"/>
+            <Style val="RightJustified"/>
+        </Frame>
+        <CollapseLayout val="True"/>
+        <Visible val="False"/>
+    </Frame>
+
+    <Frame type="Frame" name="AMT_ProductionQueueVTemplate">
+        <Anchor side="bottom" relative="$parent" pos="max" offset="0"/>
+        <Width val="38"/>
+        <Height val="476"/>
+        <Frame type="Frame" name="Slot0" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent" pos="max" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="Slot1" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot0" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot2" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot1" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot3" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot2" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot4" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot3" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot5" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot4" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot6" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot5" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot7" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot6" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot8" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot7" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot9" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+        <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="bottom" relative="$parent/Slot8" pos="min" offset="-4"/>
+        </Frame>
+        <CollapseLayout val="True"/>
+        <Visible val="False"/>
+        <StateGroup name="VisibilityCheck">
+            <DefaultState val="Hidden"/>
+            <State name="Hidden">
+                <When type="Property" frame="Slot0" Visible="False"/>
+                <When type="Property" frame="Slot1" Visible="False"/>
+                <When type="Property" frame="Slot2" Visible="False"/>
+                <When type="Property" frame="Slot3" Visible="False"/>
+                <When type="Property" frame="Slot4" Visible="False"/>
+                <When type="Property" frame="Slot5" Visible="False"/>
+                <When type="Property" frame="Slot6" Visible="False"/>
+                <When type="Property" frame="Slot7" Visible="False"/>
+                <When type="Property" frame="Slot8" Visible="False"/>
+                <When type="Property" frame="Slot9" Visible="False"/>
+                <Action type="SetProperty" frame="$this" Visible="False"/>
+            </State>
+            <State name="VisibleFrom0">
+                <When type="Property" frame="Slot0" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom1">
+                <When type="Property" frame="Slot1" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom2">
+                <When type="Property" frame="Slot2" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom3">
+                <When type="Property" frame="Slot3" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom4">
+                <When type="Property" frame="Slot4" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom5">
+                <When type="Property" frame="Slot5" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom6">
+                <When type="Property" frame="Slot6" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom7">
+                <When type="Property" frame="Slot7" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom8">
+                <When type="Property" frame="Slot8" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom9">
+                <When type="Property" frame="Slot9" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+        </StateGroup>
+    </Frame>
+    
+    <Frame type="Frame" name="AMT_ProductionQueuePanelVTemplate">
+        <Width val="248"/>
+        <Height val="476"/>
+        <Frame type="Frame" name="Queue0" template="AMT_ProductionQueuePanel/AMT_ProductionQueueVTemplate">
+            <Anchor side="right" relative="$parent" pos="max" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="Queue1" template="AMT_ProductionQueuePanel/AMT_ProductionQueueVTemplate">
+            <Anchor side="right" relative="$parent/Queue0" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue2" template="AMT_ProductionQueuePanel/AMT_ProductionQueueVTemplate">
+            <Anchor side="right" relative="$parent/Queue1" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue3" template="AMT_ProductionQueuePanel/AMT_ProductionQueueVTemplate">
+            <Anchor side="right" relative="$parent/Queue2" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue4" template="AMT_ProductionQueuePanel/AMT_ProductionQueueVTemplate">
+            <Anchor side="right" relative="$parent/Queue3" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue5" template="AMT_ProductionQueuePanel/AMT_ProductionQueueVTemplate">
+            <Anchor side="right" relative="$parent/Queue4" pos="min" offset="-4"/>
+        </Frame>
+    </Frame>
+    
+
+    <Frame type="Frame" name="AMT_ProductionQueueHTemplate">
+        <Anchor side="right" relative="$parent" pos="max" offset="0"/>
+        <Width val="416"/>
+        <Height val="44"/>
+        <Frame type="Frame" name="Slot0" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent" pos="max" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="Slot1" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot0" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot2" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot1" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot3" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot2" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot4" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot3" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot5" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot4" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot6" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot5" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot7" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot6" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot8" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot7" pos="min" offset="-4"/>
+        </Frame>
+        <Frame type="Frame" name="Slot9" template="AMT_ProductionQueuePanel/AMT_ProductionSlotTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="right" relative="$parent/Slot8" pos="min" offset="-4"/>
+        </Frame>
+        <CollapseLayout val="True"/>
+        <Visible val="False"/>
+        <StateGroup name="VisibilityCheck">
+            <DefaultState val="Hidden"/>
+            <State name="Hidden">
+                <When type="Property" frame="Slot0" Visible="False"/>
+                <When type="Property" frame="Slot1" Visible="False"/>
+                <When type="Property" frame="Slot2" Visible="False"/>
+                <When type="Property" frame="Slot3" Visible="False"/>
+                <When type="Property" frame="Slot4" Visible="False"/>
+                <When type="Property" frame="Slot5" Visible="False"/>
+                <When type="Property" frame="Slot6" Visible="False"/>
+                <When type="Property" frame="Slot7" Visible="False"/>
+                <When type="Property" frame="Slot8" Visible="False"/>
+                <When type="Property" frame="Slot9" Visible="False"/>
+                <Action type="SetProperty" frame="$this" Visible="False"/>
+            </State>
+            <State name="VisibleFrom0">
+                <When type="Property" frame="Slot0" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom1">
+                <When type="Property" frame="Slot1" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom2">
+                <When type="Property" frame="Slot2" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom3">
+                <When type="Property" frame="Slot3" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom4">
+                <When type="Property" frame="Slot4" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom5">
+                <When type="Property" frame="Slot5" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom6">
+                <When type="Property" frame="Slot6" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom7">
+                <When type="Property" frame="Slot7" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom8">
+                <When type="Property" frame="Slot8" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+            <State name="VisibleFrom9">
+                <When type="Property" frame="Slot9" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="True"/>
+            </State>
+        </StateGroup>
+    </Frame>
+
+    <Frame type="Frame" name="AMT_ProductionQueuePanelHTemplate">
+        <Width val="416"/>
+        <Height val="284"/>
+        <Frame type="Frame" name="Queue0" template="AMT_ProductionQueuePanel/AMT_ProductionQueueHTemplate">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="Queue1" template="AMT_ProductionQueuePanel/AMT_ProductionQueueHTemplate">
+            <Anchor side="Top" relative="$parent/Queue0" pos="max" offset="4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue2" template="AMT_ProductionQueuePanel/AMT_ProductionQueueHTemplate">
+            <Anchor side="Top" relative="$parent/Queue1" pos="max" offset="4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue3" template="AMT_ProductionQueuePanel/AMT_ProductionQueueHTemplate">
+            <Anchor side="Top" relative="$parent/Queue2" pos="max" offset="4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue4" template="AMT_ProductionQueuePanel/AMT_ProductionQueueHTemplate">
+            <Anchor side="Top" relative="$parent/Queue3" pos="max" offset="4"/>
+        </Frame>
+        <Frame type="Frame" name="Queue5" template="AMT_ProductionQueuePanel/AMT_ProductionQueueHTemplate">
+            <Anchor side="Top" relative="$parent/Queue4" pos="max" offset="4"/>
+        </Frame>
+    </Frame>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer/" file="GameUI">
+        <Frame type="Frame" name="ProductionQueueFrameV">
+            <Frame type="Frame" name="AlwaysHide">
+                <Visible val="False"/>
+            </Frame>
+
+            <StateGroup name="VisibilityCheck">
+                <DefaultState val="Visible"/>
+                <State name="Visible">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="False"/>
+                    <When type="Property" frame="AlwaysHide" Visible="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="True"/>
+                </State>
+                <State name="Hidden">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="True"/>
+                    <When type="Property" frame="AlwaysHide" Visible="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+                <State name="HiddenAlwaysHide">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="False"/>
+                    <When type="Property" frame="AlwaysHide" Visible="True"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+                <State name="VisibleAlwaysHide">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="True"/>
+                    <When type="Property" frame="AlwaysHide" Visible="True"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+            </StateGroup>
+
+            <Anchor side="Right" relative="$parent" pos="max" offset="-15"/>
+            <Anchor side="Top" relative="$parent/TipAlertPanelNormalAnchor" pos="mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/TipAlertPanelNormalAnchor" pos="mid" offset="0"/>
+            <Height val="476"/>
+            <Width val="248"/>
+            <Frame type="Frame" name="ProductionQueuePanel" template="AMT_ProductionQueuePanel/AMT_ProductionQueuePanelVTemplate">
+                <Visible val="False"/>
+                <Anchor side="Bottom" relative="$parent" pos="max" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+            </Frame>
+        </Frame> 
+        <Frame type="Frame" name="ProductionQueueFrameH">
+            <Frame type="Frame" name="AlwaysHide">
+                <Visible val="False"/>
+            </Frame>>
+
+            <StateGroup name="VisibilityCheck">
+                <DefaultState val="Visible"/>
+                <State name="Visible">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="False"/>
+                    <When type="Property" frame="AlwaysHide" Visible="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="True"/>
+                </State>
+                <State name="Hidden">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="True"/>
+                    <When type="Property" frame="AlwaysHide" Visible="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+                <State name="HiddenAlwaysHide">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="False"/>
+                    <When type="Property" frame="AlwaysHide" Visible="True"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+                <State name="VisibleAlwaysHide">
+                    <When type="Property" frame="$parent/CinematicModeOrVictoryIndicator" Visible="True"/>
+                    <When type="Property" frame="AlwaysHide" Visible="True"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+            </StateGroup>
+
+            <Anchor side="Right" relative="$parent/ResourcePanel" pos="max" offset="-50"/>
+            <Anchor side="Top" relative="$parent/ResourcePanel" pos="max" offset="-50"/>
+            <Height val="284"/>
+            <Width val="416"/>
+            <Frame type="Frame" name="ProductionQueuePanel" template="AMT_ProductionQueuePanel/AMT_ProductionQueuePanelHTemplate">
+                <Visible val="False"/>
+                <Anchor side="Bottom" relative="$parent" pos="max" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+                <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+                <Anchor side="left" relative="$parent" pos="min" offset="0"/>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

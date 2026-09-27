@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="CommandButton" name="SoACommandButtonTemplate" template="CommandButton/CommandButtonTemplate">
+        <!--Width val="76"/>
+        <Height val="76"/>
+        
+        <Frame type="Image" name="GameButtonBorderImage">
+            <LayerCount val="2"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_normal.dds" layer="0"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_pressed.dds" layer="1"/>
+        </Frame-->
+    </Frame>
+    
+    
+    <Frame type="CommandButton" name="SoACommandPassiveTemplate" template="CommandButton/CommandButtonTemplate">
+        <Width val="42"/>
+        <Height val="42"/>
+        
+        <Frame type="Image" name="GameButtonBorderImage">
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_passive.dds"/>
+        </Frame>
+    </Frame>
+    
+
+    <Frame type="CommandPanel" name="SOACommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+        <Visible val="true"/>
+
+        <Frame type="CommandButton" name="CommandButton00" template="AMT_TopBarSoA/SoACommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="11"/>
+            <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="134"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+            <Visible val="true"/>
+        </Frame>        
+        
+        <Frame type="Image" name="LockedImage00">
+            <Anchor relative="$parent/CommandButton00"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton01" template="AMT_TopBarSoA/SoACommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/Commandbutton00" pos="Max" offset="1"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+            <Visible val="true"/>
+        </Frame>        
+        
+        <Frame type="Image" name="LockedImage01">
+            <Anchor relative="$parent/CommandButton01"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton02" template="AMT_TopBarSoA/SoACommandButtonTemplate">
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/CommandButton03" pos="Min" offset="-1"/>
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+            <Visible val="true"/>
+        </Frame>
+        
+        <Frame type="Image" name="LockedImage02">
+            <Anchor relative="$parent/CommandButton02"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton02"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton02"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton02"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton02"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton03" template="AMT_TopBarSoA/SoACommandButtonTemplate">
+            <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-134"/>
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+            <Visible val="true"/>
+        </Frame>
+        
+        <Frame type="Image" name="LockedImage03">
+            <Anchor relative="$parent/CommandButton03"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton03"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton03"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton03"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton03"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="Image" name="PassiveBorder04">
+            <Anchor relative="$parent/CommandButton04"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_passive.dds"/>
+        </Frame>
+        
+        <Frame type="CommandButton" name="CommandButton04" template="AMT_TopBarSoA/SoACommandPassiveTemplate">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="74"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+            <Visible val="true"/>
+        </Frame>        
+        
+        <Frame type="Image" name="LockedImage04">
+            <Anchor relative="$parent/CommandButton04"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_passive_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton04"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton04"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton04"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton04"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Image" name="PassiveBorder05">
+            <Anchor relative="$parent/CommandButton05"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_passive.dds"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton05" template="AMT_TopBarSoA/SoACommandPassiveTemplate">
+            <Anchor side="Right" relative="$parent" pos="Max" offset="-75"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent/CommandButton04" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+            <Visible val="true"/>
+        </Frame>
+        
+        <Frame type="Image" name="LockedImage05">
+            <Anchor relative="$parent/CommandButton05"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_passive_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton05"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton05"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton05"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton05"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        
+
+    </Frame>
+
+    <Frame type="Frame" name="SOATopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">
+
+        <!--Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Width val="688"/>
+        <Height val="225"/-->
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/ProtossConsoleSound">
+        </Frame>
+        <Frame type="CutsceneFrame" name="CalldownCutscene">
+            <File val="Cutscenes/UI_SoAMission.SC2Cutscene"/>
+        </Frame>    
+
+        <Frame type="ProgressBar" name="EnergyProgressBar">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <MaxValue val="1"/>
+            <Value val="0"/>
+            <Visible val="False"/>
+        </Frame>
+        <Frame type="MathFrame" name="EnergyRatio">
+            <A val="{$parent/EnergyProgressBar/@Value}"/>
+            <B val="{$parent/EnergyProgressBar/@MaxValue}"/>
+            <Operator val="Divide"/>
+        </Frame> 
+        <Frame type="MathFrame" name="EnergyRatioReverse">
+            <A val="1"/>
+            <B val="{$parent/EnergyRatio/@Result}"/>
+            <Operator val="Subtract"/>
+        </Frame>
+        <Frame type="MathFrame" name="EnergyCoef">
+            <A val="{$parent/EnergyRatioReverse/@Result}"/>
+            <B val="75"/>
+            <Operator val="Multiply"/>
+        </Frame> 
+        <Frame type="MathFrame" name="SoAFillScenePaddingValue"> <!-- avoid the padding bugging out with a 0 height -->
+            <A val="{$parent/EnergyCoef/@Result}"/>
+            <B val="1"/>
+            <Operator val="Add"/>
+        </Frame> 
+
+        <Frame type="Frame" name="SoAEnergyBarFill">
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Min" offset="92"/>
+            <AlphaMaskTexture val="@UI/HotS_Shared_Frame_PortraitMask_Circle01"/>
+            <Height val="84"/>
+            <Width val="83"/>      
+            <Frame type="Frame" name="SoAFillScenePadding">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="87"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                <Height val="{$parent/$parent/SoAFillScenePaddingValue/@ResultInt}"/>
+            </Frame>
+            <Frame type="CutsceneFrame" name="SoAFillScene">
+                <Anchor side="Bottom" relative="$parent/SoAFillScenePadding" pos="Max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+                <Width val="83"/>
+                <Height val="168"/>
+                <File val="Cutscenes/UI_SoAMissionEnergy.SC2Cutscene"/>
+                <RenderType val="HDR"/>
+                <AutoPlay val="true"/>                
+                <ToneMapping val="False"/>
+                <Animation name="BirthAnim">
+                    <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+                    <Controller type="Cutscene" end="Stop">
+                        <Key type="Cutscene" time="0" action="Bookmark" bookmark="LoopStart"/>
+                        <Key type="Cutscene" time="0" action="Play"/>
+                    </Controller>
+                </Animation>
+                <Animation name="FadeIn">
+                    <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                    <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+                    <Controller type="Fade" end="Pause">
+                        <Key type="Curve" time="0" value="0"/>
+                        <Key type="Curve" time="1.334" value="0" out="Fast"/>
+                        <Key type="Curve" time="1.7" value="255" in="Slow"/>
+                    </Controller>
+                    <Controller type="Visibility" end="Pause">
+                        <Key type="Bool" time="0" value="True"/>
+                    </Controller>
+                </Animation>
+                <Animation name="FadeOut">
+                    <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+                    <Controller type="Fade" end="Pause">
+                        <Key type="Curve" time="0" value="255" out="Fast"/>
+                        <Key type="Curve" time=".366" value="0" in="Slow"/>
+                    </Controller>     
+                    <Controller type="Visibility" end="Pause">
+                        <Key type="Bool" time="0" value="True"/>
+                        <Key type="Bool" time="0.366" value="False"/>
+                    </Controller>
+                </Animation>
+                
+            </Frame>            
+            <RenderPriority val="514"/>
+        </Frame>           
+        
+        <Frame type="CutsceneFrame" name="SoAGlassOverlay">
+            <Visible val="true"/>
+            <Anchor relative="$parent/CalldownCutscene"/>
+            <File val="Cutscenes/UI_SoAMission_Glass.SC2Cutscene"/>
+            <RenderType val="HDR"/>
+            <ToneMapping val="False"/>
+            <RenderPriority val="515"/>
+            <AutoPlay val="true"/>
+            <Animation name="BirthAnim">
+                <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+                <Controller type="Cutscene" end="Stop">
+                    <Key type="Cutscene" time="0" action="Bookmark" bookmark="LoopStart"/>
+                    <Key type="Cutscene" time="0" action="Play"/>
+                </Controller>
+            </Animation>
+            <Animation name="FadeIn">
+                <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0"/>
+                    <Key type="Curve" time="1.334" value="0" out="Fast"/>
+                    <Key type="Curve" time="1.7" value="255" in="Slow"/>
+                </Controller>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="True"/>
+                </Controller>
+            </Animation>
+            <Animation name="FadeOut">
+                <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Fast"/>
+                    <Key type="Curve" time=".366" value="0" in="Slow"/>
+                </Controller>     
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="True"/>
+                    <Key type="Bool" time="0.366" value="False"/>
+                </Controller>  
+            </Animation>
+        </Frame>            
+        
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="SoACommandPanel" template="AMT_TopBarSoA/SOACommandPanelTemplate">
+            </Frame>
+        </Frame>
+        <Frame type="Label" name="SoAEnergyLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Min" offset="108"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-40"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="40"/>
+            <Width val="80"/>
+            <Style val="Void_SoAEnergyText"/>
+            <RenderPriority val="517"/>
+            <Text val="{$parent/EnergyProgressBar/@Value}"/>
+            <Visible val="true"/>
+            
+            <Animation name="FadeIn">
+                <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0"/>
+                    <Key type="Curve" time="1.334" value="0" out="Fast"/>
+                    <Key type="Curve" time="1.7" value="255" in="Slow"/>
+                </Controller>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="True"/>
+                </Controller>
+            </Animation>
+            <Animation name="FadeOut">
+                <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Fast"/>
+                    <Key type="Curve" time=".366" value="0" in="Slow"/>
+                </Controller>     
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="True"/>
+                    <Key type="Bool" time="0.366" value="False"/>
+                </Controller>  
+            </Animation>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton02" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton02" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton03" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/SoACommandPanel/CommandButton03" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame>
+</Desc>

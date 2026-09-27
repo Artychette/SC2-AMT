@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat0dot5">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="315.12"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat1">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="307.04"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat2dot5">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="282.8"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat5">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="242.4"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat7dot5">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="202"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat10">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="161.6"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat1">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="307.04"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat2dot5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="282.8"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="242.4"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat7dot5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="202"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat10">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="161.6"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareBehaviorCount id="AMTNoFakeEnergy">
+        <Behavior value="AMTFakeEnergy"/>
+        <ResultFailed value="MustTargetUnitWithEnergy"/>
+        <ResultNoUnit value="MustTargetUnitWithEnergy"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareCooldown id="AMTCasterInCombat0dot25">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="319.16"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat0dot5">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="315.12"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat1">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="307.04"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat2dot5">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="282.8"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat5">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="242.4"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat7dot5">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="202"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat10">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="161.6"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat0dot25">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="319.16"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat0dot25">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="319.16"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetInCombat0dot25">
+        <Compare value="GT"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="319.16"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat0dot5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="315.12"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTCasterNotInCombat0dot5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="315.12"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat1">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="307.04"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat2dot5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="282.8"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="242.4"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat7dot5">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="202"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareCooldown id="AMTTargetNotInCombat10">
+        <Compare value="LE"/>
+        <CooldownLink value="AMT/InCombat/Countdown"/>
+        <Location value="Behavior"/>
+        <Behavior value="AMTInCombat"/>
+        <Value value="161.6"/>
+    </CValidatorUnitCompareCooldown>
+    <CValidatorUnitCompareBehaviorCount id="AMTDraggedDownFlyer">
+        <Compare value="GT"/>
+        <Behavior value="AMTDragDownFlyer"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="AMTNotDraggedDownFlyer">
+        <Behavior value="AMTDragDownFlyer"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitFilters id="CasterNotUnderConstruction">
+        <WhichUnit Value="Caster"/>
+        <Filters value="-;UnderConstruction"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="CasterUnderConstruction">
+        <WhichUnit Value="Caster"/>
+        <Filters value="UnderConstruction;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareVital id="CasterOutOfEnergy">
+        <WhichUnit Value="Caster"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareOrderCount id="SourceHasNoAttackOrder">
+        <WhichUnit Value="Source"/>
+        <AbilLink value="attack"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitCompareOrderCount id="SourceHasAttackOrder">
+        <WhichUnit Value="Source"/>
+        <Compare value="GE"/>
+        <AbilLink value="attack"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitFilters id="CasterIsHidden">
+        <WhichUnit Value="Caster"/>
+        <Filters value="Hidden;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="CasterTriggeredCriticalHealthlt40percent">
+        <Type value="And"/>
+        <CombineArray value="CasterTookDamagelast0dot5s"/>
+        <CombineArray value="CasterLifeLT40Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterTriggeredCriticalHealthlt30percent">
+        <Type value="And"/>
+        <CombineArray value="CasterTookDamagelast0dot5s"/>
+        <CombineArray value="CasterLifeLT30Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterTriggeredCriticalHealthlt20percent">
+        <Type value="And"/>
+        <CombineArray value="CasterTookDamagelast0dot5s"/>
+        <CombineArray value="CasterLifeLT20Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterTriggeredCriticalHealthlt10percent">
+        <Type value="And"/>
+        <CombineArray value="CasterTookDamagelast0dot5s"/>
+        <CombineArray value="CasterLifeLT10Percent"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareOrderCount id="TargetHasAttackOrder">
+        <WhichUnit Value="Target"/>
+        <Compare value="GE"/>
+        <AbilLink value="attack"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitCompareOrderCount id="CasterHasAttackOrder">
+        <Compare value="GE"/>
+        <AbilLink value="attack"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitCompareOrderCount id="TargetHasNoAttackOrder">
+        <WhichUnit Value="Target"/>
+        <AbilLink value="attack"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitCompareOrderCount id="CasterHasNoAttackOrder">
+        <AbilLink value="attack"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitFilters id="TargetIsBenign">
+        <Filters value="Benign;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="TargetIsNotBenign">
+        <Filters value="-;Benign"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="TargetIsBiological">
+        <Filters value="Biological;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="TargetIsMechanicalOrRobotic">
+        <CombineArray value="TargetIsMechanical"/>
+        <CombineArray value="TargetIsRobotic"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="TargetIsNotMechanical">
+        <Filters value="-;Mechanical"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="TargetIsNotBiological">
+        <Filters value="-;Biological"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="TargetIsMechanical">
+        <Filters value="Mechanical;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="TargetIsRobotic">
+        <Filters value="Robotic;-"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="TargetIsNotRobotic">
+        <Filters value="-;Robotic"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareVital id="TargetLifeLT10Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT30Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.3"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT20Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.2"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT50Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT40Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.4"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT70Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.7"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT60Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.6"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetLifeLT90Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.9"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareDamageTakenTime id="CasterTookDamagelast0dot5s">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareDamageTakenTime>
+    <CValidatorUnitCompareVital id="TargetLifeLT80Percent" parent="CasterLifePercent">
+        <WhichUnit Value="Target"/>
+        <Compare value="LT"/>
+        <Value value="0.8"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitFilters id="TargetNotDeadAndNotHidden">
+        <ResultFailed value="CantTargetDeadUnits"/>
+        <Filters value="-;Dead,Hidden"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareDamageTakenTime id="TargetTookDamagelast0dot5s">
+        <Compare value="LT"/>
+        <Value value="0.5"/>
+    </CValidatorUnitCompareDamageTakenTime>
+    <CValidatorCombine id="TargetTriggeredCriticalHealthlt50percent">
+        <Type value="And"/>
+        <CombineArray value="TargetTookDamagelast0dot5s"/>
+        <CombineArray value="TargetLifeLT50Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetTriggeredCriticalHealthlt40percent">
+        <Type value="And"/>
+        <CombineArray value="TargetTookDamagelast0dot5s"/>
+        <CombineArray value="TargetLifeLT40Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetTriggeredCriticalHealthlt30percent">
+        <Type value="And"/>
+        <CombineArray value="TargetTookDamagelast0dot5s"/>
+        <CombineArray value="TargetLifeLT30Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetTriggeredCriticalHealthlt20percent">
+        <Type value="And"/>
+        <CombineArray value="TargetTookDamagelast0dot5s"/>
+        <CombineArray value="TargetLifeLT20Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="TargetTriggeredCriticalHealthlt10percent">
+        <Type value="And"/>
+        <CombineArray value="TargetTookDamagelast0dot5s"/>
+        <CombineArray value="TargetLifeLT10Percent"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="CasterTriggeredCriticalHealthlt50percent">
+        <Type value="And"/>
+        <CombineArray value="CasterTookDamagelast0dot5s"/>
+        <CombineArray value="CasterLifeLT50Percent"/>
+    </CValidatorCombine>
+</Catalog>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="PanelIndicatorTemplate">
+        <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+        <Width val="1"/>
+        <Height val="1"/>
+        <Visible val="false" />
+        <Animation name="Show">
+            <Event event="DoShow" action="Reset,Play" frame="$this"/>
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="Hide">
+            <Event event="DoHide" action="Reset,Play" frame="$this"/>
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+    </Frame>
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer/" file="GameUI">
+        <Frame type="Frame" name="VictoryPanelIndicator" template="AMT_Indicators/PanelIndicatorTemplate">
+            <Visible val="false" />
+        </Frame>
+        <Frame type="Frame" name="CinematicModeIndicator" template="AMT_Indicators/PanelIndicatorTemplate">
+            <Visible val="false" />
+        </Frame>
+        <Frame type="Frame" name="CinematicModeOrVictoryIndicator" template="AMT_Indicators/PanelIndicatorTemplate">
+            <Visible val="false" />
+            <StateGroup name="Visibility">
+                <DefaultState val="Hidden00"/>
+                <State name="Hidden00">
+                    <When type="Property" frame="$parent/VictoryPanelIndicator" Visible="False"/>
+                    <When type="Property" frame="$parent/CinematicModeIndicator" Visible="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="False"/>
+                </State>
+                <State name="Visible10">
+                    <When type="Property" frame="$parent/VictoryPanelIndicator" Visible="True"/>
+                    <When type="Property" frame="$parent/CinematicModeIndicator" Visible="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="True"/>
+                </State>
+                <State name="Visible01">
+                    <When type="Property" frame="$parent/VictoryPanelIndicator" Visible="False"/>
+                    <When type="Property" frame="$parent/CinematicModeIndicator" Visible="True"/>
+                    <Action type="SetProperty" frame="$this" Visible="True"/>
+                </State>
+                <State name="Visible11">
+                    <When type="Property" frame="$parent/VictoryPanelIndicator" Visible="True"/>
+                    <When type="Property" frame="$parent/CinematicModeIndicator" Visible="True"/>
+                    <Action type="SetProperty" frame="$this" Visible="True"/>
+                </State>
+            </StateGroup>
+        </Frame>
+    </Frame>  
+
+
+    <Frame type="VictoryPanel" name="VictoryPanelTemplate" file="VictoryPanel">
+        <Animation name="SignalIndicatorHide">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Event" end="Stop" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator">
+                <Key type="Event" time="0" event="DoShow"/>
+            </Controller>
+        </Animation>
+
+    </Frame>
+
+    <Frame type="Image" name="GameUI/TopLetterboxImage" file="GameUI">
+        <Animation name="SignalIndicatorShow">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Event" end="Stop" frame="$parent/UIContainer/FullscreenUpperContainer/CinematicModeIndicator">
+                <Key type="Event" time="0" event="DoShow"/>
+            </Controller>
+            <Controller type="Animation" end="Stop"  frame="$parent/UIContainer/FullscreenUpperContainer/CinematicModeIndicator" animation="DoHide">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>  
+        </Animation>
+        <Animation name="SignalIndicatorHide">
+            <Event event="OnHidden" action="Reset,Play" frame="$this"/>
+            <Controller type="Event" end="Stop" frame="$parent/UIContainer/FullscreenUpperContainer/CinematicModeIndicator">
+                <Key type="Event" time="0" event="DoHide"/>
+            </Controller>
+            <Controller type="Animation" end="Stop"  frame="$parent/UIContainer/FullscreenUpperContainer/CinematicModeIndicator" animation="DoShow">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>  
+        </Animation>
+
+    </Frame>
+
+</Desc>

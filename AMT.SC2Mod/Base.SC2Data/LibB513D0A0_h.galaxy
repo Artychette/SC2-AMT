@@ -1,0 +1,231 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Arty's Misc Tools
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libB513D0A0_ge_AMTFeature_AllexceptDebug = 0;
+const int libB513D0A0_ge_AMTFeature_CombatState = 1;
+const int libB513D0A0_ge_AMTFeature_DamageTypeUpdate = 2;
+const int libB513D0A0_ge_AMTFeature_ProductionQueuePanel = 3;
+const int libB513D0A0_ge_AMTFeature_ControlGroupRally = 4;
+const int libB513D0A0_ge_AMTFeature_ConsoleCinematicTransitionBruteForceFix = 5;
+const int libB513D0A0_ge_AMTFeature_Debug = 6;
+const int libB513D0A0_ge_AMT_PQP_ProductionTypeIconSet_Auto = 0;
+const int libB513D0A0_ge_AMT_PQP_ProductionTypeIconSet_BuildTrain = 1;
+const int libB513D0A0_ge_AMT_PQP_ProductionTypeIconSet_Research = 2;
+const int libB513D0A0_ge_AMT_PQP_ShowHideSlotOption_Show = 10000;
+const int libB513D0A0_ge_AMT_PQP_ShowHideSlotOption_Hide = 10001;
+const int libB513D0A0_ge_AMT_PQP_ShowHideSlotOption_Ignore = 10002;
+const int libB513D0A0_ge_EnergyType_Absolute = 0;
+const int libB513D0A0_ge_EnergyType_Percent = 1;
+const int libB513D0A0_ge_EnergyType_Regeneration = 2;
+const int libB513D0A0_ge_AMTTopBarTargetingPhase_None = 0;
+const int libB513D0A0_ge_AMTTopBarTargetingPhase_ChosingTarget = 1;
+const int libB513D0A0_ge_AMTTopBarTargetingPhase_ChosingDirection = 2;
+const int libB513D0A0_ge_AMTTopBarTargetingPhase_Firing = 3;
+
+// Constants
+const string libB513D0A0_gv_timerCountName = "AMTPausableTimerCount";
+const string libB513D0A0_gv_timerPrefix = "AMTPausableTimer";
+const int libB513D0A0_gv_innerFrameWidth = 720;
+const int libB513D0A0_gv_innerFrameHeight = 700;
+const int libB513D0A0_gv_nameOffset = 30;
+
+// Structures
+struct libB513D0A0_gs_AMTTopBarUIAbilityData {
+    string lv_cDLink;
+    int lv_execAbilCount;
+    int lv_targetingUnitCount;
+    int lv_placeholderCount;
+    int lv_placementSoundCount;
+    int lv_delayCount;
+    int lv_execTextCount;
+};
+
+struct libB513D0A0_gs_AMTTopBarUIAbilityLaunchNode {
+    unit lv_casterUnit;
+    actor lv_placeholderModel;
+    fixed lv_launchDelay;
+    order lv_order;
+};
+
+// Variable Declarations
+bool libB513D0A0_gv_controlGroupRallyOn;
+bool libB513D0A0_gv_productionGroupPanelOn;
+bool[17] libB513D0A0_gv_aMT_ProductionQueueCollapse;
+bool[17] libB513D0A0_gv_aMT_ProductionQueueLayoutOrientation;
+playergroup libB513D0A0_gv_aMT_ProductionQueueUsers;
+int[121] libB513D0A0_gv_aMT_ProductionQueueProgressBar;
+int[121] libB513D0A0_gv_aMT_ProductionQueueProgressCount;
+bool libB513D0A0_gv_pauseFlag;
+bool libB513D0A0_gv_lastTransmissionNotSkipped;
+playergroup libB513D0A0_gv_aMTPlayerInCinematic;
+fixed[17] libB513D0A0_gv_aMTPlayerFogAlphaBackup;
+int[17] libB513D0A0_gv_aMTTopBarTopBarCommandCard;
+fixed[17] libB513D0A0_gv_aMTTopBarTopBarCinematicEnergyBackup;
+bool[17] libB513D0A0_gv_aMTTopBarTopBarForceCineHide;
+int[17] libB513D0A0_gv_aMTTopBarTopBarPanel;
+string[17] libB513D0A0_gv_aMTTopBarTopBarTemplate;
+int[17] libB513D0A0_gv_aMTTopBarTopBarEnergyProgressBar;
+string[17] libB513D0A0_gv_aMTTopBarGlobalCasterType;
+unitgroup[17] libB513D0A0_gv_aMTTopBarGlobalCasterGroup;
+unit[17] libB513D0A0_gv_aMTTopBarGlobalCaster;
+bool libB513D0A0_gv_aMTTopBarTargetingPause;
+bool libB513D0A0_gv_aMTTopBarIsRequestedVisible;
+bool[17][101] libB513D0A0_gv_aMTTopBarUIFrameStateStorage;
+int[17] libB513D0A0_gv_aMTTopBarTargetingCurrentCharges;
+bool[17] libB513D0A0_gv_aMTTopBarTargetingActive;
+int libB513D0A0_gv_aMTTopBarTargetingActiveCount;
+int[17] libB513D0A0_gv_aMTTopBarTargetingOverlayPortrait;
+int[17] libB513D0A0_gv_aMTTopBarTargetingPanel;
+int[17] libB513D0A0_gv_aMTTopBarTargetingCancelButton;
+int[17] libB513D0A0_gv_aMTTopBarTargetingChargesProgressBar;
+int[17] libB513D0A0_gv_aMTTopBarTargetingInstructionsLabel;
+int[17] libB513D0A0_gv_aMTTopBarTargetingChargesSpent;
+int[17] libB513D0A0_gv_aMTTopBarTargetingChargesTotal;
+bool[17] libB513D0A0_gv_aMTTopBarTargetingTransitioning;
+unit[17] libB513D0A0_gv_aMTTopBarTargetingCaster;
+unitgroup[17] libB513D0A0_gv_aMTTopBarTargetingCasterGroup;
+string[17] libB513D0A0_gv_aMTTopBarTargetingAbilityInstance;
+string[17] libB513D0A0_gv_aMTTopBarActivatingBehavior;
+string[17] libB513D0A0_gv_aMTTopBarActivatingCooldown;
+bool[17] libB513D0A0_gv_pM_SoAExitInstantly;
+bool[17] libB513D0A0_gv_pM_SoAForceExit;
+bool[17] libB513D0A0_gv_pM_SoATargetingCycling;
+int[17] libB513D0A0_gv_pM_SoATargetingCycling2;
+
+// Function Declarations
+void libB513D0A0_gf_InitAMTFeature (int lp_feature, bool lp_waitOption);
+void libB513D0A0_gf_AMTPQPHelperExcludeIncludeBuilderBuiltfromProductionQueuePanelForPlayer (string lp_builderTrainer, string lp_builtTrainee, int lp_player, bool lp_excludeIncludeBack);
+void libB513D0A0_gf_AMTPQPHelperSetSlotImage (int lp_slot, int lp_queue, int lp_player, string lp_progressID, int lp_progressionType, int lp_showHideSlot);
+void libB513D0A0_gf_AMTPQPHelperShowHidePlayerSlot (int lp_slot, int lp_queue, int lp_player, bool lp_showHide);
+void libB513D0A0_gf_SetProductionQueuePanelOrientation (bool lp_orientation, playergroup lp_players);
+void libB513D0A0_gf_SetProductionQueuePanelBackgroundImage (string lp_image, int lp_imageType, playergroup lp_players);
+void libB513D0A0_gf_MergeSplitProductionQueuePanelQueues (bool lp_mergeSplit, playergroup lp_players);
+void libB513D0A0_gf_ExcludeIncludeBuilderBuiltfromProductionQueuePanel (string lp_builderTrainer, string lp_builtTrainee, playergroup lp_players, bool lp_excludeIncludeBack);
+void libB513D0A0_gf_OverrideProductionQueuePanelIconForResearch (string lp_research, string lp_icon, int lp_player);
+void libB513D0A0_gf_OverrideProductionQueuePanelIconForUnit (string lp_unitType, string lp_icon, int lp_player);
+void libB513D0A0_gf_MoveProductionQueuePanel (int lp_offsetX, int lp_offsetY, int lp_anchor, playergroup lp_players);
+void libB513D0A0_gf_ShowHideProductionQueuePanel (bool lp_visible, playergroup lp_players);
+void libB513D0A0_gf_RegisterAsPausableTimer (timer lp_timer);
+void libB513D0A0_gf_FreePausableTimer (timer lp_timer);
+timer libB513D0A0_gf_CreateNewPausableTimer ();
+void libB513D0A0_gf_PauseUnpauseRegisteredTimers (bool lp_pause);
+void libB513D0A0_gf_SetGlobalPause (bool lp_onOff);
+bool libB513D0A0_gf_GameIsPaused ();
+void libB513D0A0_gf_PlayTransmissionCueForPlayer (playergroup lp_playerGroup);
+void libB513D0A0_gf_InitAMTSkippableTransmission (unit lp_speaker, text lp_titleText, int lp_width, int lp_height, int lp_xOffset, int lp_yOffset, int lp_anchor);
+void libB513D0A0_gf_InitAMTTransmissionCinematic (unit lp_speaker);
+void libB513D0A0_gf_StartAMTTransimissionCinematic (bool lp_wait);
+void libB513D0A0_gf_AddCommunicationLineIntheCurrentAMTTransmission (string lp_character, text lp_text, int lp_height, fixed lp_writeOut, bool lp_leftSided, bool lp_wait, int lp_serialNumber);
+void libB513D0A0_gf_CreateCommunicationDialog ();
+void libB513D0A0_gf_CleanupPendingTransmission ();
+bool libB513D0A0_gf_CurrentAMTTransmissionStopped ();
+bool libB513D0A0_gf_LastAMTTransmissionHasBeenRead ();
+bool libB513D0A0_gf_PendingAMTTransmission ();
+void libB513D0A0_gf_WaitForCurrentAMTTransmissionToEnd ();
+int libB513D0A0_gf_RandomShellSerialNumber ();
+void libB513D0A0_gf_SetDamageType (string lp_effect, string lp_type, int lp_player);
+void libB513D0A0_gf_CinematicMode (bool lp_onOff, playergroup lp_players, fixed lp_duration);
+void libB513D0A0_gf_RemoveUnitAfterDelay (unit lp_unit, fixed lp_delay, int lp_timeType);
+void libB513D0A0_gf_KillUnitAfterDelay (unit lp_unit, fixed lp_delay, int lp_timeType);
+void libB513D0A0_gf_StorePlayerFogAlpha (int lp_player);
+void libB513D0A0_gf_SetFogofWarAlphaForPlayerOverTime (int lp_player, fixed lp_alpha, fixed lp_duration);
+void libB513D0A0_gf_RestoreFogAlphaForPlayerOverTime (int lp_player, fixed lp_duration);
+void libB513D0A0_gf_InitTopBarForPlayer (int lp_player, string lp_template);
+void libB513D0A0_gf_EnableDisableTopBarTargetingPause (bool lp_enableDisable);
+fixed libB513D0A0_gf_GetTopBarGlobalCasterEnergyForPlayer (int lp_player, int lp_energyType);
+void libB513D0A0_gf_SetTopBarGlobalCasterEnergyForPlayer (int lp_player, fixed lp_value, int lp_energyType);
+void libB513D0A0_gf_EnableDisableTopBarTargetingPause2 (playergroup lp_players, bool lp_showHide);
+bool libB513D0A0_gf_TopBarTargetingPauseIsEnabled ();
+bool libB513D0A0_gf_AMTTopBarAbilityUsesTargetingUI (string lp_extendedAbility);
+void libB513D0A0_gf_HighlightTopBarSlotForPlayer (int lp_player, int lp_slot, bool lp_onOff);
+void libB513D0A0_gf_RestoreStoreTemporarilyUIStorageState (int lp_player, bool lp_storeRestore);
+void libB513D0A0_gf_AMTTopBarLoadUIAbilityData (structref<libB513D0A0_gs_AMTTopBarUIAbilityData> lp_dataStruct, int lp_player);
+void libB513D0A0_gf_AMTTopBarStoreUIAbilityData (int lp_player);
+void libB513D0A0_gf_AMTTopBarClearUIAbilityData (int lp_player);
+void libB513D0A0_gf_AMTTopBarPushBackLaunchNode (int lp_player, string lp_uIAbility, structref<libB513D0A0_gs_AMTTopBarUIAbilityLaunchNode> lp_uIAbilityLaunchNode);
+void libB513D0A0_gf_AMTTopBarPopBackLaunchNode (int lp_player, string lp_uIAbility);
+void libB513D0A0_gf_AMTTopBarClearLaunchNode (int lp_player, string lp_uIAbility, int lp_index);
+void libB513D0A0_gf_AMTTopBarLoadLaunchNode (int lp_player, string lp_uIAbility, int lp_index, structref<libB513D0A0_gs_AMTTopBarUIAbilityLaunchNode> lp_launchNode);
+int libB513D0A0_gf_AMTTopBarLaunchChainSize (int lp_player, string lp_uIAbility);
+void libB513D0A0_gf_PU_TargetingUI_EnterTargetingMode (int lp_player, bool lp_showHide, bool lp_instant);
+void libB513D0A0_gf_AMTTopBarCreateTargetingForPlayer (int lp_player);
+void libB513D0A0_gf_AMTTopBarSetTargetingChargesForPlayer (int lp_player, int lp_current, int lp_max);
+void libB513D0A0_gf_AMTTopBarSetTargetingInstructionText (int lp_player, text lp_instructions);
+void libB513D0A0_gf_AMTTopBarRegisterPlayerForCancelation (int lp_player, bool lp_addRemove);
+void libB513D0A0_gf_AMTTopBarEnterTargetingModeforPlayer (int lp_player);
+void libB513D0A0_gf_AMTTopBarExitTargetingModeForPlayer (int lp_player);
+void libB513D0A0_gf_AMTTopBarLaunchFiringSequence (int lp_player, string lp_uIAbility);
+void libB513D0A0_gf_AMTTopBarFiringSequenceSingle (unit lp_casterUnit, order lp_order, fixed lp_launchDelay);
+point libB513D0A0_gf_ConvertSegmenttoVector_2D (point lp_start, point lp_end);
+point libB513D0A0_gf_NormalizeVector (point lp_vector);
+point libB513D0A0_gf_VectorFromPointToUnit (point lp_point, unit lp_unit);
+fixed libB513D0A0_gf_InnerProduct (point lp_u, point lp_v);
+
+// Trigger Declarations
+trigger libB513D0A0_gt_InitDebug;
+trigger libB513D0A0_gt_DefaultConsoleSkin;
+trigger libB513D0A0_gt_PlayerSkin;
+trigger libB513D0A0_gt_SwapPQP;
+trigger libB513D0A0_gt_ShowPQP;
+trigger libB513D0A0_gt_HidePQP;
+trigger libB513D0A0_gt_TestCommunication;
+trigger libB513D0A0_gt_AnimPlay;
+trigger libB513D0A0_gt_EntityCountCheck;
+trigger libB513D0A0_gt_UnitTag;
+trigger libB513D0A0_gt_UnitPosition;
+trigger libB513D0A0_gt_KillUnits;
+trigger libB513D0A0_gt_RefillUnits;
+trigger libB513D0A0_gt_CineModOn;
+trigger libB513D0A0_gt_CineModOff;
+trigger libB513D0A0_gt_DuplicateUnits;
+trigger libB513D0A0_gt_Testeventname;
+trigger libB513D0A0_gt_SlotHighlight;
+trigger libB513D0A0_gt_SetRace;
+trigger libB513D0A0_gt_Fadeinout;
+trigger libB513D0A0_gt_ShowTargettingUI;
+trigger libB513D0A0_gt_Pause;
+trigger libB513D0A0_gt_InitControlGroupRally;
+trigger libB513D0A0_gt_InitProductionQueuePanel;
+trigger libB513D0A0_gt_ProductionQueuePanelMainLoop;
+trigger libB513D0A0_gt_ProductionQueuePanelTrainingStart;
+trigger libB513D0A0_gt_ProductionQueuePanelTrainingStopincludeControlGroupRallyimplementation;
+trigger libB513D0A0_gt_ProductionQueuePanelBuildingStart;
+trigger libB513D0A0_gt_ProductionQueuePanelBuildingStop;
+trigger libB513D0A0_gt_ProductionQueuePanelResearchStart;
+trigger libB513D0A0_gt_ProductionQueuePanelResearchStop;
+trigger libB513D0A0_gt_InitCombatState;
+trigger libB513D0A0_gt_AttackTrigger;
+trigger libB513D0A0_gt_AbilityTrigger;
+trigger libB513D0A0_gt_CommunicationButtonClicked;
+trigger libB513D0A0_gt_MouseScroll;
+trigger libB513D0A0_gt_TransmissionReadButtonClicked;
+trigger libB513D0A0_gt_TransmissionSkipButtonClicked;
+trigger libB513D0A0_gt_CleanUpTransmissionDialog;
+trigger libB513D0A0_gt_CleanUpTransmission;
+trigger libB513D0A0_gt_DamageTypeAutoUpdate;
+trigger libB513D0A0_gt_InitConsoleCinematicTransitionBruteForceFix;
+trigger libB513D0A0_gt_AMTLayoutCinematicModeChangeSetCinematicModeIndicator;
+trigger libB513D0A0_gt_AMTTriggerMiscCinematicModeDispatcherCinematicModeOn;
+trigger libB513D0A0_gt_AMTTriggerMiscCinematicModeDispatcherCinematicModeOff;
+trigger libB513D0A0_gt_GlobalCasterEnergyChange;
+trigger libB513D0A0_gt_AMTTopBarEnergyChangeDispatcher;
+trigger libB513D0A0_gt_AMTTopBarCinematicModeOn;
+trigger libB513D0A0_gt_AMTTopBarCinematicModeOff;
+trigger libB513D0A0_gt_AMTTopBarCancelButtonClicked;
+trigger libB513D0A0_gt_AMTTopBarCinematicForceTargetingCancel;
+trigger libB513D0A0_gt_AMTTopBarTargetingPointChosen;
+trigger libB513D0A0_gt_AMTTopBarTargetingDirectionChosen;
+trigger libB513D0A0_gt_AMTTopBarTargetingCleared;
+trigger libB513D0A0_gt_AMTTopBarTargetingDeactivated;
+trigger libB513D0A0_gt_AMTTopBarTargetingUIAbilityUsed;
+trigger libB513D0A0_gt_AMTTopBarTargetingUIAbilityUsedDirectUsage;
+trigger libB513D0A0_gt_AMTTopBarTargetingUIAbilityUsedDirectFiringCancel;
+trigger libB513D0A0_gt_ATMHideWhenCasterHiddenHide;
+trigger libB513D0A0_gt_ATMHideWhenCasterHiddenShow;
+
+// Library Initialization
+void libB513D0A0_InitVariables ();
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilRedirectTarget id="AttackRedirect">
+        <AbilSetId value="Attack"/>
+    </CAbilRedirectTarget>
+    <CAbilRedirectInstant id="StopRedirect">
+        <AbilSetId value="Stop"/>
+    </CAbilRedirectInstant>
+</Catalog>

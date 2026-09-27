@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Include path="UI/Layout/AMT_Indicators.SC2Layout"/>
+    <Include path="UI/Layout/AMT_StandardTemplates.SC2Layout"/>
+    <Include path="UI/Layout/AMT_ProductionQueuePanel.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TransmissionTemplates.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarTemplate.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarSoA.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarAlarak.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarPurifier.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarFenix.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarTerran.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarZerg.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarTargetingUITemplate.SC2Layout"/>
+    <Include path="UI/Layout/AMT_TopBarTargetingUIProtoss.SC2Layout"/>
+    <Include path="UI/Layout/AMT_Indicators_HotS_ScoreScreen.SC2Layout"/>
+    <Include path="UI/Layout/AMT_Indicators_LotV_ScoreScreen.SC2Layout"/>
+</Desc>

@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+<!--                             -->
+<!-- Game UI Top frame insertion -->
+<!--                             -->
+
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+        
+        <Frame type="Frame" name="AMTGlobalCastingPanel">
+            <Width val="786"/>
+            <Height val="225"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-393"/>
+            <RenderPriority val="500"/>
+            <CollapseLayout val="true"/>
+            <PreserveAnchorOffset val="true"/>
+            <Visible val="false"/>
+        </Frame>
+    </Frame>
+
+
+<!--                    -->
+<!-- In/Out Sound Frame -->
+<!--                    -->
+
+    <Frame type="Frame" name="ProtossConsoleSound">
+        
+        <Animation name="ConsoleInPlay">
+            <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0" sound="@UI_ConsoleIn_Prot"/>
+            </Controller>
+        </Animation>
+        <Animation name="ConsoleOutPlay">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0" sound="@UI_ConsoleOut_Prot"/>
+            </Controller>    
+        </Animation>
+        <Animation name="KillInSoundOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/> 
+            <Controller type="Animation" end="Stop" frame="$this" animation="ConsoleInPlay">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>    
+        </Animation>
+        <Animation name="KillOutSoundOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/> 
+            <Controller type="Animation" end="Stop" frame="$this" animation="ConsoleOutPlay">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>    
+        </Animation>
+    </Frame>
+
+    <Frame type="Frame" name="TerranConsoleSound">
+        
+        <Animation name="ConsoleInPlay">
+            <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0" sound="@UI_ConsoleIn_Terr"/>
+            </Controller>
+        </Animation>
+        <Animation name="ConsoleOutPlay">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0" sound="@UI_ConsoleOut_Terr"/>
+            </Controller>    
+        </Animation>
+        <Animation name="KillInSoundOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/> 
+            <Controller type="Animation" end="Stop" frame="$this" animation="ConsoleInPlay">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>    
+        </Animation>
+        <Animation name="KillOutSoundOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/> 
+            <Controller type="Animation" end="Stop" frame="$this" animation="ConsoleOutPlay">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>    
+        </Animation>
+    </Frame>
+
+    <Frame type="Frame" name="ZergConsoleSound">
+        
+        <Animation name="ConsoleInPlay">
+            <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>  
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0" sound="@UI_ConsoleIn_Zerg"/>
+            </Controller>
+        </Animation>
+        <Animation name="ConsoleOutPlay">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0" sound="@UI_ConsoleOut_Zerg"/>
+            </Controller>    
+        </Animation>
+        <Animation name="KillInSoundOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/> 
+            <Controller type="Animation" end="Stop" frame="$this" animation="ConsoleInPlay">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>    
+        </Animation>
+        <Animation name="KillOutSoundOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/> 
+            <Controller type="Animation" end="Stop" frame="$this" animation="ConsoleOutPlay">
+                <Key type="Animation" time="0" action="Stop"/>
+            </Controller>    
+        </Animation>
+    </Frame>
+
+<!--                           -->
+<!-- Arrow Highligth Templates -->
+<!--                           -->
+
+    
+
+    <Frame type="Frame" name="ProtossAbilityArrowsTemplate">
+        <Width val="76"/>
+        <Height val="100"/>
+        <Visible val="false"/>
+
+        <Frame type="Image" name="Arrow1Empty">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <ScaleHeightToTexture val="True"/>
+            <Texture val="@UI/LotV_Mission_SoA_Frame_Ability_Alert_ArrowEmpty"/>
+        </Frame>
+        
+        <Frame type="Image" name="Arrow1Highlight">
+            <Anchor relative="$parent/Arrow1Empty"/>
+            <Texture val="@UI/LotV_Mission_SoA_Frame_Ability_Alert_ArrowHighlight"/>
+
+            <Animation name="Show">
+                <Event event="OnShown" action="Play"/>
+                <Event event="OnShown" action="Reset"/>
+                <Controller type="Fade" end="Loop">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.2" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.5" value="0" in="Slow"/>
+                    <Key type="Curve" time="0.8" value="255" out="Slow"/>
+                    <Key type="Curve" time="1.2" value="0" out="Slow"/>
+                </Controller>
+            </Animation>
+          
+        </Frame>
+        
+        <Frame type="Image" name="Arrow2Empty">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent/Arrow1Empty" pos="Max" offset="-43"/>
+            <ScaleHeightToTexture val="True"/>
+            <Texture val="@UI/LotV_Mission_SoA_Frame_Ability_Alert_ArrowEmpty"/>
+        </Frame>
+        
+        <Frame type="Image" name="Arrow2Highlight">
+            <Anchor relative="$parent/Arrow2Empty"/>
+            <Texture val="@UI/LotV_Mission_SoA_Frame_Ability_Alert_ArrowHighlight"/>
+
+            <Animation name="Show">
+                <Event event="OnShown" action="Play"/>
+                <Event event="OnShown" action="Reset"/>
+                <Controller type="Fade" end="Loop">
+                    <Key type="Curve" time="0.0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.3" value="0" in="Slow"/>
+                    <Key type="Curve" time="0.6" value="153" out="Slow"/>
+                    <Key type="Curve" time="1.2" value="0" out="Slow"/>
+                </Controller>
+            </Animation>
+          
+        </Frame>
+        
+        <Frame type="Image" name="Arrow3Empty">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Top" relative="$parent/Arrow2Empty" pos="Max" offset="-43"/>
+            <ScaleHeightToTexture val="True"/>
+            <Texture val="@UI/LotV_Mission_SoA_Frame_Ability_Alert_ArrowEmpty"/>
+        </Frame>
+        
+        <Frame type="Image" name="Arrow3Highlight">
+            <Anchor relative="$parent/Arrow3Empty"/>
+            <Texture val="@UI/LotV_Mission_SoA_Frame_Ability_Alert_ArrowHighlight"/>
+
+            <Animation name="Show">
+                <Event event="OnShown" action="Play"/>
+                <Event event="OnShown" action="Reset"/>
+                <Controller type="Fade" end="Loop">
+                    <Key type="Curve" time="0.0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.3" value="51" in="Slow"/>
+                    <Key type="Curve" time="0.6" value="0" out="Slow"/>
+                    <Key type="Curve" time="1.2" value="0" out="Slow"/>
+                </Controller>
+            </Animation>
+        </Frame>
+    </Frame>
+
+
+
+<!--              -->
+<!-- Command Card -->
+<!--              -->
+
+
+
+    <Frame type="CommandButton" name="TopBarCommandButtonTemplate" template="CommandButton/CommandButtonTemplate">
+        <!--Visible val="False"/ -->
+    </Frame>
+    <Frame type="CommandButton" name="TopBarCommandButtonAutoFadeTemplate" template="AMT_TopBarTemplate/TopBarCommandButtonTemplate">
+    </Frame>
+    
+    <Frame type="CommandPanel" name="TopBarCommandPanelTemplate" template="CommandPanel/CommandPanelTemplate">
+        <Width val="688"/>
+        <Height val="700"/>
+
+        <Frame type="CommandTooltip" name="TopBarCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="88"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+        
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <HideUnusedButtons val="true"/>
+        <DisplayCancelCommandCard val="false"/>
+        <UseGridHotkeys val="false"/>
+
+        <Frame type="CommandButton" name="CommandButton00">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <HotkeyUse val="CommanderAbility0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton01">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <HotkeyUse val="CommanderAbility1"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton02">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <HotkeyUse val="CommanderAbility2"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton03">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <HotkeyUse val="CommanderAbility3"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton04">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton05">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton06">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton07">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton08">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton09">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton10">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton11">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton12">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton13">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton14">
+            <TooltipFrame val="TopBarCommandTooltip"/>
+            <Visible val="false"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="0"/>
+        </Frame>
+
+        <Frame type="Label" name="RowText0">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/CommandButton00" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="@@CommandRow"/>
+        </Frame>
+
+        <Frame type="Label" name="RowText1">
+            <Visible val="false"/>
+        </Frame>
+
+        <Frame type="Label" name="RowText2">
+            <Visible val="false"/>
+        </Frame>
+
+        <Frame type="Image" name="CommandTargetImage">
+            <Anchor side="Left" relative="$parent" pos="Max" offset="200"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="200"/>
+            <Anchor side="Top" relative="$parent" pos="Max" offset="200"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="200"/>
+            <Visible val="false"/>
+        </Frame>
+
+        <Frame type="Label" name="CommandTargetName">
+            <Visible val="false"/>
+        </Frame>
+
+        <Frame type="Label" name="CommandTargetPrompt">
+            <Visible val="false"/>
+        </Frame>
+
+        <Frame type="Frame" name="UncontrollableUnitFrame">
+            <Visible val="false"/>
+            
+            <Frame type="Label" name="UncontrollableUnitTitleLabel">
+                <Visible val="false"/>
+            </Frame>
+            
+            <Frame type="Label" name="UncontrollableUnitPromptLabel">
+                <Visible val="false"/>
+            </Frame>
+        </Frame>
+    </Frame>
+
+
+    <Frame type="Frame" name="TopBarFrameBaseTemplate">
+        <Width val="786"/>
+        <Height val="225"/>
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="-393"/>   
+
+        <!-- StateGroup name="VictoryVisibility">
+            <DefaultState val="Visible"/>
+            <State name="Visible">
+                <When type="Property" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator" Visible="False"/>
+                <Action type="SetProperty" frame="$this" Visible="true"/>
+            </State>
+            <State name="Hidden">
+                <When type="Property" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator" Visible="True"/>
+                <Action type="SetProperty" frame="$this" Visible="False"/>
+            </State>
+        </StateGroup -->
+        <Animation name="HideOnVictory">
+            <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator"/>  
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        <Frame type="Frame" name="CommandCardHolder">
+            <Width val="688"/>
+            <Height val="700"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="1"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-344"/>
+            <Animation name="FadeIn">
+                <Event event="OnHidden" action="DirectionForward,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Event event="OnShown" action="DirectionReverse,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Event event="OnShown" action="DirectionForward,Play" frame="$parent"/>  
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0"/>
+                    <Key type="Curve" time="0.95" value="0" out="Fast" direction="Reverse"/>
+                    <Key type="Curve" time="1.334" value="0" out="Fast" direction="Forward"/>
+                    <Key type="Curve" time="1.7" value="255" in="Slow"/>
+                </Controller>   
+            </Animation>
+            <VisibilityOnFade val="True"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow04">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow05">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Visible val="false"/>
+        </Frame>
+        <Animation name="ShowArrow0">
+            <Event event="HighlightStart0" action="Reset,Play"/>
+            <Controller  type="Visibility" end="Pause" frame="HighlightArrow00">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="HideArrow0">
+            <Event event="HighlightEnd0" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause" frame="HighlightArrow00">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        <Animation name="ShowArrow1">
+            <Event event="HighlightStart1" action="Reset,Play"/>
+            <Controller  type="Visibility" end="Pause" frame="HighlightArrow01">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="HideArrow1">
+            <Event event="HighlightEnd1" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause" frame="HighlightArrow01">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        <Animation name="ShowArrow2">
+            <Event event="HighlightStart2" action="Reset,Play"/>
+            <Controller  type="Visibility" end="Pause" frame="HighlightArrow02">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="HideArrow2">
+            <Event event="HighlightEnd2" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause" frame="HighlightArrow02">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        <Animation name="ShowArrow3">
+            <Event event="HighlightStart3" action="Reset,Play"/>
+            <Controller  type="Visibility" end="Pause" frame="HighlightArrow03">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="HideArrow3">
+            <Event event="HighlightEnd3" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause" frame="HighlightArrow03">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        <Animation name="ShowArrow4">
+            <Event event="HighlightStart4" action="Reset,Play"/>
+            <Controller  type="Visibility" end="Pause" frame="HighlightArrow04">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="HideArrow4">
+            <Event event="HighlightEnd4" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause" frame="HighlightArrow04">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        <Animation name="ShowArrow5">
+            <Event event="HighlightStart5" action="Reset,Play"/>
+            <Controller  type="Visibility" end="Pause" frame="HighlightArrow05">
+                <Key type="Bool" time="0" value="False"/>
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+        </Animation>
+        <Animation name="HideArrow5">
+            <Event event="HighlightEnd5" action="Reset,Play"/>
+            <Controller type="Visibility" end="Pause" frame="HighlightArrow05">
+                <Key type="Bool" time="0" value="True"/>
+                <Key type="Bool" time="0" value="False"/>
+            </Controller>
+        </Animation>
+        
+    </Frame>
+    <Frame type="Frame" name="TopBarModelFrameTemplate" template="AMT_TopBarTemplate/TopBarFrameBaseTemplate">
+      
+        <Frame type="UnitModelFrame" name="TopBarModel">
+            <Width val="644"/>
+            <Height val="644"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="-73"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="1"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="1"/>
+            <CameraModel val="Assets/UI/TechPurchase/TechPurchasePortraitCamera/TechPurchasePortraitCamera.m3"/> <!-- Doesn't seem to do anything here -->
+            <Camera val="Star2Camera01"/> <!-- Doesn't seem to do anything here -->
+            <TurningEnabled val="False"/>
+            <Rotation val="315"/>       <!-- because why the hell the model start with a 45deg angle ? -->
+            <UnitWorldZ val="-0.025"/>  <!-- because all Calldown UI model have a height of 0.302459 from the origin point -->
+            <UnitWorldY val="0.2735"/>  <!-- zoom in -->
+            <UnitWorldX val="0.2735"/>  <!-- equal to the Y shift, because fucking 45deg initial angle -->
+            <ResetTurnAnimationOnUnitChange val="true"/>
+
+            <Frame type="Model" name="Model">
+                <Anchor relative="$parent"/>
+                <UseAspectScaling val="true"/>
+            </Frame>
+            <Animation name="Birth">
+                <Event event="OnShown" action="Play" frame="$this"/>  
+                <Event event="OnHidden" action="Reset" frame="$this"/>  
+                <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="True">
+                    <Key type="Identifier" time="0" value="AnimPlay Birth Birth"/>
+                    <Key type="Identifier" time="0.1" value=""/>
+                </Controller>
+            </Animation>
+            <Animation name="FadeIn">
+                <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="True">
+                    <Key type="Identifier" time="0" value="AnimPlay Birth Birth 0 -1.000000 -1.000000 1.000000 AsTimeScale 0.000000 60"/>
+                    <Key type="Identifier" time="0" value="AnimClear Death"/>
+                    <Key type="Identifier" time="0.125" value=""/>
+                </Controller>
+            </Animation>
+            <Animation name="FadeOut">
+                <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+                <Controller type="ActorMsg" end="Pause" frame="$this" ModelFrameName="Model" SendToScope="True">
+                    <Key type="Identifier" time="0" value="AnimPlay Death Death PlayForever,NonLooping -1.000000 -1.000000 1.000000 AsTimeScale 0.000000 50"/>
+                    <Key type="Identifier" time="0.125" value=""/>
+                </Controller>       
+            </Animation>
+            <Animation name="FadeInOpacity">
+                <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Fast"/>
+                    <Key type="Curve" time=".125" value="255"  in="Slow"/>
+                </Controller>
+            </Animation>
+            <Animation name="FadeOutOpacity">
+                <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255"/>
+                    <Key type="Curve" time="1.21" value="255" out="Fast"/>
+                    <Key type="Curve" time="1.334" value="0" in="Slow"/>
+                </Controller>     
+            </Animation>
+        </Frame>
+        <Frame type="Frame" name="CommandCardHolder">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow04">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow05">
+        </Frame>
+    </Frame>
+
+    <Frame type="Frame" name="TopBarCutsceneFrameTemplate" template="AMT_TopBarTemplate/TopBarFrameBaseTemplate">
+
+        <Frame type="CutsceneFrame" name="CalldownCutscene">
+            <Width val="1000"/>
+            <Height val="1000"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-501"/>
+            <!--File val="Cutscenes/UI_SoAMission.SC2Cutscene"/-->
+            <Animation name="FadeIn">
+                <Event event="OnHidden" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/>  
+                <Event event="OnShown" action="Reset,Play" frame="$this"/>
+                    <Controller type="Cutscene" end="Stop">
+                        <Key type="Cutscene" time="0" action="Bookmark" bookmark="Birth"/>
+                        <Key type="Cutscene" time="0" action="Play"/>
+                    </Controller>
+            </Animation>
+            <Animation name="FadeOut">
+                <Event event="OnShown" action="Reset,Play" frame="$ancestor[@name=FullscreenUpperContainer]/CinematicModeIndicator"/> 
+                    <Controller type="Cutscene" end="Stop">
+                        <Key type="Cutscene" time="0" action="Bookmark" bookmark="Death"/>
+                        <Key type="Cutscene" time="0" action="Play"/>
+                </Controller>     
+            </Animation>
+        
+            <RenderType val="HDR"/>
+            <ToneMapping val="False"/>
+        </Frame>    
+        <Frame type="Frame" name="CommandCardHolder">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow04">
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow05">
+        </Frame>
+    </Frame>
+
+</Desc>

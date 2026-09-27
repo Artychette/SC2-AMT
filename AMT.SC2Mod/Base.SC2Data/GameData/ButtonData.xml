@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="AMTLockedTopBarAbility">
+        <TooltipFlags index="ShowName" value="0"/>
+        <TooltipFlags index="ShowHotkey" value="0"/>
+        <TooltipFlags index="ShowLevel" value="0"/>
+        <TooltipFlags index="ShowResources" value="0"/>
+        <TooltipFlags index="ShowSupply" value="0"/>
+        <TooltipFlags index="ShowUsage" value="0"/>
+        <TooltipFlags index="ShowTime" value="0"/>
+        <TooltipFlags index="ShowCooldown" value="0"/>
+        <TooltipFlags index="ShowRequirements" value="0"/>
+        <TooltipFlags index="ShowAutocast" value="0"/>
+        <Icon value="Assets\Textures\ui_AMT_topbar_frame_ability_lock.dds"/>
+        <TintRacially value="1"/>
+    </CButton>
+</Catalog>

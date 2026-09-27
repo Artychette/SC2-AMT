@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverAvoid id="GroundFlyer">
+        <Flags index="IgnoreMovementSuppression" value="1"/>
+        <Flags index="IgnoreNoFlyZones" value="1"/>
+        <HeightMap value="Air"/>
+        <PathMode value="Scaler"/>
+    </CMoverAvoid>
+</Catalog>

@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+    <Frame type="Button" name="OverlayButtonTemplate">
+        <NormalImage val="NormalImage"/>
+        <HoverImage val="HoverImage"/>
+        <Label val="Label"/>
+        <HitTestFrame val="HitTestFrame"/>
+        <ClickSound val="@UI_ActionButtonSelect"/>
+        <Height val="66"/>
+        <Width val="296"/>
+
+        <Frame type="Image" name="NormalImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Texture val="@UI/LoTV_Shared_StoryButtonNormal"/>
+            <TextureType val="EndCap"/>
+            <Tiled val="false"/>
+            <StateCount val="3"/>
+            <DesaturateOnDisable val="false"/>
+            <DescFlags val="Internal"/>
+            
+            <Animation name="Disabled">
+                <Event event="OnDisabled" action="Reset,Play" frame="$parent"/>	
+                <Event event="OnEnabled" action="Reset" frame="$parent"/>
+                <Controller type="Texture" end="Pause">
+                    <Key type="Image" time="0.0" image="@UI/LoTV_Shared_StoryButtonDisabled"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="Image" name="HoverImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Texture val="@UI/LoTV_Shared_StoryButtonHover"/>
+            <TextureType val="EndCap"/>
+            <Tiled val="false"/>
+            <StateCount val="3"/>
+            <DescFlags val="Internal"/>
+        </Frame>
+        
+        <Frame type="Image" name="HighlightImage">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Texture val="@UI/LoTV_Shared_StoryButton_HighlightCallout"/>
+            <TextureType val="EndCap"/>
+            <Tiled val="false"/>
+            <StateCount val="1"/>
+            <DesaturateOnDisable val="false"/>
+            <Visible val="false"/>
+            <RenderPriority val="515"/>
+            <Animation name="Highlight">
+                <Event event="Highlight" action="Reset" frame="$parent"/>
+                <Event event="Highlight" action="Play" frame="$parent"/>
+                <Controller type="Fade" end="PingPong">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="1" value="255" out="Slow"/>
+                    <Key type="Curve" time="2" value="0" in="Slow"/>
+                </Controller>
+            </Animation>
+            <Animation name="HighlightVisibility">
+                <Event event="Highlight" action="Reset" frame="$parent"/>
+                <Event event="Highlight" action="Play" frame="$parent"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="HighlightVisibilityOff">
+                <Event event="HighlightStop" action="Reset" frame="$parent"/>
+                <Event event="HighlightStop" action="Play" frame="$parent"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="Label" name="Label">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="4"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Style val="Void_StoryButtonLabel"/>
+            <DescFlags val="Internal"/>
+            <RenderPriority val="516"/>
+        </Frame>
+
+        <Frame type="Frame" name="HitTestFrame">
+            <TooltipAnchorPosition val="TopCenter"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <DescFlags val="Internal"/>
+        </Frame>
+    </Frame>
+
+
+    <Frame type="Portrait" name="TargetingOverlayTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <AcceptsMouse val="false"/>
+        <RenderType val="HDR"/>        
+        <UseTransition val="False"/>
+        <BackgroundImage val="BackgroundImage"/>
+        <ModelLink val="SOA_Calldown_UI"/>
+        
+        <Frame type="Image" name="BackgroundImage">
+            <Visible val="false"/>
+            <DescFlags val="Internal"/>
+        </Frame>
+        <Animation name="Show">
+            <Event event="TargetingOverlayShow" action="Reset,Play"/>
+            <Controller type="Visibility" end="Stop">
+                <Key type="Bool" time="0.0" value="False"/>
+                <Key type="Bool" time="0.0" value="True"/>
+            </Controller>
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0.0" sound="@UI_SOA_calldown_on1"/>
+                <Key type="Sound" time="0.5" sound="@UI_SOA_calldown_on2"/>
+            </Controller>
+             <Controller type="Fade" end="Pause">
+                 <Key type="Curve" time="0" value="0" out="Slow"/>
+                 <Key type="Curve" time=".35" value="255" in="Slow"/>
+             </Controller>
+        </Animation>
+        <Animation name="Hide">
+            <Event event="TargetingOverlayHide" action="Reset,Play"/>
+            <Controller type="Visibility" end="Stop">
+                <Key type="Bool" time="0.0" value="True"/>
+                <Key type="Bool" time="0.4" value="False"/>
+            </Controller>
+            <Controller type="Sound" end="Stop">
+                <Key type="Sound" time="0.0" sound="@UI_SOA_calldown_on1"/>
+                <!--Key type="Sound" time="0.5" sound="@UI_SOA_calldown_on2"/-->
+            </Controller>
+             <Controller type="Fade" end="Pause">
+                 <Key type="Curve" time="0" value="255" out="Slow"/>
+                 <Key type="Curve" time=".35" value="0" in="Slow"/>
+             </Controller>
+        </Animation>
+    </Frame>
+
+    <Frame type="Frame" name="ChargesTemplate">
+        <Width val="76"/>
+        <Height val="76"/>
+        <Visible val="False"/>
+
+        <Frame type="Image" name="Charge">
+            <Anchor side="Top" relative="$parent" Pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" Pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent" Pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" Pos="Mid" offset="0"/>
+            <Width val="76"/>
+            <Height val="76"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge"/>
+
+            <Animation name="Bump">
+                <Event event="Bump" action="Reset,Play" frame="$parent"/>
+                 <Controller type="Dimension" dimension="Width" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset" frame="$parent"/>
+                <Event event="OnShown" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time=".125" value="255" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Width" relative="False" percentage="False" end="Pause" >
+                     <Key type="Curve" time="0" value="1" in="linear" out="linear"/>
+                     <Key type="Curve" time="0.75" value="35" in="linear" out="linear"/>
+                     <Key type="Curve" time="1" value="76" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="False" percentage="False" end="Pause" >
+                     <Key type="Curve" time="0" value="1" in="linear" out="linear"/>
+                     <Key type="Curve" time="0.75" value="35" in="linear" out="linear"/>
+                     <Key type="Curve" time="1" value="76" in="linear" out="linear"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="Consume" action="Reset" frame="$parent"/>
+                <Event event="Consume" action="Play" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="255" out="linear"/>
+                     <Key type="Curve" time="0" value="0" in="linear"/>
+                 </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Image" name="ChargePulse">
+            <Anchor side="Top" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge_Pulse"/>
+            <Width val="76"/>
+            <Height val="76"/>
+
+            <Animation name="Bump">
+                <Event event="Bump" action="Reset,Play" frame="$parent"/>
+                 <Controller type="Dimension" dimension="Width" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset" frame="$parent"/>
+                <Event event="OnShown" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                 <Controller type="Dimension" dimension="Width" relative="False" percentage="True" end="Loop" >
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time="1" value="50" in="linear" out="linear"/>
+                     <Key type="Curve" time="2" value="100" in="linear" out="linear"/>
+                     <Key type="Curve" time="3" value="100" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="False" percentage="True" end="Loop" >
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time="1" value="50" in="linear" out="linear"/>
+                     <Key type="Curve" time="2" value="100" in="linear" out="linear"/>
+                     <Key type="Curve" time="3" value="100" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Fade" end="Loop">
+                     <Key type="Curve" time="0" value="255" out="Slow"/>
+                     <Key type="Curve" time="2" value="255" in="Slow"/>
+                     <Key type="Curve" time="3" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="Consume" action="Reset" frame="$parent"/>
+                <Event event="Consume" action="Play" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="255" out="Slow"/>
+                     <Key type="Curve" time="0.05" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Image" name="ChargeRing1">
+            <Anchor side="Top" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge_Ring1"/>
+            <Height val="40"/>
+            <ScaleWidthToTexture val="True"/>
+
+            <Animation name="Bump">
+                <Event event="Bump" action="Reset,Play" frame="$parent"/>
+                 <Controller type="Dimension" dimension="Width" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset" frame="$parent"/>
+                <Event event="OnShown" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time=".125" value="255" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Width" relative="False" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time=".5" value="50" in="linear" out="linear"/>
+                     <Key type="Curve" time=".75" value="100" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="False" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time=".5" value="50" in="linear" out="linear"/>
+                     <Key type="Curve" time=".75" value="100" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Rotation" end="Loop" relative="false">
+                     <Key type="Curve" time="0.0" value="0" in="Linear" out="Linear"/>
+                     <Key type="Curve" time="4.0" value="360" in="Linear" out="Linear"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="Consume" action="Reset" frame="$parent"/>
+                <Event event="Consume" action="Play" frame="$parent"/>
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Slow"/>
+                    <Key type="Curve" time="0.05" value="0" in="Slow"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Image" name="ChargeRing2">
+            <Anchor side="Top" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge" Pos="Mid" offset="0"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge_Ring2"/>
+            <Height val="52"/>
+            <ScaleWidthToTexture val="True"/>
+            
+            <Animation name="Bump">
+                <Event event="Bump" action="Reset,Play" frame="$parent"/>
+                 <Controller type="Dimension" dimension="Width" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="true" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0.125" value="-20" in="Slow" out="Slow"/>
+                     <Key type="Curve" time=".25" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="OnShown" action="Reset" frame="$parent"/>
+                <Event event="OnShown" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time=".125" value="255" in="Slow"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Width" relative="False" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time=".12" value="50" in="linear" out="linear"/>
+                     <Key type="Curve" time=".25" value="100" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Dimension" dimension="Height" relative="False" percentage="True" end="Pause" >
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time="0" value="0" in="linear" out="linear"/>
+                     <Key type="Curve" time=".12" value="50" in="linear" out="linear"/>
+                     <Key type="Curve" time=".25" value="100" in="linear" out="linear"/>
+                 </Controller>
+                 <Controller type="Rotation" end="Loop" relative="false">
+                     <Key type="Curve" time="0.0" value="0" in="Linear" out="Linear"/>
+                     <Key type="Curve" time="4.0" value="-360" in="Linear" out="Linear"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="Consume" action="Reset" frame="$parent"/>
+                <Event event="Consume" action="Play" frame="$parent"/>
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Slow"/>
+                    <Key type="Curve" time="0.05" value="0" in="Slow"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Image" name="ChargeEmpty">
+            <Anchor relative="$parent"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge_Empty"/>
+            <Alpha val="0"/>
+            <Width val="50"/>
+            <Height val="50"/>
+            
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset,Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="Consume" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Pause" frame="$parent"/>
+                <Event event="OnShown" action="Stop,Reset" frame="$parent"/>
+                <Controller type="Animation" end="Stop" frame="$this" animation="Hide">
+                    <Key type="Animation" time="0" action="Stop"/>
+                </Controller>
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.125" value="255" in="Slow"/>
+                </Controller>
+                 <Controller type="Rotation" end="Loop" relative="false">
+                     <Key type="Curve" time="0.0" value="0" in="Linear" out="Linear"/>
+                     <Key type="Curve" time="30" value="-360" in="Linear" out="Linear"/>
+                 </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Image" name="ChargeEmptyRing1">
+            <Anchor side="Top" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge_Empty_Ring1"/>
+            <Width val="33"/>
+            <Height val="33"/>
+            <ScaleWidthToTexture val="True"/>
+            <Alpha val="0"/>
+            
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset,Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="Consume" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Pause" frame="$parent"/>
+                <Event event="OnShown" action="Stop,Reset" frame="$parent"/>
+                <Controller type="Animation" end="Stop" frame="$this" animation="Hide">
+                    <Key type="Animation" time="0" action="Stop"/>
+                </Controller>
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.125" value="255" in="Slow"/>
+                </Controller>
+                 <Controller type="Rotation" end="Loop" relative="false">
+                     <Key type="Curve" time="0.0" value="0" in="Linear" out="Linear"/>
+                     <Key type="Curve" time="30" value="-360" in="Linear" out="Linear"/>
+                 </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Image" name="ChargeEmptyRing2">
+            <Anchor side="Top" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Anchor side="Left" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/ChargeEmpty" Pos="Mid" offset="0"/>
+            <Texture val="@UI/LotV_Mission_SoA_Charge_Empty_Ring2"/>
+            <Height val="43"/>
+            <Height val="43"/>
+            <ScaleWidthToTexture val="True"/>
+            <Alpha val="0"/>
+            
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset,Play" frame="$parent"/>
+                <Event event="Consume" action="Pause" frame="$parent"/>
+                <Event event="Refresh" action="Play" frame="$parent"/>
+                 <Controller type="Fade" end="Pause">
+                     <Key type="Curve" time="0" value="0" out="Slow"/>
+                     <Key type="Curve" time="0" value="0" in="Slow"/>
+                 </Controller>
+            </Animation>
+            <Animation name="Show">
+                <Event event="Consume" action="Play" frame="$parent"/>
+                <Event event="Refresh" action="Pause" frame="$parent"/>
+                <Event event="OnShown" action="Stop,Reset" frame="$parent"/>
+                <Controller type="Animation" end="Stop" frame="$this" animation="Hide">
+                    <Key type="Animation" time="0" action="Stop"/>
+                </Controller>
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.125" value="255" in="Slow"/>
+                </Controller>
+                 <Controller type="Rotation" end="Loop" relative="false">
+                     <Key type="Curve" time="0.0" value="0" in="Linear" out="Linear"/>
+                     <Key type="Curve" time="30" value="360" in="Linear" out="Linear"/>
+                 </Controller>
+            </Animation>
+        </Frame>
+    </Frame>
+    
+    <Frame type="Frame" name="ChargesContainerTemplate">
+        <Width val="830"/>
+        <Height val="140"/>
+        
+        <Frame type="Image" name="ChargesBG">
+            <Anchor side="Top" relative="$parent/ChargesLabel" pos="Min" offset="-10"/>
+            <Anchor side="Left" relative="$parent/ChargesLabel" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/ChargesLabel" pos="Mid" offset="0"/>
+            <Texture val="Assets\Textures\ui_void_storyscanline_title.dds"/>
+            <Width val="550"/>
+            <Height val="70"/>
+            
+            <Animation name="Show">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                    <Key type="Curve" time="1" value="255" in="Slow"/>
+                 </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="10" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                    <Key type="Curve" time="1.0" value="0" in="Linear"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        <Frame type="Label" name="ChargesLabel">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Height val="36"/>
+            <Text val="Charges Remaining"/> <!--@UI/AMTTargetingUI/Charges"/-->
+            <Style val="Void_SOATargetModeSmall"/>
+        </Frame>
+        
+        <Frame type="Frame" name="Charge1" template="AMT_TopBarTargetingUITemplate/ChargesTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="210"/>
+        </Frame>
+        <Frame type="Frame" name="Charge2" template="AMT_TopBarTargetingUITemplate/ChargesTemplate">
+            <Anchor side="Bottom" relative="$parent/Charge1" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge1" pos="Min" offset="-10"/>
+        </Frame>
+        <Frame type="Frame" name="Charge3" template="AMT_TopBarTargetingUITemplate/ChargesTemplate">
+            <Anchor side="Bottom" relative="$parent/Charge1" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge2" pos="Min" offset="-10"/>
+        </Frame>
+        <Frame type="Frame" name="Charge4" template="AMT_TopBarTargetingUITemplate/ChargesTemplate">
+            <Anchor side="Bottom" relative="$parent/Charge1" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge3" pos="Min" offset="-10"/>
+        </Frame>
+        <Frame type="Frame" name="Charge5" template="AMT_TopBarTargetingUITemplate/ChargesTemplate">
+            <Anchor side="Bottom" relative="$parent/Charge1" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge4" pos="Min" offset="-10"/>
+        </Frame>
+        
+        <Frame type="ProgressBar" name="ChargeCounter">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <MaxValue val="0"/>
+            <Value val="0"/>
+            <Visible val="False"/>
+        </Frame>
+        <Frame type="ProgressBar" name="ChargeChangeTracker">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <MaxValue val="{$parent/ChargeCounter/@MaxValue}"/>
+            <Value val="0"/>
+            <Visible val="False"/>
+            <StateGroup name="ChargeChange">
+                <DefaultState val="NoChange"/>
+                <State name="NoChange">
+                    <When type="Property" frame="$this" operator="Equal" Value="{$parent/ChargeCounter/@Value}"/>
+                </State>
+                <State name="Change">
+                    <When type="Property" frame="$this" operator="NotEqual" Value="{$parent/ChargeCounter/@Value}"/>
+                    <Action type="SendEvent" frame="$parent/Charge1" event="Bump"/>
+                    <Action type="SendEvent" frame="$parent/Charge2" event="Bump"/>
+                    <Action type="SendEvent" frame="$parent/Charge3" event="Bump"/>
+                    <Action type="SendEvent" frame="$parent/Charge4" event="Bump"/>
+                    <Action type="SendEvent" frame="$parent/Charge5" event="Bump"/>
+                    <Action type="SetProperty" frame="$this" Value="{$parent/ChargeCounter/@Value}"/>
+                </State>
+            </StateGroup>
+        </Frame>
+    
+        <Frame type="Label" name="ChargeCountLabel">
+            <Visible val="False"/>
+            <Anchor side="Top" relative="$parent/Charge1" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent/Charge1" pos="Max" offset="0"/>
+            <Anchor side="Left" relative="$parent/Charge1" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/Charge1" pos="Max" offset="0"/>
+            <Height val="36"/>
+            <Text val="{$parent/ChargeCounter/@Value}"/> 
+            <Style val="Void_SOATargetModeSmall"/>
+        </Frame>
+    
+        <StateGroup name="MaxChargeState">
+            <DefaultState val="NoCharge"/>
+            <State name="NoCharge">
+                <When type="Property" frame="ChargeCounter" operator="Equal" MaxValue="0"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="210"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge2" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="False"/> 
+            </State>
+            <State name="ChargeTotal1">
+                <When type="Property" frame="ChargeCounter" operator="Equal" MaxValue="1"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="38"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="True"/>
+                <Action type="SetProperty" frame="Charge2" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="False"/> 
+            </State>
+            <State name="ChargeTotal2">
+                <When type="Property" frame="ChargeCounter" operator="Equal" MaxValue="2"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="81"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="True"/>
+                <Action type="SetProperty" frame="Charge2" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="False"/> 
+            </State>
+            <State name="ChargeTotal3">
+                <When type="Property" frame="ChargeCounter" operator="Equal" MaxValue="3"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="126"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="True"/>
+                <Action type="SetProperty" frame="Charge2" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="False"/> 
+            </State>
+            <State name="ChargeTotal4">
+                <When type="Property" frame="ChargeCounter" operator="Equal" MaxValue="4"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="167"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="True"/>
+                <Action type="SetProperty" frame="Charge2" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="False"/> 
+            </State>
+            <State name="ChargeTotal5">
+                <When type="Property" frame="ChargeCounter" operator="Equal" MaxValue="5"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="210"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="True"/>
+                <Action type="SetProperty" frame="Charge2" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="True"/> 
+            </State>
+            <State name="ChargeTotal6OrMore">
+                <When type="Property" frame="ChargeCounter" operator="GreaterThan" MaxValue="5"/>
+                <Action type="SetAnchor" frame="Charge1" side="Right" relative="$parent" pos="Mid" offset="38"/> 
+                <Action type="SetProperty" frame="ChargeCountLabel" Visible="True"/> 
+                <Action type="SetProperty" frame="Charge1" Visible="True"/>
+                <Action type="SetProperty" frame="Charge2" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge3" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge4" Visible="False"/> 
+                <Action type="SetProperty" frame="Charge5" Visible="False"/> 
+            </State>
+        </StateGroup>
+        <StateGroup name="CurrentChargeState">
+            <DefaultState val="NoCharge"/>
+            <State name="NoCharge">
+                <When type="Property" frame="ChargeCounter" operator="Equal" Value="0"/>
+                <Action type="SendEvent" frame="Charge1" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge2" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge3" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge4" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge5" event="Consume"/> 
+            </State>
+            <State name="ChargeRemain1">
+                <When type="Property" frame="ChargeCounter" operator="Equal" Value="1"/>
+                <Action type="SendEvent" frame="Charge1" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge2" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge3" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge4" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge5" event="Consume"/> 
+            </State>
+            <State name="ChargeRemain2">
+                <When type="Property" frame="ChargeCounter" operator="Equal" Value="2"/>
+                <Action type="SendEvent" frame="Charge1" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge2" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge3" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge4" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge5" event="Consume"/> 
+            </State>
+            <State name="ChargeRemain3">
+                <When type="Property" frame="ChargeCounter" operator="Equal" Value="3"/>
+                <Action type="SendEvent" frame="Charge1" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge2" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge3" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge4" event="Consume"/> 
+                <Action type="SendEvent" frame="Charge5" event="Consume"/> 
+            </State>
+            <State name="ChargeRemain4">
+                <When type="Property" frame="ChargeCounter" operator="Equal" Value="4"/>
+                <Action type="SendEvent" frame="Charge1" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge2" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge3" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge4" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge5" event="Consume"/> 
+            </State>
+            <State name="ChargeRemain5">
+                <When type="Property" frame="ChargeCounter" operator="GreaterThanOrEqual" Value="5"/>
+                <Action type="SendEvent" frame="Charge1" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge2" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge3" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge4" event="Refresh"/> 
+                <Action type="SendEvent" frame="Charge5" event="Refresh"/> 
+            </State>
+        </StateGroup>
+    </Frame>
+    
+    <Frame type="Frame" name="TargetingUITemplate">
+        <Anchor relative="$parent"/>
+        <!--Visible val="False"/-->
+        
+        <Frame type="Frame" name="ChargesContainer" template="AMT_TopBarTargetingUITemplate/ChargesContainerTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+        </Frame>
+        
+        <Frame type="Button" name="CancelButton" template="AMT_TopBarTargetingUITemplate/OverlayButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-25"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+            <Text val="Cancel"/>
+            <ClickSound val="@UI_ButtonPitchPlay"/>
+            <HoverSound val="*@UI_Void_ButtonMouseOver_ActorSound"/>
+            <Shortcut val="@Button/Hotkey/Cancel"/>
+            
+            <Animation name="Show">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                    <Key type="Curve" time="1" value="255" in="Slow"/>
+                </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="10" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                    <Key type="Curve" time="1.0" value="0" in="Linear"/>
+                </Controller>
+                <Controller type="Anchor" end="Pause" side="Left" relative="true">
+                    <Key type="Curve" time="0" value="150" out="Slow"/>
+                    <Key type="Curve" time="0.35" value="150" out="Slow"/> 
+                    <Key type="Curve" time="1" value="0" in="Slow"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                </Controller>
+                <Controller type="Anchor" end="Pause" side="Left" relative="true">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time="0.5" value="150" out="Slow"/> 
+                </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Frame" name="AnchoringFrame">
+            <Anchor side="Bottom" relative="$parent/CancelButton" pos="Min" offset="-15"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="22"/>
+            <Width val="0"/>
+            <Height val="0"/>
+         </Frame>
+         
+         <Frame type="Image" name="InstructionsBG">
+            <Anchor side="Top" relative="$parent/Instructions" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent/CancelButton" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/CancelButton" pos="Mid" offset="0"/>
+            <Texture val="Assets\Textures\ui_void_storyscanline_title.dds"/>
+            <Width val="500"/>
+            <Height val="70"/>
+            
+            <Animation name="Show">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                    <Key type="Curve" time="1" value="255" in="Slow"/>
+                 </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="10" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                    <Key type="Curve" time="1.0" value="0" in="Linear"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                 </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Label" name="Instructions">
+            <Text val=" "/>
+            <Style val="Void_SOATargetModeLarge"/>
+            <Anchor side="Bottom" relative="$parent/CancelButton" pos="Min" offset="-15"/>
+            <Anchor side="Left" relative="$parent/AnchoringFrame" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent/AnchoringFrame" pos="Mid" offset="0"/>
+            <Height val="60"/>
+            
+            <Animation name="Show">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                    <Key type="Curve" time="1" value="255" in="Slow"/>
+                </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="10" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                    <Key type="Curve" time="1.0" value="0" in="Linear"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+        <Frame type="Image" name="MouseIcon">
+            <Anchor side="Top" relative="$parent/Instructions" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent/Instructions" pos="Min" offset="-10"/>
+            <Width val="44"/>
+            <Height val="52"/>
+            <Texture val="@UI/LotV_Mission_SoA_TargetingMouse"/>
+            
+            <Animation name="Show">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                    <Key type="Curve" time="1" value="255" in="Slow"/>
+                 </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="10" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                    <Key type="Curve" time="1.0" value="0" in="Linear"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Controller type="Fade" end="Pause">
+                    <Key type="Curve" time="0" value="255" out="Slow"/>
+                    <Key type="Curve" time=".5" value="0" out="Slow"/>
+                 </Controller>
+                <Controller type="Blur" end="Pause">
+                    <Key type="Curve" time="0" value="0" out="Linear"/>
+                    <Key type="Curve" time=".5" value="10" out="Linear"/>
+                </Controller>
+            </Animation>
+            
+        </Frame>
+
+        <Animation name="Show">
+            <Event event="TargetingUIShow" action="Reset,Play"/>
+            <Controller type="Animation" end="Pause" frame="$this" animation="Hide">
+                <Key type="Animation" time="0.0" action="Stop"/>
+            </Controller>
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0" value="True"/>
+            </Controller>
+            <Controller type="Anchor" end="Pause" side="Left" relative="true">
+                <Key type="Curve" time="0" value="215" out="Slow"/>
+                <Key type="Curve" time="0.35" value="215" out="Slow"/>
+                <Key type="Curve" time="1" value="0" in="Slow"/>
+            </Controller>
+            <Controller type="Anchor" end="Pause" side="Right" relative="true">
+                <Key type="Curve" time="0" value="-215" out="Slow"/>
+                <Key type="Curve" time="0.35" value="-215" out="Slow"/> 
+                <Key type="Curve" time="1" value="0" in="Slow"/>
+            </Controller>
+            <Controller type="Animation" end="Pause" frame="MouseIcon" animation="Show">
+                <Key type="Animation" time="0.0" action="Reset"/>
+                <Key type="Animation" time="0.0" action="Play"/>
+            </Controller>
+            <Controller type="Animation" end="Pause" frame="Instructions" animation="Show">
+                <Key type="Animation" time="0.0" action="Reset"/>
+                <Key type="Animation" time="0.0" action="Play"/>
+            </Controller>
+            <Controller type="Animation" end="Pause" frame="CancelButton" animation="Show">
+                <Key type="Animation" time="0.0" action="Reset"/>
+                <Key type="Animation" time="0.0" action="Play"/>
+            </Controller>
+            <Controller type="Fade" end="Pause">
+                <Key type="Curve" time="0" value="0" out="Slow"/>
+                <Key type="Curve" time=".2" value="255" out="Slow"/>
+            </Controller>
+        </Animation>
+        
+        <Animation name="Hide">
+            <Event event="TargetingUIHide" action="Reset,Play"/>
+            <Controller type="Fade" end="Pause">
+                <Key type="Curve" time="0" value="255" out="Slow"/>
+                <Key type="Curve" time=".2" value="255" out="Slow"/>
+                <Key type="Curve" time=".5" value="0" in="Slow"/>
+            </Controller>
+            <Controller type="Anchor" end="Pause" side="Left" relative="true">
+                <Key type="Curve" time="0" value="0" in="Slow"/>
+                <Key type="Curve" time="0.5" value="-215" out="Slow"/>
+            </Controller>
+            <Controller type="Anchor" end="Pause" side="Right" relative="true">
+                <Key type="Curve" time="0" value="0" out="Slow"/>
+                <Key type="Curve" time="0.5" value="-215" in="Slow"/>
+            </Controller>
+            <Controller type="Animation" end="Pause" frame="MouseIcon" animation="Hide">
+                <Key type="Animation" time="0.0" action="Reset"/>
+                <Key type="Animation" time="0.0" action="Play"/>
+            </Controller>
+            <Controller type="Animation" end="Pause" frame="Instructions" animation="Hide">
+                <Key type="Animation" time="0.0" action="Reset"/>
+                <Key type="Animation" time="0.0" action="Play"/>
+            </Controller>
+            <Controller type="Animation" end="Pause" frame="CancelButton" animation="Hide">
+                <Key type="Animation" time="0.0" action="Reset"/>
+                <Key type="Animation" time="0.0" action="Play"/>
+            </Controller>
+            <Controller type="Visibility" end="Pause">
+                <Key type="Bool" time="0.0" value="True"/>
+                <Key type="Bool" time="0.5" value="false"/>
+            </Controller>
+        </Animation>
+    </Frame>    
+    
+</Desc>

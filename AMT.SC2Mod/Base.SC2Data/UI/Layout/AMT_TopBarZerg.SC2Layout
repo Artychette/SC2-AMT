@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="CommandButton" name="ZergCommandButtonTemplate" template="AMT_TopBarTemplate/TopBarCommandButtonTemplate">
+    </Frame>
+
+    <Frame type="CommandPanel" name="ZergCommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+
+        <Frame type="CommandTooltip" name="ZergCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="120"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+        <Frame type="CommandTooltip" name="ZergCommandTooltipB" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="160"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+        <Frame type="CommandTooltip" name="ZergCommandTooltipC" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="160"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+		
+        <Frame type="CommandButton" name="CommandButton00" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-21"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>    
+
+        <Frame type="Image" name="EmptyImage00">
+            <Anchor relative="$parent/CommandButton00"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+
+        <Frame type="CommandButton" name="CommandButton01" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="21"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>     
+
+        <Frame type="Image" name="EmptyImage01">
+            <Anchor relative="$parent/CommandButton01"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>       		
+    </Frame>
+
+    <Frame type="CommandPanel" name="StukovCommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+
+	    <Frame type="CommandTooltip" name="TopBarCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="120"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+		
+		
+	    <Frame type="CommandButton" name="CommandButton00" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-102"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>   
+
+        <Frame type="Image" name="EmptyImage00">
+            <Anchor relative="$parent/CommandButton00"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+
+		
+        <Frame type="CommandButton" name="CommandButton01" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-16"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>     
+
+
+        <Frame type="Image" name="EmptyImage01">
+            <Anchor relative="$parent/CommandButton01"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>        
+
+
+
+        
+        <Frame type="CommandButton" name="CommandButton02" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="16"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>      
+
+        <Frame type="Image" name="EmptyImage02">
+            <Anchor relative="$parent/CommandButton02"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton02"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton02"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton02"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton02"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>        
+
+		
+        <Frame type="CommandButton" name="CommandButton03" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="102"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>
+
+        <Frame type="Image" name="EmptyImage03">
+            <Anchor relative="$parent/CommandButton03"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton03"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton03"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton03"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton03"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>        
+    </Frame>
+
+	
+	
+    <Frame type="CommandPanel" name="DehakaCommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+		
+	    <Frame type="CommandTooltip" name="TopBarCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="120"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+		
+		
+	    <Frame type="CommandButton" name="CommandButton00" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-102"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>   
+
+        <Frame type="Image" name="EmptyImage00">
+            <Anchor relative="$parent/CommandButton00"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+        
+
+		
+        <Frame type="CommandButton" name="CommandButton01" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-16"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>     
+
+
+        <Frame type="Image" name="EmptyImage01">
+            <Anchor relative="$parent/CommandButton01"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>        
+
+	        
+        <Frame type="CommandButton" name="CommandButton02" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="16"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>      
+
+        <Frame type="Image" name="EmptyImage02">
+            <Anchor relative="$parent/CommandButton02"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton02"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton02"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton02"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton02"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>        
+
+		
+        <Frame type="CommandButton" name="CommandButton03" template="AMT_TopBarZerg/ZergCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="102"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_Stukov_TopBar_Click"/>
+        </Frame>
+
+        <Frame type="Image" name="EmptyImage03">
+            <Anchor relative="$parent/CommandButton03"/>
+            <TextureType val="Normal"/>
+            <Texture val="@@UI/ButtonBorderNormal"/>
+            
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton03"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton03"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton03"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton03"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>        
+		
+    </Frame>
+    
+    <Frame type="Frame" name="ZergTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">        
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/ZergConsoleSound">
+        </Frame>
+
+        <Frame type="CutsceneFrame" name="CalldownCutscene">
+            <File val="Cutscenes/UI_ZergCastingPanel.SC2Cutscene"/>
+        </Frame>     
+
+
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="ZergCommandPanel" template="AMT_TopBarZerg/ZergCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/ZergCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/ZergCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/ZergCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/ZergCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame>    
+    
+    <Frame type="Frame" name="StukovTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">        
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/ZergConsoleSound">
+        </Frame>
+
+        <Frame type="CutsceneFrame" name="CalldownCutscene">
+            <File val="Cutscenes/UI_StukovCastingPanel.SC2Cutscene"/>
+        </Frame>     
+
+
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="StukovCommandPanel" template="AMT_TopBarZerg/StukovCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton02" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton02" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton03" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/StukovCommandPanel/CommandButton03" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame>    
+
+	    
+    <Frame type="Frame" name="DehakaTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">        
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/ZergConsoleSound">
+        </Frame>
+
+        <Frame type="CutsceneFrame" name="CalldownCutscene">
+            <File val="Cutscenes/UI_DehakaCastingPanel.SC2Cutscene"/>
+        </Frame>     
+
+
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="DehakaCommandPanel" template="AMT_TopBarZerg/StukovCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton02" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton02" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton03" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/DehakaCommandPanel/CommandButton03" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame>    
+	
+	
+</Desc>

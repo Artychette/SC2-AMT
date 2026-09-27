@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+    <Frame type="Button" name="AMTCommandCardButtonTemplate" template="StandardTemplates/StandardButtonTemplate">
+        <Frame type="Image" name="NormalImage">
+            <Alpha val="0"/>
+        </Frame>
+
+        <Frame type="Image" name="HoverImage">
+            <Alpha val="0"/>
+        </Frame>
+
+        <Frame type="Image" name="NormalCoverImage">
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/AMT/Transmission_Button_Normal"/>
+            <TextureType val="NineSlice"/>
+            <DisabledAlpha val="192"/>
+
+            <StateGroup name="Disabler">
+                <DefaultState val="Enabled"/>
+                <State name="Enabled">
+                    <When type="Property" frame="$parent" Enabled="true"/>
+                    <Action type="SetProperty" frame="$this" Enabled="true"/>
+                </State>
+                <State name="Disabled">
+                    <When type="Property" frame="$parent" Enabled="false"/>
+                    <Action type="SetProperty" frame="$this" Enabled="false"/>
+                </State>
+            </StateGroup>
+        </Frame>
+
+        <Frame type="Image" name="HoverCoverImage">
+            <Visible val="false"/>
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/AMT/Transmission_Button_Hover"/>
+            <TextureType val="NineSlice"/>
+
+            <Animation name="Hover">
+                <Event event="OnMouseEnter" action="Play" frame="$parent"/>
+                <Event event="OnMouseExit" action="Reset,Pause" frame="$parent"/>
+                <Event event="OnDisabled" action="Reset,Pause" frame="$parent"/>
+
+                <Controller name="Visibility_0" type="Visibility" end="Pause" frame="$this">
+                    <Key type="Bool" time="0" value="false"/>
+                    <Key type="Bool" time="0.001" value="true"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="Image" name="PressedCoverImage">
+            <Visible val="false"/>
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/AMT/Transmission_Button_Pressed"/>
+            <TextureType val="NineSlice"/>
+
+            <StateGroup name="Visibility">
+                <DefaultState val="Hidden"/>
+                <State name="Visible">
+                    <When type="Property" frame="$parent" Pushed="true"/>
+                    <When type="Property" frame="$parent" Enabled="true"/>
+                    <Action type="SetProperty" frame="$this" Visible="true"/>
+                </State>
+                <State name="Hidden">
+                    <When type="Property" frame="$parent" Pushed="false"/>
+                    <When type="Property" frame="$parent" Enabled="true"/>
+                    <Action type="SetProperty" frame="$this" Visible="false"/>
+                </State>
+                <State name="HiddenCauseDisabled">
+                    <When type="Property" frame="$parent" Enabled="False"/>
+                    <Action type="SetProperty" frame="$this" Visible="false"/>
+                </State>
+            </StateGroup>
+        </Frame>
+
+        <Frame type="Label" name="Label">
+            <Anchor relative="$parent"/>
+            <Style val="@@@StandardButton"/>
+            <DisabledAlpha val="192"/>
+        </Frame>
+
+        <Frame type="Frame" name="HitTestFrame">
+        </Frame>
+    </Frame>
+</Desc>

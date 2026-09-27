@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel id="SpearofAdunUI">
+        <Model value="Assets\UI\Protoss\ui_screens_mission_spearcalldowns\ui_screens_mission_spearcalldowns.m3"/>
+    </CModel>
+    <CModel id="TalkIconBubble" parent="PersistentSpellFX">
+        <Model value="Assets\UI\Cursors\TalkIconBubble\TalkIconBubble.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_AbathurCalldownTwo">
+        <Model value="Assets\UI\Glues\UI_Screens_Mission_AbathurCalldownTwo\UI_Screens_Mission_AbathurCalldownTwo.m3"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_DehakaCalldownFour">
+        <Model value="Assets\UI\Glues\UI_Screens_Mission_ZergPrimalCalldownFour\UI_Screens_Mission_ZergPrimalCalldownFour.m3"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_HornerCalldownFour">
+        <Model value="Assets\UI\Glues\ui_screens_mission_junkercalldownfour\ui_screens_mission_junkercalldownfour.m3"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_NovaCalldownTwo" parent="UI">
+        <Model value="Assets\UI\Glues\UI_Screens_Mission_NovaCalldownTwo\UI_Screens_Mission_NovaCalldownTwo.m3"/>
+        <Lighting value="ConsoleNovaCoop"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_ProtossPurifierCalldownThree" parent="UIGlue"/>
+    <CModel id="UI_Screens_Mission_ProtossPurifierCalldownThree_Hologram" parent="UIGlue"/>
+    <CModel id="UI_Screens_Mission_ProtossTaldarimCalldownTwo" parent="UIGlue"/>
+    <CModel id="UI_Screens_Mission_SpearCalldowns" parent="UI">
+        <Model value="Assets/UI/Protoss/UI_Screens_Mission_SpearCalldowns/UI_Screens_Mission_SpearCalldowns.m3"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_SpearCalldowns_Glass" parent="UIGlue"/>
+    <CModel id="UI_Screens_Mission_SpearCalldowns_Power" parent="UIGlue"/>
+    <CModel id="UI_Screens_Mission_StukovCalldownFour">
+        <Model value="Assets\UI\Glues\UI_Screens_Mission_StukovCalldownFour\UI_Screens_Mission_StukovCalldownFour.m3"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_TerranCalldownFour" parent="UIGlue"/>
+    <CModel id="UI_Screens_Mission_TerranCalldownNova">
+        <Model value="Assets\UI\Glues\UI_Screens_Mission_NovaCalldownTwo\UI_Screens_Mission_NovaCalldownTwo.m3"/>
+    </CModel>
+    <CModel id="UI_Screens_Mission_TerranCalldownTwo" parent="UIGlue"/>
+</Catalog>

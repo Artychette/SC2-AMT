@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="DieIfCasterDeadAB">
+        <EditorCategories value=""/>
+        <Behavior value="DieNormalNoCreditOnCasterDeath"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="DieIfCasterDeadABRemove">
+        <EditorCategories value=""/>
+        <Behavior value="DieRemoveOnCasterDeath"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="EMPModifyUnit">
+        <ValidatorArray value="AMTNoFakeEnergy"/>
+    </CEffectModifyUnit>
+    <CEffectDamage id="EMPDamage">
+        <ShieldBonus value="100"/>
+    </CEffectDamage>
+    <CEffectSet id="FeedbackSet">
+        <ValidatorArray value="AMTNoFakeEnergy"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="AMTInCombatAB">
+        <EditorCategories value=""/>
+        <Behavior value="AMTInCombat"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AMTInCombatABS">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Source"/>
+        <Behavior value="AMTInCombat"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AMTInCombatRB">
+        <EditorCategories value=""/>
+        <BehaviorLink value="AMTInCombat"/>
+    </CEffectRemoveBehavior>
+    <CEffectSet id="AMTInCombatAS">
+        <EditorCategories value=""/>
+        <EffectArray value="AMTInCombatRBS"/>
+        <EffectArray value="AMTInCombatRB"/>
+        <EffectArray value="AMTInCombatABS"/>
+        <EffectArray value="AMTInCombatAB"/>
+    </CEffectSet>
+    <CEffectRemoveBehavior id="AMTInCombatRBS">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Source"/>
+        <BehaviorLink value="AMTInCombat"/>
+    </CEffectRemoveBehavior>
+    <CEffectApplyBehavior id="AMTDragDownFlyerAB">
+        <EditorCategories value=""/>
+        <Behavior value="AMTDragDownFlyer"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="AMTDragDownFlyerRefresh">
+        <ValidatorArray index="0" value="AMTDraggedDownFlyer"/>
+        <EditorCategories value=""/>
+        <Behavior value="AMTDragDownFlyer"/>
+    </CEffectApplyBehavior>
+    <CEffectModifyUnit id="AMTDragDownFlyerMUEnd">
+        <EditorCategories value=""/>
+        <Height value="2.5"/>
+        <HeightTime value="0.75"/>
+    </CEffectModifyUnit>
+    <CEffectModifyUnit id="AMTDragDownFlyerMUStart">
+        <EditorCategories value=""/>
+        <Height value="-2.5"/>
+        <HeightTime value="0.75"/>
+    </CEffectModifyUnit>
+    <CEffectApplyBehavior id="HideIfCasterHiddenABTP">
+        <EditorCategories value=""/>
+        <Behavior value="HideIfCasterHiddenWTP"/>
+        <ValidatorArray index="0" value="TargetNotDead"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HideIfCasterHiddenAB">
+        <EditorCategories value=""/>
+        <Behavior value="HideIfCasterHidden"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="HideIfCasterHiddenABTPH">
+        <ValidatorArray index="0" value="TargetNotDead"/>
+        <EditorCategories value=""/>
+        <Behavior value="HideIfCasterHiddenHelperDummyBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectTeleport id="HideIfCasterHiddenTP">
+        <EditorCategories value=""/>
+        <SourceLocation Value="TargetUnit"/>
+        <TeleportFlags index="TestFog" value="0"/>
+    </CEffectTeleport>
+    <CEffectSet id="HideIfCasterHiddenFinalSet">
+        <EditorCategories value=""/>
+        <EffectArray value="HideIfCasterHiddenTP"/>
+        <EffectArray value="HideIfCasterHiddenABTPH"/>
+    </CEffectSet>
+    <CEffectDamage id="KillRemove">
+        <ImpactLocation Value="TargetUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoKillCredit" value="1"/>
+        <Death value="Remove"/>
+        <Visibility value="Hidden"/>
+    </CEffectDamage>
+    <CEffectDamage id="KillTargetDeathNormal">
+        <Flags index="Kill" value="1"/>
+        <Flags index="NoKillCredit" value="1"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="SummonCounterAcB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="SummonCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="SummonCounterASB">
+        <EditorCategories value=""/>
+        <Behavior value="AddToSummonCounter"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="SummonCounterRcB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="SummonCounter"/>
+        <Count value="1"/>
+    </CEffectRemoveBehavior>
+</Catalog>

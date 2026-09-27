@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="CommandPanel" name="AlarakCommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+        <Width val="688"/>
+        <Height val="700"/>
+        
+        <Anchor side="Top" relative="$parent" pos="Min" offset="1"/>
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <HideUnusedButtons val="true"/>
+        <DisplayCancelCommandCard val="false"/>
+        <UseGridHotkeys val="false"/>
+        
+        <Animation name="FadeIn">
+            <Event event="OnShown" action="Reset"/>
+            <Event event="OnShown" action="Play"/>                
+            <Controller type="Fade" end="Pause">
+                <Key type="Curve" time="0" value="0" out="Slow"/>
+                <Key type="Curve" time="0.25" value="255" in="Slow"/>
+            </Controller>
+        </Animation>
+
+        <Frame type="CommandTooltip" name="SoACommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="88"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton00">
+            <Width val="76"/>
+            <Height val="76"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="11"/>
+            <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-66"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>        
+        
+        <Frame type="Image" name="LockedImage00">
+            <Anchor relative="$parent/CommandButton00"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton00"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton00"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton01">
+            <Width val="76"/>
+            <Height val="76"/>
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="66"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>        
+        
+        <Frame type="Image" name="LockedImage01">
+            <Anchor relative="$parent/CommandButton01"/>
+            <Texture val="Assets\Textures\ui_void_mission_soa_frame_ability_lock.dds"/>
+            <Animation name="Show">
+                <Event event="OnHidden" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnHidden" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="true"/>
+                </Controller>
+            </Animation>
+            <Animation name="Hide">
+                <Event event="OnShown" action="Reset" frame="$parent/CommandButton01"/>
+                <Event event="OnShown" action="Play" frame="$parent/CommandButton01"/>
+                <Controller type="Visibility" end="Pause">
+                    <Key type="Bool" time="0.0" value="false"/>
+                </Controller>
+            </Animation>
+        </Frame>
+    </Frame>
+
+
+    <Frame type="Frame" name="AlarakTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/ProtossConsoleSound">
+        </Frame>    
+
+        <Frame type="CutsceneFrame" name="CalldownCutscene">
+            <File val="Cutscenes/UI_AlarakCastingPanel.SC2Cutscene"/>
+        </Frame>             
+        
+        
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="AlarakCommandPanel" template="AMT_TopBarAlarak/AlarakCommandPanelTemplate">
+            </Frame>
+        </Frame>
+                
+        <Frame type="Button" name="GemButton">
+            <Width val="32"/>
+            <Height val="58"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="14"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/AlarakCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/AlarakCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/AlarakCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/AlarakCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame> 
+    
+</Desc>

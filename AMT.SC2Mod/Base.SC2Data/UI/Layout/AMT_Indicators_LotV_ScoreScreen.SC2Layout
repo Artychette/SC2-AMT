@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+    <Frame type="Frame" name="ScoreScreenTemplate" file="VoidShared_ScoreScreen">
+        <Animation name="SignalIndicatorHide">
+            <Event event="OnShown" action="Reset,Play" frame="$this"/>
+            <Controller type="Event" end="Stop" frame="$ancestor[@name=FullscreenUpperContainer]/VictoryPanelIndicator">
+                <Key type="Event" time="0" event="DoHide"/>
+            </Controller>
+        </Animation>
+    </Frame>
+
+</Desc>

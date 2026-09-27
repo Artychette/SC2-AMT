@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUser id="AMTTopBarTemplate">
+        <Fields Id="LayoutTemplatePath" Type="String"/>
+        <Fields Id="SlotCount" Type="Int"/>
+        <Fields>
+            <Id value="Abilities"/>
+            <Type value="User"/>
+            <UserType value="AMTTopBarExtendedAbilty"/>
+            <Count value="15"/>
+        </Fields>
+        <Fields Id="GlobalCasterType" Type="GameLink" GameLinkType="Unit"/>
+        <Fields Id="CommandCardInternalPath" Type="String"/>
+        <Fields Id="InitCallbackTrigger" Type="String"/>
+        <Fields Id="EnergyProgressBarPath" Type="String"/>
+        <Fields Id="TargetingUI" Type="User" UserType="AMTTopBarTargetingUI"/>
+        <Fields Id="PauseInCinematic" Type="Int">
+            <Flags index="Modifiable" value="1"/>
+        </Fields>
+        <Instances Id="[Default]">
+            <Int Int="6">
+                <Field Id="SlotCount"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="PauseInCinematic"/>
+            </Int>
+            <String String="AMT_TopBarCommander/CommanderTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <String String="CommandCardHolder/CommanderCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+        </Instances>
+        <Instances Id="SpearOfAdun">
+            <String String="CommandCardHolder/SoACommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="EnergyProgressBar">
+                <Field Id="EnergyProgressBarPath"/>
+            </String>
+            <String String="AMT_TopBarSoA/SOATopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Alarak">
+            <Int Int="2">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/AlarakCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarAlarak/AlarakTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Fenix">
+            <Int Int="3">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/FenixCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarFenix/FenixTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Purifier">
+            <Int Int="3">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/PurifierCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarPurifier/PurifierTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Terran2Slot">
+            <Int Int="2">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/Terran2SlotCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarTerran/Terran2SlotTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Terran4Slot">
+            <Int Int="4">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/Terran4SlotCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarTerran/Terran4SlotTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Nova">
+            <Int Int="4">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/NovaCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarTerran/NovaTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Junker">
+            <Int Int="4">
+                <Field Id="SlotCount"/>
+            </Int>
+            <String String="CommandCardHolder/JunkerCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarTerran/JunkerTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Zerg">
+            <String String="CommandCardHolder/ZergCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarZerg/ZergTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Stukov">
+            <String String="AMT_TopBarZerg/StukovTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <String String="CommandCardHolder/StukovCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+        <Instances Id="Dehaka">
+            <String String="CommandCardHolder/DehakaCommandPanel">
+                <Field Id="CommandCardInternalPath"/>
+            </String>
+            <String String="AMT_TopBarZerg/DehakaTopBarTemplate">
+                <Field Id="LayoutTemplatePath"/>
+            </String>
+            <User Type="AMTTopBarTargetingUI" Instance="SpearOfAdun">
+                <Field Id="TargetingUI"/>
+            </User>
+        </Instances>
+    </CUser>
+    <CUser id="AMTTopBarExtendedAbilty">
+        <Fields Id="ActivatingBehavior" Type="GameLink" GameLinkType="Behavior"/>
+        <Fields Id="SequenceExecuteCommand" Type="AbilCmd" Count="20"/>
+        <Fields Id="SequenceDelay" Type="Fixed" Count="20"/>
+        <Fields Id="SequenceCount" Type="Int"/>
+        <Fields Id="SequenceTargetingCommand" Type="AbilCmd" Count="20"/>
+        <Fields>
+            <Id value="SequenceTargetingUnitType"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Unit"/>
+            <Count value="20"/>
+        </Fields>
+        <Fields Id="ActivatingAbility" Type="GameLink" GameLinkType="Abil"/>
+        <Fields Id="SequenceTargetingInstructions" Type="Text" Count="20"/>
+        <Fields Id="SequenceExecutingInstructions" Type="Text" Count="20"/>
+        <Fields>
+            <Id value="SequencePlaceholderModel"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Actor"/>
+            <Count value="20"/>
+        </Fields>
+        <Fields>
+            <Id value="SequencePlacementSound"/>
+            <Type value="GameLink"/>
+            <GameLinkType value="Actor"/>
+            <Count value="20"/>
+        </Fields>
+        <Fields Id="HideCharges" Type="Int"/>
+        <Fields Id="UseTargetingUI" Type="Int"/>
+        <Fields Id="FireInstantly" Type="Int"/>
+        <Instances Id="[Default]">
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="1"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="2"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="3"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="4"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="5"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="6"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="7"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="8"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="9"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="10"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="11"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="12"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="13"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="14"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="15"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="16"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="17"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="18"/>
+            </Fixed>
+            <Fixed Fixed="-1">
+                <Field Id="SequenceDelay" Index="19"/>
+            </Fixed>
+            <Int Int="1">
+                <Field Id="FireInstantly"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="UseTargetingUI"/>
+            </Int>
+        </Instances>
+    </CUser>
+    <CUser id="AMTTopBarTargetingUI">
+        <Fields Id="PortraitOverlayLayoutPath" Type="String" EditorColumn="1"/>
+        <Fields Id="TargetingUILayoutPath" Type="String" EditorColumn="2"/>
+        <Fields Id="ChargeBarInternalPath" Type="String" EditorColumn="3"/>
+        <Fields Id="InstructionLabelInternalPath" Type="String" EditorColumn="4"/>
+        <Fields Id="CancelButtonInternalPath" Type="String" EditorColumn="5"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="SpearOfAdun">
+            <String String="AMT_TopBarTargetingUITemplate/TargetingUITemplate">
+                <Field Id="TargetingUILayoutPath"/>
+            </String>
+            <String String="AMT_TopBarTargetingUITemplate/TargetingOverlayTemplate">
+                <Field Id="PortraitOverlayLayoutPath"/>
+            </String>
+            <String String="ChargesContainer/ChargeCounter">
+                <Field Id="ChargeBarInternalPath"/>
+            </String>
+            <String String="Instructions">
+                <Field Id="InstructionLabelInternalPath"/>
+            </String>
+            <String String="CancelButton">
+                <Field Id="CancelButtonInternalPath"/>
+            </String>
+        </Instances>
+    </CUser>
+</Catalog>

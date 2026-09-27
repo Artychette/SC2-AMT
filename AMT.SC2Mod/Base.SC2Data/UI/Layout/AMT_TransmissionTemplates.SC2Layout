@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Image" name="AMTTransmissionBackGroundTemplate">
+        <Texture val="@@@UI/Game_Console_Chat_Background"/>
+        <TextureType val="Border"/>
+    </Frame>
+
+    <Frame type="Button" name="AMTTransmissionButtonTemplate" template="AMT_StandardTemplates/AMTCommandCardButtonTemplate">
+        <Width val="150"/>
+        <Height val="50"/>
+    </Frame>
+</Desc>

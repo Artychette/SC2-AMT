@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAttachMethodFilter id="AMFilterHandLeft">
+        <Keys Keyword="Hand"/>
+        <Keys Keyword="Left"/>
+    </CAttachMethodFilter>
+    <CAttachMethodFilter id="AMFilterHandRight">
+        <Keys Keyword="Hand"/>
+        <Keys Keyword="Right"/>
+    </CAttachMethodFilter>
+</Catalog>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+
+    <Frame type="CommandButton" name="TerranCommandButtonTemplate" template="AMT_TopBarTemplate/TopBarCommandButtonTemplate">
+    </Frame>
+
+    <Frame type="CommandPanel" name="Terran4SlotCommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+
+        <Frame type="CommandTooltip" name="TopBarCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="120"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton00" template="AMT_TopBarTerran/TerranCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="12"/>
+            <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-102"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>        
+
+        <Frame type="CommandButton" name="CommandButton01" template="AMT_TopBarTerran/TerranCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-16"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>       
+
+        <Frame type="CommandButton" name="CommandButton02" template="AMT_TopBarTerran/TerranCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="16"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>      
+
+        <Frame type="CommandButton" name="CommandButton03" template="AMT_TopBarTerran/TerranCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="102"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>
+
+
+    </Frame>
+
+	
+    <Frame type="CommandPanel" name="Terran2SlotCommandPanelTemplate" template="AMT_TopBarTemplate/TopBarCommandPanelTemplate">
+
+        <Frame type="CommandTooltip" name="TopBarCommandTooltip" template="CommandButton/CommandTooltipTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="120"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="-225"/>
+        </Frame>
+
+        <Frame type="CommandButton" name="CommandButton00" template="AMT_TopBarTerran/TerranCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="12"/>
+            <Anchor side="Left" relative="$this" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$this" pos="Min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="Mid" offset="-16"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>        
+
+        <Frame type="CommandButton" name="CommandButton01" template="AMT_TopBarTerran/TerranCommandButtonTemplate">
+            <Anchor side="Top" relative="$parent/CommandButton00" pos="Min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="Mid" offset="16"/>
+            <Anchor side="Right" relative="$this" pos="Min" offset="0"/>
+            <ClickSound val="*@UI_SoA_SpellClick"/>
+        </Frame>       
+    </Frame>
+	
+    <Frame type="Frame" name="Terran2SlotTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/TerranConsoleSound">
+        </Frame>
+        <Frame type="CutsceneFrame" name="CalldownCutscene">            
+            <File val="Cutscenes/UI_TerranCastingPanel.SC2Cutscene"/>
+            <Animation name="BirthFilter">
+                <Event event="OnShown" action="Reset,Play"/>
+                <Controller type="Cutscene" end="Stop">
+                    <Key type="Cutscene" time="0" action="AddFilter" filter="TwoButtons"/>
+                </Controller> 
+            </Animation>
+        </Frame>     
+        
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="Terran2SlotCommandPanel" template="AMT_TopBarTerran/Terran2SlotCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/Terran2SlotCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/Terran2SlotCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/Terran2SlotCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/Terran2SlotCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame>    
+    
+
+	
+    <Frame type="Frame" name="Terran4SlotTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/TerranConsoleSound">
+        </Frame>
+        <Frame type="CutsceneFrame" name="CalldownCutscene">            
+            <File val="Cutscenes/UI_TerranCastingPanel.SC2Cutscene"/>
+            <Animation name="BirthFilter">
+                <Event event="OnShown" action="Reset,Play"/>
+                <Controller type="Cutscene" end="Stop">
+                    <Key type="Cutscene" time="0" action="AddFilter" filter="FourButtons"/>
+                </Controller> 
+            </Animation>
+        </Frame>     
+        
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="Terran4SlotCommandPanel" template ="AMT_TopBarTerran/Terran4SlotCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton02" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton02" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton03" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/Terran4SlotCommandPanel/CommandButton03" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame> 
+
+    <Frame type="Frame" name="NovaTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/TerranConsoleSound">
+        </Frame>
+        <Frame type="CutsceneFrame" name="CalldownCutscene">            
+            <File val="Cutscenes/UI_TerranCastingPanel.SC2Cutscene"/>
+            <Animation name="BirthFilter">
+                <Event event="OnShown" action="Reset,Play"/>
+                <Controller type="Cutscene" end="Stop">
+                    <Key type="Cutscene" time="0" action="AddFilter" filter="Nova"/>
+                </Controller> 
+            </Animation>
+        </Frame>     
+        
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="NovaCommandPanel" template ="AMT_TopBarTerran/Terran4SlotCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton02" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton02" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton03" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/NovaCommandPanel/CommandButton03" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame> 
+
+    <Frame type="Frame" name="JunkerTopBarTemplate" template="AMT_TopBarTemplate/TopBarCutsceneFrameTemplate">
+
+        <Frame type="Frame" name="ConsoleSound" template="AMT_TopBarTemplate/TerranConsoleSound">
+        </Frame>
+        <Frame type="CutsceneFrame" name="CalldownCutscene">            
+            <File val="Cutscenes/UI_HornerCastingPanel.SC2Cutscene"/>
+            <Animation name="BirthFilter">
+                <Event event="OnShown" action="Reset,Play"/>
+                <Controller type="Cutscene" end="Stop">
+                    <Key type="Cutscene" time="0" action="AddFilter" filter="FourButtons"/>
+                </Controller> 
+            </Animation>
+        </Frame>     
+        
+        <Frame type="Frame" name="CommandCardHolder">
+            <Frame type="CommandPanel" name="JunkerCommandPanel" template ="AMT_TopBarTerran/Terran4SlotCommandPanelTemplate">
+            </Frame>
+        </Frame>
+        
+        <Frame type="Frame" name="HighlightArrow00" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton00" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton00" pos="Mid" offset="-38"/>            
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow01" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton01" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton01" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow02" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton02" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton02" pos="Mid" offset="-38"/>    
+        </Frame>
+        <Frame type="Frame" name="HighlightArrow03" template="AMT_TopBarTemplate/ProtossAbilityArrowsTemplate">
+            <Anchor side="Top" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton03" pos="Max" offset="15"/>
+            <Anchor side="Left" relative="$parent/CommandCardHolder/JunkerCommandPanel/CommandButton03" pos="Mid" offset="-38"/>    
+        </Frame>
+    </Frame> 
+    
+    
+</Desc>

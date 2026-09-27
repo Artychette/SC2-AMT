@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorSiteOpForward id="SOpLookSouth">
+        <EditorCategories value=""/>
+        <Forward value="0.000000,-1.000000,0.000000"/>
+    </CActorSiteOpForward>
+    <CActorSiteOpForward id="SOpLookNorth">
+        <EditorCategories value=""/>
+        <Forward value="0.000000,1.000000,0.000000"/>
+    </CActorSiteOpForward>
+    <CActorSiteOpForward id="SOpLookEast">
+        <EditorCategories value=""/>
+        <Forward value="1.000000,0.000000,0.000000"/>
+    </CActorSiteOpForward>
+    <CActorSiteOpForward id="SOpLookWest">
+        <EditorCategories value=""/>
+        <Forward value="-1.000000,0.000000,0.000000"/>
+    </CActorSiteOpForward>
+    <CActorModel id="TalkIconBubble" parent="ModelAnimationStyleOneShot"/>
+</Catalog>

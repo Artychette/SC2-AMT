@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Portrait" name="TargetingOverlayProtossTemplate" template="AMT_TopBarTargetingUITemplate/TargetingOverlayTemplate">
+    </Frame>
+    <Frame type="Frame" name="TargetingUIProtossTemplate" template="AMT_TopBarTargetingUITemplate/TargetingUITemplate">
+    </Frame>
+</Desc>
