@@ -1,4 +1,48 @@
 ==============================
+============ v1.3 ============
+==============================
+
+
+
+------ Core Lib Extension
+
+--- Event : 
+	- Exposed all natives event registration functions to allow to dynamically add event to triggers from the GUI without using custom script blocks. 
+
+--- Condition : 
+	- Added a "Is True" and "Is False" conditions to avoid "if(boolean==true/false)" monstruousities.
+
+--- Dynamic Container (new) :
+	- Added a (c++ style) "Vector" struct that act both as a dynamic array and a stack. Work for almost all GUI variable type.
+	- Added a (c++ style) "Deque" (double ended queue) struct that act both as a queue and a stack. Work for almost all GUI variable type.
+
+--- UI : 
+	- Added a "Convert String to UI Layout Frame" function
+
+--- User-Data :
+	- Added 2 cast functions : "Convert String To User Instance", "Convert String To User Field"
+	- Added a "User Reference" function that return a user reference from a user-type and an instance
+
+------ Conversation (new)
+- Added a whole API for transmission/briefing/RPG-like conversation to be run from conversation data
+
+
+------ Math Misc.
+- Added a random generator for integer (and another with a distribution biaised toward less consecutive identical output), real number (in a given interval) and points (in a given disk)
+
+------ Misc.
+- Optimized most existing modules to (slightly) reduce performance cost of enabled ones and anihilate any performance cost of disabled ones.
+
+
+==============================
+============ v1.2a ===========
+==============================
+
+------ Top Bar Builder 
+- Fixed a bug that would not properly show back the top bar when rapid-firing the cinematic mode on/off (for real this time, hopefully)
+
+
+==============================
 ============ v1.2 ============
 ==============================
 
@@ -10,12 +54,12 @@
 - Fixed a bug that would not properly show back the top bar when rapid-firing the cinematic mode on/off
 - Fixed a bug that would cause the "Top Bar Ability Fired/Cancelled" to not work properly for most extended abilities
 - Added safety measure to prevent more that one top bar initialization to occur per player (meaning, after the first usage, the function will just not do anything)
-- Added a default "Top Bar Caster" unit to be derived from when creating custom global caster (nothing mandatory, but set a wanted a field  as to be expected for such a unit, such as making it virtually unkillable, with no colision, etc...)
+- Added a default "Top Bar Caster" unit to be derived from when creating custom global caster (nothing mandatory, but set some fields as to be expected for such a unit, such as making it virtually unkillable, with no colision, etc...)
 - Edited the lighting of all top bars to match those of Coop/LotV and added a few assets missing in bare WoL
 - Set the default value of the "Player" parameter to 1 for all functions with such parameter
-- Added support to add the taegeting UI to any effect-target ability on the global caster
+- Added support to add the targeting UI to any effect-target ability on the global caster
 - Added a "UseTargetingUI" option on extended abilities to allow to bypasse the targeting UI
-- Added a "FireIntantly" option on extended abilities to allow to bypasse sequence queuing process if the targeting UI is bypassed (meaning charges are used on the spot instead of waiting the whole queue to be filled)
+- Added a "FireIntantly" option on extended abilities to allow to bypass sequence queuing process if the targeting UI is bypassed (meaning charges are used on the spot instead of waiting the whole queue to be filled)
 
 ------ Misc.
 - Added Hand Left & Hand Right Attach Methods

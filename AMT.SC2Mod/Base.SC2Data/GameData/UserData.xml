@@ -177,6 +177,260 @@
             </User>
         </Instances>
     </CUser>
+    <CUser id="AMTConversationRunnableTrigger">
+        <Fields Id="TriggerIdentifier" Type="String">
+            <Flags index="Modifiable" value="1"/>
+        </Fields>
+    </CUser>
+    <CUser id="AMTConversationSkipPromptTemplate">
+        <Fields Id="DialogTemplate" Type="String"/>
+        <Fields Id="SkipButtonPath" Type="String"/>
+        <Fields Id="SkipButtonLabelPath" Type="String"/>
+        <Fields Id="SkipText" Type="Text"/>
+        <Fields Id="ReadButtonPath" Type="String"/>
+        <Fields Id="ReadButtonLabelPath" Type="String"/>
+        <Fields Id="ReadText" Type="Text"/>
+        <Fields Id="TitleLabelPath" Type="String"/>
+        <Fields Id="TitleText" Type="Text"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="AMTDefault">
+            <String String="AMT_Conversation_ScrolledWindow/SkipPromptTemplate">
+                <Field Id="DialogTemplate"/>
+            </String>
+            <String String="ReadButton">
+                <Field Id="ReadButtonPath"/>
+            </String>
+            <String String="SkipButton">
+                <Field Id="SkipButtonPath"/>
+            </String>
+        </Instances>
+    </CUser>
+    <CUser id="AMTConversationTransmissionTemplate">
+        <Fields Id="MainFrame" Type="String" EditorColumn="2"/>
+        <Fields Id="PortraitPath" Type="String" EditorColumn="3"/>
+        <Fields Id="TextPath" Type="String" EditorColumn="4"/>
+        <Fields>
+            <Id value="name"/>
+            <Type value="String"/>
+            <EditorColumn value="1"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="PortraitBorderPath" Type="String"/>
+        <Fields Id="TextBorderPath" Type="String"/>
+        <Fields Id="SkipPromptTemplate" Type="User" UserType="AMTConversationSkipPromptTemplate"/>
+        <Fields Id="CharMatchingBorder" Type="Int"/>
+        <Instances Id="[Default]">
+            <User Type="AMTConversationSkipPromptTemplate" Instance="AMTDefault">
+                <Field Id="SkipPromptTemplate"/>
+            </User>
+        </Instances>
+        <Instances Id="VanillaTransmission">
+            <String String="AMT_Conversation_Transmission/VanillaTransmissionTemplate">
+                <Field Id="MainFrame"/>
+            </String>
+            <String String="Vanilla Transmission (match player race)">
+                <Field Id="name"/>
+            </String>
+            <String String="Portrait">
+                <Field Id="PortraitPath"/>
+            </String>
+            <User Type="AMTConversationSkipPromptTemplate" Instance="[Default]">
+                <Field Id="SkipPromptTemplate"/>
+            </User>
+        </Instances>
+        <Instances Id="VanillaCharTransmission">
+            <Int Int="1">
+                <Field Id="CharMatchingBorder"/>
+            </Int>
+            <String String="AMT_Conversation_Transmission/VanillaTransmissionTemplate">
+                <Field Id="MainFrame"/>
+            </String>
+            <String String="Vanilla Transmission (match character race)">
+                <Field Id="name"/>
+            </String>
+            <String String="Portrait">
+                <Field Id="PortraitPath"/>
+            </String>
+            <String String="PortraitBorder">
+                <Field Id="PortraitBorderPath"/>
+            </String>
+        </Instances>
+        <Instances Id="VanillaTransmissionWithText">
+            <String String="AMT_Conversation_Transmission/VanillaTransmissionWithTextTemplate">
+                <Field Id="MainFrame"/>
+            </String>
+            <String String="Vanilla Transmission With Text Box (match player race)">
+                <Field Id="name"/>
+            </String>
+            <String String="Portrait">
+                <Field Id="PortraitPath"/>
+            </String>
+            <String String="PortraitBorder">
+                <Field Id="PortraitBorderPath"/>
+            </String>
+            <String String="TextBorder">
+                <Field Id="TextBorderPath"/>
+            </String>
+            <String String="Text">
+                <Field Id="TextPath"/>
+            </String>
+        </Instances>
+        <Instances Id="VanillaCharTransmissionWithText">
+            <Int Int="1">
+                <Field Id="CharMatchingBorder"/>
+            </Int>
+            <String String="AMT_Conversation_Transmission/VanillaTransmissionWithTextTemplate">
+                <Field Id="MainFrame"/>
+            </String>
+            <String String="Vanilla Transmission With Text Box (match character race)">
+                <Field Id="name"/>
+            </String>
+            <String String="Portrait">
+                <Field Id="PortraitPath"/>
+            </String>
+            <String String="PortraitBorder">
+                <Field Id="PortraitBorderPath"/>
+            </String>
+            <String String="Text">
+                <Field Id="TextPath"/>
+            </String>
+            <String String="TextBorder">
+                <Field Id="TextBorderPath"/>
+            </String>
+        </Instances>
+    </CUser>
+    <CUser id="AMTConversationScrolledWindowTemplate">
+        <Fields>
+            <Id value="name"/>
+            <Type value="String"/>
+            <EditorColumn value="1"/>
+            <EditorText value="Name"/>
+        </Fields>
+        <Fields Id="MainTemplate" Type="String" EditorColumn="2"/>
+        <Fields Id="ScolledPanelPath" Type="String" EditorColumn="3"/>
+        <Fields Id="ScrollProgressPath" Type="String" EditorColumn="4"/>
+        <Fields Id="TransmissionTemplate" Type="String" EditorColumn="5"/>
+        <Fields Id="PortraitPath" Type="String" EditorColumn="6"/>
+        <Fields Id="TextPath" Type="String" EditorColumn="7"/>
+        <Fields Id="PortraitBorderPath" Type="String" EditorColumn="8"/>
+        <Fields Id="TextBorderPath" Type="String" EditorColumn="9"/>
+        <Fields Id="SkipPromptTemplate" Type="User" UserType="AMTConversationSkipPromptTemplate"/>
+        <Fields Id="NextButtonPath" Type="String"/>
+        <Fields Id="ContainerFrameHeight" Type="Int"/>
+        <Fields Id="TransmissionFrameHeight" Type="Int"/>
+        <Fields Id="TransmissionTemplateRightAligned" Type="String"/>
+        <Fields Id="AutoCinematicMode" Type="Int"/>
+        <Fields Id="AutoGamePause" Type="Int"/>
+        <Fields Id="PortraitTopOffset" Type="Int"/>
+        <Fields Id="PortraitHeight" Type="Int"/>
+        <Instances Id="[Default]"/>
+        <Instances Id="VanillaTransmissionScrolled">
+            <Int Int="760">
+                <Field Id="ContainerFrameHeight"/>
+            </Int>
+            <Int Int="291">
+                <Field Id="TransmissionFrameHeight"/>
+            </Int>
+            <Int Int="222">
+                <Field Id="PortraitHeight"/>
+            </Int>
+            <Int Int="41">
+                <Field Id="PortraitTopOffset"/>
+            </Int>
+            <String String="Stacking Vanilla Transmission (match player console)">
+                <Field Id="name"/>
+            </String>
+            <String String="Portrait">
+                <Field Id="PortraitPath"/>
+            </String>
+            <String String="PortraitBorder">
+                <Field Id="PortraitBorderPath"/>
+            </String>
+            <String String="TextBorder">
+                <Field Id="TextBorderPath"/>
+            </String>
+            <String String="Text">
+                <Field Id="TextPath"/>
+            </String>
+            <String String="AMT_Conversation_ScrolledWindow/ScrolledWindowEntryTemplate">
+                <Field Id="TransmissionTemplate"/>
+            </String>
+            <String String="ScrollableContainer/ScrollValue">
+                <Field Id="ScrollProgressPath"/>
+            </String>
+            <String String="ScrollableContainer/ContainerFrame">
+                <Field Id="ScolledPanelPath"/>
+            </String>
+            <String String="AMT_Conversation_ScrolledWindow/ScrolledWindowPanelTemplate">
+                <Field Id="MainTemplate"/>
+            </String>
+            <String String="NextButton">
+                <Field Id="NextButtonPath"/>
+            </String>
+            <String String="AMT_Conversation_ScrolledWindow/ScrolledWindowEntryTemplateRight">
+                <Field Id="TransmissionTemplateRightAligned"/>
+            </String>
+            <User Type="AMTConversationSkipPromptTemplate" Instance="AMTDefault">
+                <Field Id="SkipPromptTemplate"/>
+            </User>
+        </Instances>
+        <Instances Id="VanillaTransmissionScrolledAutoPauseCinemode">
+            <Int Int="760">
+                <Field Id="ContainerFrameHeight"/>
+            </Int>
+            <Int Int="291">
+                <Field Id="TransmissionFrameHeight"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="AutoGamePause"/>
+            </Int>
+            <Int Int="1">
+                <Field Id="AutoCinematicMode"/>
+            </Int>
+            <Int Int="41">
+                <Field Id="PortraitTopOffset"/>
+            </Int>
+            <Int Int="222">
+                <Field Id="PortraitHeight"/>
+            </Int>
+            <String String="Stacking Vanilla Transmission (Automatic Pause and Cinematic mode)">
+                <Field Id="name"/>
+            </String>
+            <String String="Portrait">
+                <Field Id="PortraitPath"/>
+            </String>
+            <String String="PortraitBorder">
+                <Field Id="PortraitBorderPath"/>
+            </String>
+            <String String="TextBorder">
+                <Field Id="TextBorderPath"/>
+            </String>
+            <String String="Text">
+                <Field Id="TextPath"/>
+            </String>
+            <String String="AMT_Conversation_ScrolledWindow/ScrolledWindowEntryTemplate">
+                <Field Id="TransmissionTemplate"/>
+            </String>
+            <String String="ScrollableContainer/ScrollValue">
+                <Field Id="ScrollProgressPath"/>
+            </String>
+            <String String="ScrollableContainer/ContainerFrame">
+                <Field Id="ScolledPanelPath"/>
+            </String>
+            <String String="AMT_Conversation_ScrolledWindow/ScrolledWindowPanelTemplate">
+                <Field Id="MainTemplate"/>
+            </String>
+            <String String="NextButton">
+                <Field Id="NextButtonPath"/>
+            </String>
+            <String String="AMT_Conversation_ScrolledWindow/ScrolledWindowEntryTemplateRight">
+                <Field Id="TransmissionTemplateRightAligned"/>
+            </String>
+            <User Type="AMTConversationSkipPromptTemplate" Instance="AMTDefault">
+                <Field Id="SkipPromptTemplate"/>
+            </User>
+        </Instances>
+    </CUser>
     <CUser id="AMTTopBarExtendedAbilty">
         <Fields Id="ActivatingBehavior" Type="GameLink" GameLinkType="Behavior"/>
         <Fields Id="SequenceExecuteCommand" Type="AbilCmd" Count="20"/>

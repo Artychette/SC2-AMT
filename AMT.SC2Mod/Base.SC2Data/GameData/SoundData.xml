@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CSound id="UI_ConsoleIn_Prot" parent="UI">
+    <CSound id="UI_ConsoleIn_Prot" parent="UI" Portrait="" Subtitle="UnknownConversation" Speaker="" Actor="" Line="00001">
         <AssetArray File="Assets\Sounds\UI_ProtossConsoleTransition_In.wav" FacialGroup=""/>
         <Pitch value="0.000000,0.300000"/>
         <SpeakerMix index="Center" value="0.000000"/>
         <Volume value="-8.000000,-8.000000"/>
+        <Flags index="NeedsTTS" value="1"/>
     </CSound>
     <CSound id="UI_ConsoleIn_Terr" parent="UI">
         <AssetArray File="Assets\Sounds\Uni\UI\UI_TerranConsoleTransition.wav"/>

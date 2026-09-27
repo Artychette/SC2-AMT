@@ -14,4 +14,7 @@
         <Icon value="Assets\Textures\ui_AMT_topbar_frame_ability_lock.dds"/>
         <TintRacially value="1"/>
     </CButton>
+    <CButton id="TextCreatorDummyButtonWithAGiganticVerboseNameSoNobodyUsesIt">
+        <Tooltip value="Conversation/FixedCondition/AMT/RandomMachineSerial"/>
+    </CButton>
 </Catalog>

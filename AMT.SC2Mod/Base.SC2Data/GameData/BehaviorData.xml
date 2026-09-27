@@ -83,7 +83,7 @@
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <RemoveValidatorArray value="CasterIsNotHidden"/>
-        <FinalEffect value="HideIfCasterHiddenABTP"/>
+        <FinalEffect value="HideIfCasterHiddenInitialSet"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="SummonCounter">
         <InfoFlags index="Hidden" value="1"/>

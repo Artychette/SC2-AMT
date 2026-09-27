@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="VanillaTransmissionTemplate">
+        <Anchor side="Bottom" relative="$parent" pos="max" offset="-400"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="50"/>
+        <Width val="303"/>
+        <Height val="475"/>
+        <Frame type="Portrait" name="Portrait">
+            <BorderImage val="BorderImage"/>
+            <Frame type="Image" name="BorderImage">
+                <Visible val="false"/>
+            </Frame>
+            <Anchor side="Top" relative="$parent" pos="min" offset="45"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="33"/>
+            <Width val="237"/>
+            <Height val="360"/>
+        </Frame>
+        <Frame type="Image" name="PortraitBorder">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+            <Width val="303"/>
+            <Height val="475"/>
+            <Texture val="@@UI/PortraitBorder"/>
+            <TextureType val="Border"/>
+        </Frame>
+    </Frame>
+    <Frame type="Frame" name="VanillaTransmissionWithTextTemplate">
+        <Anchor side="Bottom" relative="$parent" pos="max" offset="-400"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="50"/>
+        
+        <StateGroup name="ChatDisplayVisibility">
+            <DefaultState val="Visible"/>
+            <State name="Hidden">
+                <When type="Property" frame="$this" Visible="True"/>
+                <Action type="SetProperty" frame="$ancestor[@name=FullscreenUpperContainer]/ChatDisplay" Visible="False"/>
+            </State>
+            <State name="Visible">
+                <When type="Property" frame="$this" Visible="False"/>
+                <Action type="SetProperty" frame="$ancestor[@name=FullscreenUpperContainer]/ChatDisplay" Visible="True"/>
+            </State>
+        </StateGroup>
+
+        <Width val="843"/>
+        <Height val="475"/>
+        <Frame type="Image" name="TextBorder">
+            <Anchor side="Bottom" relative="$parent" pos="max" offset="-65"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+            <Width val="575"/>
+            <Height val="235"/>
+            <Texture val="@@@UI/Game_Console_Chat_Background"/>
+            <TextureType val="Border"/>
+        </Frame>
+        <Frame type="Label" name="Text">
+            <Anchor side="Bottom" relative="$parent/TextBorder" pos="max" offset="-30"/>
+            <Anchor side="Top" relative="$parent/TextBorder" pos="min" offset="20"/>
+            <Anchor side="Right" relative="$parent/TextBorder" pos="max" offset="-33"/>
+            <Width val="484"/>
+            <Height val="160"/>
+        </Frame>
+        <Frame type="Portrait" name="Portrait">
+            <BorderImage val="BorderImage"/>
+            <Frame type="Image" name="BorderImage">
+                <Visible val="false"/>
+            </Frame>
+            <Anchor side="Top" relative="$parent" pos="min" offset="45"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="33"/>
+            <Width val="237"/>
+            <Height val="360"/>
+        </Frame>
+        <Frame type="Image" name="PortraitBorder">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+            <Width val="303"/>
+            <Height val="475"/>
+            <Texture val="@@UI/PortraitBorder"/>
+            <TextureType val="Border"/>
+        </Frame>
+    </Frame>
+</Desc>

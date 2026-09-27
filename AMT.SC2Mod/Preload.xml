@@ -3,9 +3,9 @@
 <Actor id="SYSTEM_ActorConfig"/>
 <Behavior id="AMTInCombat"/>
 <Behavior id="AMTTopBarDisableAbilities"/>
-<Effect id="AMTInCombatAS"/>
 <Model id="TalkIconBubble"/>
 <Sound id="UI_TransmissionStart"/>
 <User id="AMTTopBarExtendedAbilty"/>
+<User id="AMTConversationTransmissionTemplate"/>
 <PlayerResponse id="AMTInCombatResponse"/>
 </Preload>

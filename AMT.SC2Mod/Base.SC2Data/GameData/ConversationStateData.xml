@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CConversationState id="AMTConversationSpecialOptionState">
+        <Indices Id="SpecialOption" Name="ConversationState/AMTConversationSpecialOptionState/SpecialOption"/>
+    </CConversationState>
+    <CConversationState id="UnknownConversationState">
+        <Indices Id="UnknownConversationState01" Name="ConversationState/UnknownConversationState/UnknownConversationState01">
+            <InfoValue Id="vklyuglkyg" Value="1"/>
+        </Indices>
+        <InfoIds index="Text">
+            <Id value="liyughly"/>
+            <Id value="ygblyh"/>
+        </InfoIds>
+        <InfoIds index="Value">
+            <Id value="vklyuglkyg"/>
+        </InfoIds>
+    </CConversationState>
+</Catalog>

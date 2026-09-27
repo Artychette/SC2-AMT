@@ -15,4 +15,6 @@
     <Include path="UI/Layout/AMT_TopBarTargetingUIProtoss.SC2Layout"/>
     <Include path="UI/Layout/AMT_Indicators_HotS_ScoreScreen.SC2Layout"/>
     <Include path="UI/Layout/AMT_Indicators_LotV_ScoreScreen.SC2Layout"/>
+    <Include path="UI/Layout/AMT_Conversation_Transmission.SC2Layout"/>
+    <Include path="UI/Layout/AMT_Conversation_ScrolledWindow.SC2Layout"/>
 </Desc>

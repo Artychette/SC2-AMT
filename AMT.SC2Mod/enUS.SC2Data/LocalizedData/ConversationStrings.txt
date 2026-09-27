@@ -1,0 +1,17 @@
+﻿Character/Name/UnknownCharacter=Unknown Character
+Conversation/AMTDataDrivenTransmissionBase/Choice00001=User Response
+Conversation/AMTDataDrivenTransmissionBase/Group00001=User Choices
+Conversation/AMTDataDrivenTransmissionBase/Line00001=What's my line again?
+Conversation/FixedAction/AMT/GamePause=Pause/Unpause the game ~VALUE~ (0 = unpause, 1+ = pause)
+Conversation/FixedAction/AMT/PlayTransmissionCue=Play Transmission Cue
+Conversation/FixedAction/AMT/RunTrigger=Run trigger ~INDEX~ and wait ~VALUE~ (0 = don't wait ; 1+ = wait)
+Conversation/FixedCondition/AMT/Disabled=Disabled
+Conversation/FixedCondition/AMT/IsLastLine=(Line - Scrollable Window) Last Line before exit
+Conversation/FixedCondition/AMT/Line/OverrideDuration=(Line - Overrride) Set duration to ~VALUE~ x4 frame(s) (1s = 16 frames)
+Conversation/FixedCondition/AMT/Line/OverrideWriteout=(Line - Overrride) Set text writeout duration to ~VALUE~ x4 frame(s) (1s = 16 frames)
+Conversation/FixedCondition/AMT/RandomMachineSerial=(Line) Add random machine serial to character name (use serial index ~VALUE~)
+Conversation/FixedCondition/AMT/RightAlignedLine=(Line - Scrollable Window) Right-Aligned display
+Conversation/UnknownConversation/Group00001=User Choices
+Conversation/UnknownConversation/Group00002=User Choices
+Conversation/UnknownConversation/Line00001=What's my line again?
+Conversation/UnknownConversation/Line00002=What's my line again?

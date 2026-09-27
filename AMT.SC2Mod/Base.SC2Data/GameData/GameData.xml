@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CGame id="Dflt">
+        <TriggerLibs index="0" IncludePath="TriggerLibs/AMTHLib"/>
         <TriggerLibs Id="B513D0A0"/>
     </CGame>
 </Catalog>

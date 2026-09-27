@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Frame type="Frame" name="ScrolledWindowEntryTemplate">
+        <Height val="291"/>
+        <Width val="875"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+        <Frame type="Image" name="TextBorder">
+            <Anchor side="Top" relative="$parent" pos="min" offset="30"/>
+            <Anchor side="Bottom" relative="$parent" pos="max" offset="-45"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="-200"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="182"/>
+            <Texture val="@@@UI/Game_Console_Chat_Background"/>
+            <TextureType val="Border"/>
+        </Frame>
+        <Frame type="Label" name="Text">
+            <Anchor side="Bottom" relative="$parent/TextBorder" pos="max" offset="-30"/>
+            <Anchor side="Top" relative="$parent/TextBorder" pos="min" offset="25"/>
+            <Anchor side="Right" relative="$parent/TextBorder" pos="max" offset="-33"/>
+            <Anchor side="Left" relative="$parent/TextBorder" pos="min" offset="33"/>
+        </Frame>
+        <Frame type="Portrait" name="Portrait">
+            <BorderImage val="BorderImage"/>
+            <Frame type="Image" name="BorderImage">
+                <Visible val="false"/>
+            </Frame>
+            <Anchor side="Top" relative="$parent/PortraitBorder" pos="min" offset="41"/>
+            <Anchor side="Left" relative="$parent/PortraitBorder" pos="min" offset="29"/>
+            <Width val="157"/>
+            <Height val="222"/>
+        </Frame>
+        <Frame type="Image" name="PortraitBorder">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+            
+            <Width val="217"/>
+            <Height val="340"/>
+            <Texture val="@@@UI/PortraitBorder"/>
+            <TextureType val="Border"/>
+        </Frame>
+    </Frame>
+    <Frame type="Frame" name="ScrolledWindowEntryTemplateRight" template="AMT_Conversation_ScrolledWindow/ScrolledWindowEntryTemplate">        
+        <Frame type="Image" name="TextBorder">
+            <Anchor side="Right" relative="$parent" pos="max" offset="-182"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="200"/>
+        </Frame>
+        <Frame type="Label" name="Text">
+            <Anchor side="Bottom" relative="$parent/TextBorder" pos="max" offset="-30"/>
+            <Anchor side="Top" relative="$parent/TextBorder" pos="min" offset="25"/>
+            <Anchor side="Right" relative="$parent/TextBorder" pos="max" offset="-33"/>
+            <Anchor side="Left" relative="$parent/TextBorder" pos="min" offset="33"/>
+        </Frame>
+        <Frame type="Image" name="PortraitBorder">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="max" offset="-217"/>
+        </Frame>
+    </Frame>
+    <Frame type="Frame" name="ScrolledWindowPanelTemplate">
+        <Anchor side="Top" relative="$parent" pos="min" offset="100"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="25"/>
+        <Anchor side="Right" relative="$parent" pos="max" offset="-25"/>
+        <Width val="1024"/>
+        <Height val="825"/>
+        <Visible val="False"/>
+        <StateGroup name="SubtitleVisibility">
+            <DefaultState val="Visible"/>
+            <State name="Hidden">
+                <When type="Property" frame="$this" Visible="True"/>
+                <Action type="SetProperty" frame="$ancestor[@name=FullscreenUpperContainer]/ChatDisplay" Visible="False"/>
+                <Action type="SetProperty" frame="$ancestor[@name=FullscreenUpperContainer]/SubtitlePanel" Visible="False"/>
+                <Action type="SetProperty" frame="$ancestor[@name=UIContainer]/FullscreenLowerContainer/ConversationPanel" Visible="False"/>
+            </State>
+            <State name="Visible">
+                <When type="Property" frame="$this" Visible="False"/>
+                <Action type="SetProperty" frame="$ancestor[@name=FullscreenUpperContainer]/ChatDisplay" Visible="True"/>
+                <Action type="SetProperty" frame="$ancestor[@name=FullscreenUpperContainer]/SubtitlePanel" Visible="True"/>
+                <Action type="SetProperty" frame="$ancestor[@name=UIContainer]/FullscreenLowerContainer/ConversationPanel" Visible="True"/>
+            </State>
+        </StateGroup>
+
+        <Frame type="Control" name="ScrollableContainer">
+            <Anchor side="Top" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="max" offset="-55"/>
+            <AcceptsMouse val="True"/>
+            <AllowedButtons val="Middle"/>
+            <Frame type="ProgressBar" name="ScrollValue">
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+                <MaxValue val="800"/>
+                <MinValue val="0"/>
+                <Value val="0"/>
+                <Visible val="False"/>
+            </Frame>
+            <Frame type="MathFrame" name="TopPadding"> 
+                <A val="{$parent/ScrollValue/@Value}"/>
+                <B val="1"/>
+                <Operator val="Add"/>
+            </Frame>
+            <Frame type="Frame" name="TopAnchor">
+                <Anchor side="Top" relative="$parent" pos="max" offset="-1"/>
+                <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+                <Height val="{$parent/TopPadding/@ResultInt}"/>
+                <Width val="1"/>
+            </Frame>
+            <Frame type="MathFrame" name="ScrollDownValue"> 
+                <A val="{$parent/ScrollValue/@Value}"/>
+                <B val="35"/>
+                <Operator val="Subtract"/>
+            </Frame>
+            <Frame type="MathFrame" name="ScrollUpValue"> 
+                <A val="{$parent/ScrollValue/@Value}"/>
+                <B val="35"/>
+                <Operator val="Add"/>
+            </Frame>
+                
+            
+            <Frame type="Image" name="Background">
+                <!--Alpha val="40"/-->
+                <Anchor side="Top" relative="$parent" pos="min" offset="-45"/>
+                <Anchor side="Left" relative="$parent" pos="min" offset="-5"/>
+                <Anchor side="Right" relative="$parent" pos="max" offset="5"/>
+                <Anchor side="Bottom" relative="$parent" pos="max" offset="30"/>
+                <Texture val="@@@UI/Game_Console_Chat_Background"/>
+                <TextureType val="Border"/>
+                <!--ImageMaskTexture val="Assets\Textures\ui_glues_profileavatar_unranked_mask_medium.dds"/-->
+                <Tiled val="False"/>
+            </Frame>
+            <Frame type="Frame" name="ContainerFrame">
+                <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+                <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent/TopAnchor" pos="max" offset="0"/>
+                <Height val="{$parent/ScrollValue/@MaxValue}"/>
+            </Frame>
+
+        </Frame>
+
+        <Frame type="Button" name="NextButton" template="AMT_StandardTemplates/AMTCommandCardButtonTemplate">
+            <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="max" offset="-5"/>       
+            <Width val="100"/>
+            <Height val="50"/>
+        </Frame>
+
+    </Frame>
+
+    
+
+    <Frame type="Frame" name="SkipPromptTemplate">
+        <Anchor side="Top" relative="$parent" pos="min" offset="150"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+        <Width val="600"/>
+        <Height val="150"/>
+        
+        <Frame type="Image" name="Background">
+            <Anchor relative="$parent"/>
+            <Texture val="@@@UI/Game_Console_Chat_Background"/>
+            <TextureType val="Border"/>
+        </Frame>
+        <Frame type="Label" name="Title">
+            <Anchor side="Top" relative="$parent" pos="min" offset="15"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="0"/>
+            <Height val="50"/>
+            <Style val="AMT_ConvSkipPromptDefaultTitle"/>
+            <Text val="Incoming Transmission"/>
+        </Frame>
+        <Frame type="Button" name="ReadButton" template="AMT_StandardTemplates/AMTCommandCardButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="max" offset="-40"/>
+            <Anchor side="Left" relative="$parent" pos="min" offset="43"/>
+            <Width val="150"/>
+            <Height val="50"/>
+            <Frame type="Label" name="Label">
+                <Style val="AMT_ConvSkipPromptDefaultButton"/>
+                <Text val="READ"/>
+            </Frame>
+        </Frame>
+        <Frame type="Button" name="SkipButton" template="AMT_StandardTemplates/AMTCommandCardButtonTemplate">
+            <Anchor side="Bottom" relative="$parent" pos="max" offset="-40"/>
+            <Anchor side="Right" relative="$parent" pos="max" offset="-43"/>
+            <Width val="150"/>
+            <Height val="50"/>
+            <Frame type="Label" name="Label">
+                <Text val="SKIP"/>
+            </Frame>
+        </Frame>
+    </Frame>
+</Desc>

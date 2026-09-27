@@ -1,9 +1,12 @@
-﻿Abil/Name/UnknownAbility=Unknown Ability
-Button/Name/AMTLockedTopBarAbility=Locked Top Bar Ability
+﻿Button/Name/AMTLockedTopBarAbility=Locked Top Bar Ability
+Button/Name/TextCreatorDummyButtonWithAGiganticVerboseNameSoNobodyUsesIt=TextCreatorDummyButtonWithAGiganticVerboseNameSoNobodyUsesIt
 Button/Tooltip/AMTLockedTopBarAbility=Locked
 ConsoleSkin/Name/DefaultProtoss=Default (Protoss)
 ConsoleSkin/Name/DefaultTerran=Default (Terran)
 ConsoleSkin/Name/DefaultZerg=Default (Zerg)
+ConversationState/AMTConversationSpecialOptionState/SpecialOption=(Special Option)
+ConversationState/Characters/Characters01=Character 1
+ConversationState/UnknownConversationState/UnknownConversationState01=Untitled Index
 DocInfo/Name=Arty's Miscellaneous Tools
 Effect/Name/AMTDragDownFlyerAB=Drag Down Flyer
 Effect/Name/AMTDragDownFlyerMUEnd=Drag Down Flyer
@@ -21,6 +24,7 @@ Effect/Name/HideIfCasterHiddenABTP=Hide If Caster Hidden
 Effect/Name/HideIfCasterHiddenABTPH=Hide If Caster Hidden
 Effect/Name/HideIfCasterHiddenAHB2=Hide If Caster Hidden
 Effect/Name/HideIfCasterHiddenFinalSet=Hide If Caster Hidden
+Effect/Name/HideIfCasterHiddenInitialSet=Hide If Caster Hidden
 Effect/Name/HideIfCasterHiddenTP=Hide If Caster Hidden
 Effect/Name/HideIfCasterHiddenTP2=Hide If Caster Hidden
 Effect/Name/StopWhenCasterStopAB2=Stop When Caster Stop Copy
@@ -28,31 +32,97 @@ Effect/Name/SummonCounterASB=Add To Summon Count
 Effect/Name/SummonCounterAcB=Increase Summon Counter
 Effect/Name/SummonCounterAcB2=Summon Counter Copy
 Effect/Name/SummonCounterRcB=Decrease Summon Counter
+Param/Expression/lib_B513D0A0_1072E8F1=Randi(~min~,~max~) - "Observed / Expected" format :
+Param/Expression/lib_B513D0A0_14920A00=Vector ID = ~A~<n/>Vector ID_prefix = ~B~<n/>Vector size_prefix = ~C~<n/>Vector size = ~D~<n/>Vector scope =~E~
+Param/Expression/lib_B513D0A0_20161F1E=Path 
+Param/Expression/lib_B513D0A0_2D706E14=New vector creation (prefix = ~B~ | value = ~A~)
 Param/Expression/lib_B513D0A0_2E0BBADE=Highlighting button ~B~ for player ~A~
+Param/Expression/lib_B513D0A0_30EFB1CF=Playing Line ~A~
 Param/Expression/lib_B513D0A0_334ABBCD=X,Y : ~A~ / ~B~
+Param/Expression/lib_B513D0A0_4033A9F0=Playing RunAction ~A~
+Param/Expression/lib_B513D0A0_40AB7216=~Num~ -> ~Count~  |  ~Num2~ -> ~Count2~  
+Param/Expression/lib_B513D0A0_45AFEA23=writeout before extract ~A~
 Param/Expression/lib_B513D0A0_4617F884=<s val="Lobby_MapInfoPreview_DescriptionRight"><c val="~C~">~A~</c></s>
 Param/Expression/lib_B513D0A0_4B3CA51C=Entity Count : ~A~
+Param/Expression/lib_B513D0A0_5F5698DB=Randi(~min~,~max~) - "Observed / Expected" format :
+Param/Expression/lib_B513D0A0_69B4DD5E=<s val="AMTTransmissionCharName"><c val="~Color~">~Name~ :</c></s><n/><n/><s val="AMTTransmissionText"><c val="~Color~">~Text~</c></s>
+Param/Expression/lib_B513D0A0_6E389CE0=Group ~A~ : ~type~ ~ID~
+Param/Expression/lib_B513D0A0_6FFE965C=~L~ : ~Obs~/~Exp~
 Param/Expression/lib_B513D0A0_7866C962=~Name~
+Param/Expression/lib_B513D0A0_7898C429=--- Condition : <n/>------ ~VAL~ ~OP~ ~USER~
+Param/Expression/lib_B513D0A0_7A1E026B=Portrait Height ~A~
 Param/Expression/lib_B513D0A0_7B8D350A=<s val="Lobby_MapInfoPreview_Description"><c val="~C~">~A~</c></s>
+Param/Expression/lib_B513D0A0_7FFFEF6C=writeout after extract ~A~
 Param/Expression/lib_B513D0A0_815D89E3=<s val="ABChoiceRewardsValerian">~A~</s>
 Param/Expression/lib_B513D0A0_849ED670=<c val="~C~">~A~ #~B~ :</c>
+Param/Expression/lib_B513D0A0_908DA953=Reference ID  = ~A~<n/>DataTable value (direct) = ~B~
+Param/Expression/lib_B513D0A0_98F4D532=<n/>~L~ : ~Obs~/~Exp~ -- 
+Param/Expression/lib_B513D0A0_9A9B70FE=Inspecting ~B~ ~A~
 Param/Expression/lib_B513D0A0_9C97EBDF=Unit Tag : ~A~
+Param/Expression/lib_B513D0A0_9E5884CE=<s val="AMTTransmissionCharNameRight"><c val="~Color~">~Name~ :</c><n/><n/><s val="AMTTransmissionTextRight"><c val="~Color~">~Text~</c></s></s>
+Param/Expression/lib_B513D0A0_A1F7511B=Playing Jump ~A~ with location "~loc~" (group #~groupid~)
+Param/Expression/lib_B513D0A0_A5DBDCB1=~L~ : ~Obs~/~Exp~ -- 
+Param/Expression/lib_B513D0A0_ABE5D33C=--- Condition : <n/>------ ~VAL~ ~OP~ ~USER~
+Param/Expression/lib_B513D0A0_B26D1F50=-> ~A~
+Param/Expression/lib_B513D0A0_B4EC2D2E=<s val="AMTTransmissionCharName"><c val="~Color~">~Name~ :</c></s><n/><n/><s val="AMTTransmissionText"><c val="~Color~">~Text~</c></s>
 Param/Expression/lib_B513D0A0_BE0D2843=~A~
+Param/Expression/lib_B513D0A0_BE772DF8=<n/>~L~ : ~Obs~/~Exp~ -- 
+Param/Expression/lib_B513D0A0_BE8B80C3=~L~ : ~Obs~/~Exp~
+Param/Expression/lib_B513D0A0_C166503F=-> ~A~ (~type~ ~ID~)
 Param/Expression/lib_B513D0A0_C3CD280C=~Text~
+Param/Expression/lib_B513D0A0_D352135E=~L~ : ~Obs~/~Exp~ 
 Param/Expression/lib_B513D0A0_D4EC1A48=<c val="~C~">~A~ : </c>
 Param/Expression/lib_B513D0A0_D989C71B=<s val="ABChoiceRewards">~A~</s>
+Param/Expression/lib_B513D0A0_E959BBC5=Running Action  ~A~/~B~
+Param/Expression/lib_B513D0A0_EBC38D68=jumping to group ~A~
 Param/Expression/lib_B513D0A0_F88DE465=Unhighlighting button ~B~ for player ~A~
+Param/Value/lib_B513D0A0_01EC60C8=Building Path Stack
+Param/Value/lib_B513D0A0_0C02943C====================================
+Param/Value/lib_B513D0A0_0C88B6DE==============================<n/>Group Parent Dump<n/>=============================
+Param/Value/lib_B513D0A0_1288B435=Identical seq :
 Param/Value/lib_B513D0A0_1671F553=<s val="ArcadeFighterLevelScoreTitle"><c val="17FFA3">Incoming Transmission</c></s>
+Param/Value/lib_B513D0A0_225D8A4D=Special Option detected
+Param/Value/lib_B513D0A0_2AA3190C=Next
+Param/Value/lib_B513D0A0_2D90E0C5= #
+Param/Value/lib_B513D0A0_330B337E========== Zero Gap count (per length)
 Param/Value/lib_B513D0A0_333857FA=
+Param/Value/lib_B513D0A0_36795B60=<n/>Zero Gap count (per length)<n/>
 Param/Value/lib_B513D0A0_3DABBFA4=Read
+Param/Value/lib_B513D0A0_4156C982=User-Type Usage detected
 Param/Value/lib_B513D0A0_49ACBC67=Blablablablablablablablablabla
+Param/Value/lib_B513D0A0_4E73B7DC=Conversation State Usage detected
+Param/Value/lib_B513D0A0_55181790=<n/><n/>sequence of identical count (per length)<n/>
 Param/Value/lib_B513D0A0_5977F4AC=Close
+Param/Value/lib_B513D0A0_62A2CA8D=Existing Slot
 Param/Value/lib_B513D0A0_62FA467B=Hiding Targeting UI
 Param/Value/lib_B513D0A0_64146184=Skip
+Param/Value/lib_B513D0A0_64D7BB0C=Disabled Node !
+Param/Value/lib_B513D0A0_68912862= #
+Param/Value/lib_B513D0A0_69A95594=User-Type Usage detected
+Param/Value/lib_B513D0A0_69EB30E4=Conversation State Usage detected
+Param/Value/lib_B513D0A0_6A03E299=Close
+Param/Value/lib_B513D0A0_6B0B7E2F=#
+Param/Value/lib_B513D0A0_6CBFC2CB="AND" Branch
 Param/Value/lib_B513D0A0_766B1054=Blablablablablablablablablabla
+Param/Value/lib_B513D0A0_7A3B31D6=No Condition
 Param/Value/lib_B513D0A0_7DF4D4FE=Hi sweety,<n/><n/>We have received an emergency call from an exploration squadron in this sector. I would have send someone else but all your brothers are busy right now...<n/>Anyway, seem like the planet is inhabited after all and the locals are not happy with our presence. You are to secure the nearby energy generator and remove any threat to the Flock.<n/>Do whatever you want with our stationed troops.<n/><n/><n/><n/>Do not disappoint me.
+Param/Value/lib_B513D0A0_821C76C3= #
+Param/Value/lib_B513D0A0_836739E6=Training started
+Param/Value/lib_B513D0A0_85D1733A=Special Option detected
+Param/Value/lib_B513D0A0_8705BD90=Disabled Node !
+Param/Value/lib_B513D0A0_8CBDFBAE=(0,...,0) count (per length)<n/>
+Param/Value/lib_B513D0A0_99AA5A66=#
+Param/Value/lib_B513D0A0_9ECB7BD6====================================
+Param/Value/lib_B513D0A0_B959DD4C=========== (0,...,0) count (per length)
+Param/Value/lib_B513D0A0_BA1DB0B0========= sequence of identical count (per length)
 Param/Value/lib_B513D0A0_BAC5DF56=You're a bad boy !
 Param/Value/lib_B513D0A0_C4494BAE=Showing Targeting UI
 Param/Value/lib_B513D0A0_C7C0A73C=<s val="ArcadeFighterLevelScoreTitle"><c val="17FFA3">Incoming Transmission</c></s>
 Param/Value/lib_B513D0A0_C91C5280=FFFFFF
+Param/Value/lib_B513D0A0_D84E2986=New vector creation (no prefix founded)
+Param/Value/lib_B513D0A0_E78FB36D=Discraded
+Param/Value/lib_B513D0A0_E7C7CEFE="OR" Branch
+Param/Value/lib_B513D0A0_EBFE2DAE=New Slot
+Param/Value/lib_B513D0A0_F5DE5795=Discraded
 Param/Value/lib_B513D0A0_F94C2A13=Next
+UserData/UnknownUserType/Untitled Instance_Untitled Field=test

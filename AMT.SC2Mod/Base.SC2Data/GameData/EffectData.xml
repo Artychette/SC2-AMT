@@ -75,6 +75,11 @@
         <EditorCategories value=""/>
         <Behavior value="HideIfCasterHiddenHelperDummyBehavior"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="HideIfCasterHiddenInitialSet">
+        <EditorCategories value=""/>
+        <EffectArray value="HideIfCasterHiddenTP"/>
+        <EffectArray value="HideIfCasterHiddenABTP"/>
+    </CEffectSet>
     <CEffectTeleport id="HideIfCasterHiddenTP">
         <EditorCategories value=""/>
         <SourceLocation Value="TargetUnit"/>

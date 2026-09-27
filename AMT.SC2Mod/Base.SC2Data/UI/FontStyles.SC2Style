@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <StyleFile>
+    <Style name="AMT_ConvSkipPromptDefaultTitle" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="25" vjustify="Middle" hjustify="Center" styleflags="Shadow | Outline | Bold" textcolor="255,157,255,157 - 255,13,255,134" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2" outlinewidth="1"/>
+    <Style name="AMT_ConvSkipPromptDefaultButton" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="18" vjustify="Middle" hjustify="Center" styleflags="Shadow | Outline | Bold" textcolor="255,215,215,215" highlightcolor="255,255,255,255 - 255,252,252,252" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="0" outlinewidth="0"/>
     <Style name="AMT_PQP_Count" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="12" vjustify="Bottom" hjustify="Right" styleflags="Shadow | Outline" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="2" outlinewidth="0"/>
-
-    <!-- Targeting mode instructions --> 
+    <Style name="AMTTransmissionCharName" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="22" vjustify="Top" hjustify="Left" styleflags="Shadow | Outline | Bold" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="3" outlinewidth="2"/>
+    <Style name="AMTTransmissionCharNameRight" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="22" vjustify="Top" hjustify="Right" styleflags="Shadow | Outline | Bold" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="3" outlinewidth="2"/>
+    <Style name="AMTTransmissionText" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="17" vjustify="Top" hjustify="Left" styleflags="Shadow" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="0"/>
+    <Style name="AMTTransmissionTextRight" template="StandardExtendedTemplate" font="UI\Fonts\bl.ttf" height="17" vjustify="Top" hjustify="Right" styleflags="Shadow" textcolor="255,255,255,255" highlightcolor="255,0,0,0" disabledcolor="255,128,128,128" hotkeycolor="255,0,0,0" hyperlinkcolor="255,0,0,0" glowcolor="255,0,0,0" shadowoffset="1" outlinewidth="0"/>
+    <!-- Targeting mode instructions -->
     <Constant name="Void_Bold" val="#FontHeader"/>
     <Constant name="Void_BoldExtended" val="#FontHeaderExtended"/>
     <Constant name="Void_Regular" val="#FontStandard"/>
@@ -13,13 +18,10 @@
     <Constant name="Void_ColorBlue4" val="0078ff"/>
     <Constant name="Void_ColorBlue6" val="49, 124, 136"/>
     <Constant name="Void_ColorWhite" val="255, 255, 255"/>
-
     <Style name="Void_RegularLarge" font="#Void_Regular" height="#Void_FontSizeLarge" vjustify="Middle"/>
     <Style name="Void_BoldExtendedLarge" font="#Void_BoldExtended" height="#Void_FontSizeLarge" vjustify="Middle"/>
     <Style name="Void_BoldSmall" font="#Void_Bold" height="#Void_FontSizeSmall" vjustify="Middle"/>
-
-    <Style name="Void_SOATargetModeSmall" template="Void_BoldExtendedLarge" height="26" hjustify="Center" vjustify="Middle" textcolor="#Void_ColorWhite" styleflags="Glow" glowcolor="#Void_ColorBlue4"/>
+    <Style name="Void_SOATargetModeSmall" template="Void_BoldExtendedLarge" height="26" vjustify="Middle" hjustify="Center" styleflags="Glow" textcolor="#Void_ColorWhite" glowcolor="#Void_ColorBlue4"/>
     <Style name="Void_SOATargetModeLarge" template="Void_RegularLarge" height="22" hjustify="Left" styleflags="Glow" glowcolor="#Void_ColorBlue4"/>
-    <Style name="Void_SOATargetModeChargesText" template="Void_BoldSmall" hjustify="Left" vjustify="Top" textcolor="#Void_ColorBlue6"/> 
-    
+    <Style name="Void_SOATargetModeChargesText" template="Void_BoldSmall" vjustify="Top" hjustify="Left" textcolor="#Void_ColorBlue6"/>
 </StyleFile>

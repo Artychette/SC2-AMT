@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CConversation default="1" id="AMTDataDrivenTransmissionBase">
+        <ProductionLevel value="3"/>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/Disabled">
+            <Conditions FixedId="Disabled" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/Line/OverrideDuration">
+            <Conditions FixedId="OverrideDuration" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/Line/OverrideWriteout">
+            <Conditions FixedId="OverrideWriteout" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/RandomMachineSerial">
+            <Conditions FixedId="RandomMachineSerial" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedActions Text="Conversation/FixedAction/AMT/PlayTransmissionCue">
+            <Actions FixedId="PlayTransmissionCue"/>
+        </FixedActions>
+        <FixedActions Text="Conversation/FixedAction/AMT/GamePause">
+            <Actions FixedId="GamePause"/>
+        </FixedActions>
+        <FixedActions Text="Conversation/FixedAction/AMT/RunTrigger">
+            <Actions FixedId="RunTrigger">
+                <User Type="AMTConversationRunnableTrigger"/>
+            </Actions>
+        </FixedActions>
+    </CConversation>
+    <CConversation default="1" id="AMTDataDrivenTransmissionScrollableWindow">
+        <ProductionLevel value="3"/>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/Disabled">
+            <Conditions FixedId="Disabled" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/Line/OverrideDuration">
+            <Conditions FixedId="OverrideDuration" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/Line/OverrideWriteout">
+            <Conditions FixedId="OverrideWriteout" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/RightAlignedLine">
+            <Conditions FixedId="RightAlignedLine" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/IsLastLine">
+            <Conditions FixedId="IsLastLine"/>
+        </FixedConditions>
+        <FixedConditions Text="Conversation/FixedCondition/AMT/RandomMachineSerial">
+            <Conditions FixedId="RandomMachineSerial" State="AMTConversationSpecialOptionState" Index="-1"/>
+        </FixedConditions>
+        <FixedActions Text="Conversation/FixedAction/AMT/PlayTransmissionCue">
+            <Actions FixedId="PlayTransmissionCue"/>
+        </FixedActions>
+        <FixedActions Text="Conversation/FixedAction/AMT/GamePause">
+            <Actions FixedId="GamePause"/>
+        </FixedActions>
+        <FixedActions Text="Conversation/FixedAction/AMT/RunTrigger">
+            <Actions FixedId="RunTrigger">
+                <User Type="AMTConversationRunnableTrigger"/>
+            </Actions>
+        </FixedActions>
+    </CConversation>
+</Catalog>
