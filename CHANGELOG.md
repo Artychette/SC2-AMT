@@ -1,41 +1,6 @@
 # CHANGELOG
 
 __==============================<br/>
-============ v1.3 ==============<br/>
-==============================<br/>__
-
-
-## Core Lib Extension
-
-### Event : 
-- Exposed all native event registration functions to allow to dynamically add events to triggers from the GUI without using custom script blocks. 
-
-### Condition : 
-- Added "Is True" and "Is False" conditions to avoid `if(boolean==true)` and `if(boolean==false)` monstrosities.
-
-### Dynamic Container (new) :
-- Added a (c++ style) "Vector" struct that act both as a dynamic array and a stack. Work for almost all GUI variable type.
-- Added a (c++ style) "Deque" (Double Ended QUEue) struct that act both as a queue and a stack. Work for almost all GUI variable type.
-
-### UI : 
-- Added a "Convert String to UI Layout Frame" function
-
-### User-Data :
-- Added 2 cast functions : "Convert String To User Instance", "Convert String To User Field"
-- Added a "User Reference" function that return a user reference from a user-type and an instance
-
-## Conversation (new)
-- Added a whole API for transmission/briefing/RPG-like conversation to be run from conversation data
-
-
-## Math Misc.
-- Added a random generator for integer (and another with a distribution biaised toward less consecutive identical output), real number (in a given interval) and points (in a given disk)
-
-## Misc.
-- Optimized most existing modules to (slightly) reduce performance cost of enabled ones and anihilate any performance cost of disabled ones.
-
-#
-__==============================<br/>
 ============ v1.2a =============<br/>
 ==============================<br/>__
 
