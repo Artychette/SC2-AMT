@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TriggerData>
+    <Library Id="AMTH">
+        <Root>
+            <Item Type="Category" Library="AMTH" Id="626612FD"/>
+            <Item Type="Category" Library="AMTH" Id="2B7C64BD"/>
+            <Item Type="Category" Library="AMTH" Id="E4EE2E91"/>
+            <Item Type="Label" Library="AMTH" Id="B8D20280"/>
+        </Root>
+        <Element Type="Category" Id="626612FD">
+            <Item Type="Variable" Library="AMTH" Id="DED352B5"/>
+        </Element>
+        <Element Type="Variable" Id="DED352B5">
+            <VariableType>
+                <Type Value="int"/>
+                <Constant/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="B5F497D6"/>
+        </Element>
+        <Element Type="Param" Id="B5F497D6">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Category" Id="2B7C64BD">
+            <Label Type="Label" Library="AMTH" Id="B8D20280"/>
+            <Item Type="Structure" Library="AMTH" Id="6AB60E5A"/>
+            <Item Type="Structure" Library="AMTH" Id="1F4B3CBB"/>
+        </Element>
+        <Element Type="Structure" Id="6AB60E5A">
+            <Label Type="Label" Library="AMTH" Id="B8D20280"/>
+            <Variable Type="Variable" Library="AMTH" Id="AAF31951"/>
+        </Element>
+        <Element Type="Variable" Id="AAF31951">
+            <VariableType>
+                <Type Value="int"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="9303FFE5"/>
+        </Element>
+        <Element Type="Param" Id="9303FFE5">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Structure" Id="1F4B3CBB">
+            <Label Type="Label" Library="AMTH" Id="B8D20280"/>
+            <Variable Type="Variable" Library="AMTH" Id="F578FCF5"/>
+        </Element>
+        <Element Type="Variable" Id="F578FCF5">
+            <VariableType>
+                <Type Value="int"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="9EDDC82A"/>
+        </Element>
+        <Element Type="Param" Id="9EDDC82A">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Category" Id="E4EE2E91">
+            <Label Type="Label" Library="Ntve" Id="00000034"/>
+            <Item Type="Structure" Library="AMTH" Id="A3D07FDF"/>
+            <Item Type="Structure" Library="AMTH" Id="FC72B64A"/>
+            <Item Type="Structure" Library="AMTH" Id="09241FBD"/>
+            <Item Type="Structure" Library="AMTH" Id="F328E71A"/>
+        </Element>
+        <Element Type="Structure" Id="A3D07FDF">
+            <Label Type="Label" Library="Ntve" Id="00000034"/>
+            <Variable Type="Variable" Library="AMTH" Id="84E1153F"/>
+            <Variable Type="Variable" Library="AMTH" Id="D87FF6F2"/>
+            <Variable Type="Variable" Library="AMTH" Id="0CBCAE57"/>
+        </Element>
+        <Element Type="Variable" Id="84E1153F">
+            <Identifier>convLink</Identifier>
+            <VariableType>
+                <Type Value="string"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="EE872C77"/>
+        </Element>
+        <Element Type="Param" Id="EE872C77">
+            <CustomType Type="string"/>
+            <ScriptCode>
+                null
+            </ScriptCode>
+        </Element>
+        <Element Type="Variable" Id="D87FF6F2">
+            <VariableType>
+                <Type Value="preset"/>
+                <TypeElement Type="Preset" Library="Ntve" Id="B17DF93E"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="FEBD1112"/>
+        </Element>
+        <Element Type="Param" Id="FEBD1112">
+            <Preset Type="PresetValue" Library="Ntve" Id="085729C5"/>
+        </Element>
+        <Element Type="Variable" Id="0CBCAE57">
+            <VariableType>
+                <Type Value="int"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="46B2D03E"/>
+        </Element>
+        <Element Type="Param" Id="46B2D03E">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Structure" Id="FC72B64A">
+            <Label Type="Label" Library="Ntve" Id="00000034"/>
+            <Variable Type="Variable" Library="AMTH" Id="BE4CE436"/>
+        </Element>
+        <Element Type="Variable" Id="BE4CE436">
+            <VariableType>
+                <Type Value="int"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="32F2AD4E"/>
+        </Element>
+        <Element Type="Param" Id="32F2AD4E">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Structure" Id="09241FBD">
+            <Label Type="Label" Library="Ntve" Id="00000034"/>
+            <Variable Type="Variable" Library="AMTH" Id="2A847B20"/>
+            <Variable Type="Variable" Library="AMTH" Id="F8C53D19"/>
+        </Element>
+        <Element Type="Variable" Id="2A847B20">
+            <VariableType>
+                <Type Value="string"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="DCF41F45"/>
+        </Element>
+        <Element Type="Param" Id="DCF41F45">
+            <Value>RootItems</Value>
+            <ValueType Type="string"/>
+        </Element>
+        <Element Type="Variable" Id="F8C53D19">
+            <VariableType>
+                <Type Value="int"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="BD089B2F"/>
+        </Element>
+        <Element Type="Param" Id="BD089B2F">
+            <Value>0</Value>
+            <ValueType Type="int"/>
+        </Element>
+        <Element Type="Structure" Id="F328E71A">
+            <Label Type="Label" Library="Ntve" Id="00000034"/>
+            <Variable Type="Variable" Library="AMTH" Id="410FEA99"/>
+            <Variable Type="Variable" Library="AMTH" Id="2F2D5E9B"/>
+            <Variable Type="Variable" Library="AMTH" Id="C896F5AB"/>
+            <Variable Type="Variable" Library="AMTH" Id="FC634E5B"/>
+            <Variable Type="Variable" Library="AMTH" Id="427CED33"/>
+            <Variable Type="Variable" Library="AMTH" Id="30B39E81"/>
+            <Variable Type="Variable" Library="AMTH" Id="B030C0A4"/>
+            <Variable Type="Variable" Library="AMTH" Id="CA6D4ACD"/>
+            <Variable Type="Variable" Library="AMTH" Id="16A4408E"/>
+            <Variable Type="Variable" Library="AMTH" Id="33F385CA"/>
+            <Variable Type="Variable" Library="AMTH" Id="E402811E"/>
+            <Variable Type="Variable" Library="AMTH" Id="F1FE93F5"/>
+            <Variable Type="Variable" Library="AMTH" Id="7AFE500F"/>
+            <Variable Type="Variable" Library="AMTH" Id="823FA414"/>
+            <Variable Type="Variable" Library="AMTH" Id="21113C9C"/>
+        </Element>
+        <Element Type="Variable" Id="410FEA99">
+            <VariableType>
+                <Type Value="control"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="C39843D9"/>
+        </Element>
+        <Element Type="Param" Id="C39843D9">
+            <Preset Type="PresetValue" Library="Ntve" Id="FAC49C47"/>
+        </Element>
+        <Element Type="Variable" Id="2F2D5E9B">
+            <VariableType>
+                <Type Value="modelanim"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="196810AC"/>
+        </Element>
+        <Element Type="Param" Id="196810AC">
+            <Value>&quot;Stand&quot;</Value>
+            <ValueType Type="modelanim"/>
+        </Element>
+        <Element Type="Variable" Id="C896F5AB">
+            <VariableType>
+                <Type Value="string"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="73CAECC1"/>
+        </Element>
+        <Element Type="Param" Id="73CAECC1">
+            <ValueType Type="string"/>
+        </Element>
+        <Element Type="Variable" Id="FC634E5B">
+            <VariableType>
+                <Type Value="string"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="19C872D3"/>
+        </Element>
+        <Element Type="Param" Id="19C872D3">
+            <ValueType Type="string"/>
+        </Element>
+        <Element Type="Variable" Id="427CED33">
+            <VariableType>
+                <Type Value="text"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="919CF5F0"/>
+        </Element>
+        <Element Type="Param" Id="919CF5F0">
+            <Preset Type="PresetValue" Library="Ntve" Id="50BDC6EF"/>
+        </Element>
+        <Element Type="Variable" Id="30B39E81">
+            <VariableType>
+                <Type Value="string"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="43E629BD"/>
+        </Element>
+        <Element Type="Param" Id="43E629BD">
+            <ValueType Type="string"/>
+        </Element>
+        <Element Type="Variable" Id="B030C0A4">
+            <VariableType>
+                <Type Value="string"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="69FE532F"/>
+        </Element>
+        <Element Type="Param" Id="69FE532F">
+            <ValueType Type="string"/>
+        </Element>
+        <Element Type="Variable" Id="CA6D4ACD">
+            <VariableType>
+                <Type Value="text"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="DFFFE350"/>
+        </Element>
+        <Element Type="Param" Id="DFFFE350">
+            <Preset Type="PresetValue" Library="Ntve" Id="50BDC6EF"/>
+        </Element>
+        <Element Type="Variable" Id="16A4408E">
+            <VariableType>
+                <Type Value="transmissionsource"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="2DDAA2B7"/>
+        </Element>
+        <Element Type="Param" Id="2DDAA2B7">
+            <FunctionCall Type="FunctionCall" Library="AMTH" Id="D2BC3A07"/>
+        </Element>
+        <Element Type="FunctionCall" Id="D2BC3A07">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C551984B"/>
+        </Element>
+        <Element Type="Variable" Id="33F385CA">
+            <VariableType>
+                <Type Value="soundlink"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="884CC898"/>
+        </Element>
+        <Element Type="Param" Id="884CC898">
+            <Preset Type="PresetValue" Library="Ntve" Id="90583839"/>
+        </Element>
+        <Element Type="Variable" Id="E402811E">
+            <VariableType>
+                <Type Value="fixed"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="3AFB776C"/>
+        </Element>
+        <Element Type="Param" Id="3AFB776C">
+            <Value>0</Value>
+            <ValueType Type="fixed"/>
+        </Element>
+        <Element Type="Variable" Id="F1FE93F5">
+            <Identifier>writeout</Identifier>
+            <VariableType>
+                <Type Value="fixed"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="3EC965F4"/>
+        </Element>
+        <Element Type="Param" Id="3EC965F4">
+            <Value>0</Value>
+            <ValueType Type="fixed"/>
+        </Element>
+        <Element Type="Variable" Id="7AFE500F">
+            <VariableType>
+                <Type Value="preset"/>
+                <TypeElement Type="Preset" Library="Ntve" Id="4F482613"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="D87A740D"/>
+        </Element>
+        <Element Type="Param" Id="D87A740D">
+            <Preset Type="PresetValue" Library="Ntve" Id="92CD5912"/>
+        </Element>
+        <Element Type="Variable" Id="823FA414">
+            <VariableType>
+                <Type Value="bool"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="7DE0977D"/>
+        </Element>
+        <Element Type="Param" Id="7DE0977D">
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Variable" Id="21113C9C">
+            <VariableType>
+                <Type Value="bool"/>
+                <ArraySize Dim="0" Value="17"/>
+            </VariableType>
+            <Value Type="Param" Library="AMTH" Id="8CD05E55"/>
+        </Element>
+        <Element Type="Param" Id="8CD05E55">
+            <Value>false</Value>
+            <ValueType Type="bool"/>
+        </Element>
+        <Element Type="Label" Id="B8D20280">
+            <Color>255,0,0,255</Color>
+            <Icon>Assets\Textures\ui-editoricon-triggercategories_variable.dds</Icon>
+        </Element>
+    </Library>
+</TriggerData>

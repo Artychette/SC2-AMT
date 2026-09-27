@@ -1,0 +1,40 @@
+include "TriggerLibs/NativeLib"
+
+include "LibAMTH_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: AMT Structures
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libAMTH_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Variable Initialization
+bool libAMTH_InitVariables_completed = false;
+
+void libAMTH_InitVariables () {
+    if (libAMTH_InitVariables_completed) {
+        return;
+    }
+
+    libAMTH_InitVariables_completed = true;
+
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libAMTH_InitLib_completed = false;
+
+void libAMTH_InitLib () {
+    if (libAMTH_InitLib_completed) {
+        return;
+    }
+
+    libAMTH_InitLib_completed = true;
+
+    libAMTH_InitLibraries();
+    libAMTH_InitVariables();
+}
+

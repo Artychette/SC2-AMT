@@ -1,0 +1,101 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: AMT Structures
+//--------------------------------------------------------------------------------------------------
+// Constants
+
+const int libAMTH_gv_aMTArraySizeforHeaderHack = 0;
+
+// Structures
+
+struct libAMTH_gs_Vector {
+    string lv_id;
+    int lv_size;
+    string lv_id_prefix;
+    string lv_size_prefix;
+    bool lv_scope;
+};
+
+struct libAMTH_gs_Deque {
+    string lv_id;
+    int lv_size;
+    int lv_start;
+    string lv_id_prefix;
+    string lv_size_prefix;
+    string lv_start_prefix;
+    bool lv_scope;
+};
+
+struct libAMTH_gs_ConversationTree {
+    string serial;
+    string lv_convLink;
+    libAMTH_gs_Vector lv_parentStack;
+    libAMTH_gs_Vector lv_iDStack;
+    libAMTH_gs_Vector lv_childIDStack;
+    libAMTH_gs_Vector lv_groupParentArray;
+    libAMTH_gs_Vector lv_groupChildIDArray;
+    libAMTH_gs_Vector lv_choiceParentArray;
+    libAMTH_gs_Vector lv_choiceChildIDArray;
+    int lv_player;
+    bool lv_scope;
+    bool is_active;    
+};
+
+struct libAMTH_gs_ConversationNode {
+    string lv_type;
+    int lv_iD;
+};
+
+typedef structref<libAMTH_gs_ConversationTree> SConvTree_Ref;
+typedef structref<libAMTH_gs_ConversationNode> SConvNode_Ref;
+
+static void InitCallback(string,SConvTree_Ref){}
+static bool SkipPromptCallback(string,SConvTree_Ref){return true;}
+static void CloseCallback(string,SConvTree_Ref){}
+static void LineCallback(int,string,SConvTree_Ref){}
+static void ChoiceCallback(int,string,SConvTree_Ref){}
+static bool CheckCondCallback(SConvNode_Ref,SConvTree_Ref){return true;}
+static void ActionCallback(int,string,SConvTree_Ref){}
+
+typedef funcref<SkipPromptCallback> ConvSkipCallback;
+typedef funcref<InitCallback> ConvInitCallback;
+typedef funcref<CloseCallback> ConvCloseCallback;
+typedef funcref<LineCallback> ConvLineCallback;
+typedef funcref<ChoiceCallback> ConvChoiceCallback;
+typedef funcref<CheckCondCallback> ConvCheckCondCallback;
+typedef funcref<ActionCallback> ConvActionCallback;
+
+struct libAMTH_gs_ConversationPlayer
+{
+    ConvSkipCallback skipPrompt;
+    ConvInitCallback init;
+    ConvCloseCallback close;
+    ConvLineCallback runLine;
+    ConvChoiceCallback runChoice;
+    ConvCheckCondCallback checkCondition;
+    ConvActionCallback runAction;
+    string UITemplate;
+};
+
+struct libAMTH_gs_ConversationLineData {
+    int lv_portrait;
+    string lv_portraitAnim;
+    string lv_portraitActorLink;
+    string lv_speakerModelLink;
+    text lv_speakerNameText;
+    string lv_speakerRaceLink;
+    string lv_speakerColor;
+    text lv_text;
+    transmissionsource lv_source;
+    soundlink lv_soundLink;
+    fixed lv_duration;
+    fixed lv_writeout;
+    int lv_durationOperation;
+    bool lv_wait;
+    bool[17] lv_allowedConversationType;
+};
+
+// Library Initialization
+void libAMTH_InitVariables ();
+
