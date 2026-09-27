@@ -1,6 +1,6 @@
 # Arty's Misc. Tools For SC2 Mods
 
-compiles a bunch of different tools for SC2 mods.
+Compiles a bunch of different tools for SC2 mods.
 
 Some features require initialization to work, because they can affect performance while some people may not want the thing. They can be initialized with the "Init AMT feature" action. There is a "all at once" option that launch everything (except debug, which need to be run independently if you want it)
 It's tested enough (been using that for several month - up to a year or two for some pieces - without trouble) but i won't expect it to be bullet proof.
