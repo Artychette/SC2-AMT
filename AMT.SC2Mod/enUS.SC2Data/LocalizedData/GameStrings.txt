@@ -56,3 +56,5 @@ Param/Value/lib_B513D0A0_C4494BAE=Showing Targeting UI
 Param/Value/lib_B513D0A0_C7C0A73C=<s val="ArcadeFighterLevelScoreTitle"><c val="17FFA3">Incoming Transmission</c></s>
 Param/Value/lib_B513D0A0_C91C5280=FFFFFF
 Param/Value/lib_B513D0A0_F94C2A13=Next
+UI/AMTTargetingUI/Charges=Charges Remaining
+UI/AMTTargetingUI/Cancel=Cancel
