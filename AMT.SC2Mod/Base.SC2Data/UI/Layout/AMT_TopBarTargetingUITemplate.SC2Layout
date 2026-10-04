@@ -102,6 +102,7 @@
 
 
     <Frame type="Portrait" name="TargetingOverlayTemplate">
+        <Visible val="False"/>
         <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
         <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
         <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
@@ -515,7 +516,7 @@
             <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
             <Height val="36"/>
-            <Text val="Charges Remaining"/> <!--@UI/AMTTargetingUI/Charges"/-->
+            <Text val="@UI/AMTTargetingUI/Charges"/>
             <Style val="Void_SOATargetModeSmall"/>
         </Frame>
         
@@ -709,7 +710,7 @@
     
     <Frame type="Frame" name="TargetingUITemplate">
         <Anchor relative="$parent"/>
-        <!--Visible val="False"/-->
+        <Visible val="False"/>
         
         <Frame type="Frame" name="ChargesContainer" template="AMT_TopBarTargetingUITemplate/ChargesContainerTemplate">
             <Anchor side="Top" relative="$parent" pos="Min" offset="10"/>
@@ -721,7 +722,7 @@
             <Anchor side="Bottom" relative="$parent" pos="Max" offset="-25"/>
             <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
             <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
-            <Text val="Cancel"/>
+            <Text val="@UI/AMTTargetingUI/Cancel"/>
             <ClickSound val="@UI_ButtonPitchPlay"/>
             <HoverSound val="*@UI_Void_ButtonMouseOver_ActorSound"/>
             <Shortcut val="@Button/Hotkey/Cancel"/>

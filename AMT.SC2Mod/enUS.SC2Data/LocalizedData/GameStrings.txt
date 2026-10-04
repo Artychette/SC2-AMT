@@ -125,4 +125,6 @@ Param/Value/lib_B513D0A0_E7C7CEFE="OR" Branch
 Param/Value/lib_B513D0A0_EBFE2DAE=New Slot
 Param/Value/lib_B513D0A0_F5DE5795=Discraded
 Param/Value/lib_B513D0A0_F94C2A13=Next
+UI/AMTTargetingUI/Charges=Charges Remaining
+UI/AMTTargetingUI/Cancel=Cancel
 UserData/UnknownUserType/Untitled Instance_Untitled Field=test
